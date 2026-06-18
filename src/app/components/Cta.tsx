@@ -17,12 +17,12 @@ export default function Cta({
     <section className="bg-[#2D1B4E] py-20">
       <div className="max-w-2xl mx-auto px-6 text-center flex flex-col items-center gap-6">
         <h2 className="font-playfair text-4xl text-white">{title}</h2>
-        <p className="font-lato text-sm text-[#C9B8E8]/70 leading-relaxed">
+        <p className="font-lato text-sm text-[#E8E0F5]/80 leading-relaxed">
           {description}
         </p>
         <Link
           href={buttonHref}
-          className="font-lato text-sm px-8 py-3 rounded-full bg-[#C9B8E8] text-[#2D1B4E] hover:bg-white transition-colors duration-300"
+          className="font-lato text-sm px-8 py-3 rounded-full bg-[#C9B8E8] text-[#2D1B4E] hover:bg-white transition-colors duration-300 font-medium"
         >
           {buttonLabel}
         </Link>

@@ -31,7 +31,7 @@ export default function Faq({ items, title, subtitle }: FaqProps) {
           {items.map((item) => (
             <details
               key={item.question}
-              className="group border-b border-[#C9B8E8]/40 py-5 cursor-pointer"
+              className="group border-b border-[#C9B8E8]/50 py-5 cursor-pointer"
             >
               <summary className="flex justify-between items-center font-playfair text-lg text-[#2D1B4E] list-none">
                 {item.question}
@@ -39,7 +39,7 @@ export default function Faq({ items, title, subtitle }: FaqProps) {
                   +
                 </span>
               </summary>
-              <p className="mt-3 font-lato text-sm text-[#2D1B4E]/70 leading-relaxed">
+              <p className="mt-3 font-lato text-sm text-[#2D1B4E]/80 leading-relaxed">
                 {item.reponse}
               </p>
             </details>

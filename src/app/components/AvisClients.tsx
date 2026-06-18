@@ -32,19 +32,19 @@ export default function AvisClients({ items, title, subtitle }: AvisClientsProps
           {items.map((a) => (
             <div
               key={a.nom}
-              className="bg-white border border-[#C9B8E8]/30 rounded-2xl p-8 flex flex-col gap-4"
+              className="bg-white border border-[#C9B8E8]/50 rounded-2xl p-8 flex flex-col gap-4"
             >
               <span className="text-[#C9B8E8] font-playfair text-4xl leading-none">
                 "
               </span>
-              <p className="font-lato text-sm text-[#2D1B4E]/70 leading-relaxed -mt-2">
+              <p className="font-lato text-sm text-[#2D1B4E]/80 leading-relaxed -mt-2">
                 {a.texte}
               </p>
               <div className="mt-auto">
                 <span className="font-lato text-xs text-[#9B7FC8] tracking-widest uppercase">
                   — {a.nom}
                 </span>
-                <span className="block font-lato text-xs text-[#2D1B4E]/30 mt-1">
+                <span className="block font-lato text-xs text-[#2D1B4E]/50 mt-1">
                   {a.service}
                 </span>
               </div>
