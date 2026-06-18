@@ -19,7 +19,7 @@ export default function NumerologiePage() {
   return (
     <>
       {/* ── HERO ─────────────────────────────────────────────── */}
-      <section className="relative bg-[#F5F0FF] overflow-hidden min-h-[85vh] flex items-center">
+      <section className="relative bg-[#F5F0FF] overflow-hidden min-h-[95vh] flex items-center">
         <motion.div
           className="absolute top-[-120px] right-[-120px] w-[550px] h-[550px] rounded-full bg-[#C9B8E8]/25 blur-3xl pointer-events-none"
           animate={{ scale: [1, 1.08, 1], opacity: [0.4, 0.65, 0.4] }}
@@ -267,7 +267,7 @@ export default function NumerologiePage() {
                 variants={fadeUp} initial="hidden" whileInView="visible"
                 viewport={{ once: true }} custom={i}
                 whileHover={{ y: -6, boxShadow: "0 20px 40px rgba(155,127,200,0.15)" }}
-                className="bg-white border border-[#C9B8E8]/50 rounded-3xl p-8 flex flex-col gap-4 transition-all duration-300 cursor-default"
+                className="bg-white border border-[#C9B8E8]/50 rounded-3xl p-8 flex flex-col gap-4 transition-all duration-50 cursor-default"
               >
                 <span className="text-3xl text-[#9B7FC8]">{item.icon}</span>
                 <h3 className="font-playfair text-xl text-[#2D1B4E]">{item.title}</h3>
