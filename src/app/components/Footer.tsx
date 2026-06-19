@@ -52,7 +52,7 @@ export default function Footer() {
 
       <div className="max-w-6xl mx-auto px-6 mt-10 pt-6 border-t border-[#C9B8E8]/30 flex flex-col md:flex-row justify-between items-center gap-2 text-xs text-[#C9B8E8]/65">
         <span>© {new Date().getFullYear()} Maryse - Tous droits réservés</span>
-        <span>Réalisé avec soin ✦</span>
+        <span>Réalisé par Gabriel Christe ✦</span>
       </div>
     </footer>
   );
