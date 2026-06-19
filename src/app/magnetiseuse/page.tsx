@@ -94,7 +94,7 @@ export default function MagnetiseurPage() {
               {
                 icon: "❋",
                 title: "Soulagement physique",
-                desc: "Douleurs, fatigue chronique, tensions musculaires — le magnétisme peut soulager de nombreux maux.",
+                desc: "Douleurs, fatigue chronique, tensions musculaires, le magnétisme peut soulager de nombreux maux.",
               },
               {
                 icon: "◇",
