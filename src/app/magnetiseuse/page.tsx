@@ -22,7 +22,7 @@ export default function MagnetiseusePage() {
   return (
     <>
       {/* ── HERO ─────────────────────────────────────────────── */}
-      <section className="relative bg-[#F5F0FF] overflow-hidden min-h-[95vh] flex items-center">
+      <section className="relative bg-[#F5F0FF] overflow-hidden min-h-[85vh] flex items-center">
         <motion.div
           className="absolute top-[-100px] left-[-100px] w-[500px] h-[500px] rounded-full bg-[#C9B8E8]/25 blur-3xl pointer-events-none"
           animate={{ scale: [1, 1.08, 1], opacity: [0.4, 0.65, 0.4] }}
