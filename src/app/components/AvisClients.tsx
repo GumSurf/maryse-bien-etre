@@ -42,7 +42,7 @@ export default function AvisClients({ items, title, subtitle }: AvisClientsProps
               </p>
               <div className="mt-auto">
                 <span className="font-lato text-xs text-[#9B7FC8] tracking-widest uppercase">
-                  — {a.nom}
+                  - {a.nom}
                 </span>
                 <span className="block font-lato text-xs text-[#2D1B4E]/50 mt-1">
                   {a.service}

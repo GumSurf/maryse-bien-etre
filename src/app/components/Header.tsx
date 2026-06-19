@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Accueil" },
+  { href: "/about", label: "À propos" },
   { href: "/numerologie", label: "Numérologie" },
   { href: "/magnetiseuse", label: "Magnétiseuse" },
   { href: "/contact", label: "Contact" },

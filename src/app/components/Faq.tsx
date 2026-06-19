@@ -27,22 +27,19 @@ export default function Faq({ items, title, subtitle }: FaqProps) {
             )}
           </div>
         )}
-        <div>
+        <div className="flex flex-col gap-8">
           {items.map((item) => (
-            <details
+            <div
               key={item.question}
-              className="group border-b border-[#C9B8E8]/50 py-5 cursor-pointer"
+              className="border-b border-[#C9B8E8]/50 pb-8 last:border-b-0"
             >
-              <summary className="flex justify-between items-center font-playfair text-lg text-[#2D1B4E] list-none">
+              <h3 className="font-playfair text-lg text-[#2D1B4E] mb-2">
                 {item.question}
-                <span className="text-[#9B7FC8] group-open:rotate-45 transition-transform duration-300 text-xl flex-shrink-0 ml-4">
-                  +
-                </span>
-              </summary>
-              <p className="mt-3 font-lato text-sm text-[#2D1B4E]/80 leading-relaxed">
+              </h3>
+              <p className="font-lato text-sm text-[#2D1B4E]/80 leading-relaxed">
                 {item.reponse}
               </p>
-            </details>
+            </div>
           ))}
         </div>
       </div>

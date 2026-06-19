@@ -14,7 +14,7 @@ export default function Citation({ texte, auteur }: CitationProps) {
           {texte}
         </p>
         <span className="block mt-4 font-lato text-xs tracking-widest text-[#C9B8E8]/75 uppercase">
-          — {auteur}
+          - {auteur}
         </span>
       </div>
     </section>
