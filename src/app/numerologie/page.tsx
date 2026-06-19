@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { faqNumerologie, citation } from "../lib/data";
 import Faq from "../components/Faq";
 import Cta from "../components/Cta";
+import BlobImage from "../components/BlobImage";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -137,7 +138,7 @@ export default function NumerologiePage() {
               certains événements suivent un cycle sans pouvoir l'expliquer ?
             </p>
             <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed">
-              La numérologie ne prédit rien — elle éclaire. Elle aide à répondre
+              La numérologie ne prédit rien, elle éclaire. Elle aide à répondre
               à des questions essentielles sur votre chemin de vie.
             </p>
             <ul className="flex flex-col gap-3 mt-2">
@@ -161,19 +162,37 @@ export default function NumerologiePage() {
 
           <motion.div
             variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}
+            className="flex justify-center"
           >
-            <div className="bg-[#F5F0FF] rounded-3xl p-10 border border-[#C9B8E8]/50 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#C9B8E8]/20 rounded-bl-full" />
-              <blockquote className="relative z-10">
-                <span className="font-playfair text-7xl text-[#C9B8E8]/60 leading-none block -mb-4">"</span>
-                <p className="font-playfair text-xl text-[#2D1B4E] leading-relaxed">
-                  {citation.texte}
-                </p>
-                <footer className="mt-6 font-lato text-xs text-[#9B7FC8] tracking-widest uppercase">
-                  — {citation.auteur}
-                </footer>
-              </blockquote>
-            </div>
+            <BlobImage
+              variant={1}
+              className="w-full max-w-sm aspect-[4/5] bg-gradient-to-br from-[#C9B8E8] via-[#9B7FC8] to-[#2D1B4E]"
+            >
+              <div className="absolute inset-0 flex items-center justify-center">
+                <motion.span
+                  className="font-playfair text-8xl text-white/90"
+                  animate={{ rotate: [0, 8, -8, 0], scale: [1, 1.05, 1] }}
+                  transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  ✦
+                </motion.span>
+              </div>
+              {/* Petites étoiles flottantes */}
+              {["✧", "✦", "✧"].map((s, i) => (
+                <motion.span
+                  key={i}
+                  className="absolute text-white/50 text-xl"
+                  style={{
+                    top: `${[20, 70, 45][i]}%`,
+                    left: `${[20, 25, 75][i]}%`,
+                  }}
+                  animate={{ opacity: [0.3, 0.8, 0.3], y: [0, -6, 0] }}
+                  transition={{ duration: 3 + i, repeat: Infinity, delay: i * 0.6 }}
+                >
+                  {s}
+                </motion.span>
+              ))}
+            </BlobImage>
           </motion.div>
         </div>
       </section>
@@ -188,17 +207,92 @@ export default function NumerologiePage() {
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
           <motion.div
             variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
-            className="hidden lg:grid grid-cols-3 gap-4"
+            className="hidden lg:block relative h-[420px]"
           >
-            {["1","2","3","4","5","6","7","8","9"].map((n, i) => (
+            {[
+              { n: "7", size: 90, top: "2%", left: "8%", delay: 0 },
+              { n: "3", size: 70, top: "8%", left: "55%", delay: 0.3 },
+              { n: "9", size: 110, top: "30%", left: "28%", delay: 0.6 },
+              { n: "1", size: 60, top: "15%", left: "82%", delay: 0.9 },
+              { n: "4", size: 80, top: "55%", left: "5%", delay: 1.2 },
+              { n: "11", size: 95, top: "60%", left: "60%", delay: 1.5 },
+              { n: "2", size: 65, top: "75%", left: "35%", delay: 1.8 },
+              { n: "8", size: 75, top: "42%", left: "78%", delay: 2.1 },
+              { n: "6", size: 55, top: "85%", left: "82%", delay: 2.4 },
+            ].map((item, i) => (
               <motion.div
-                key={n}
-                className="aspect-square rounded-2xl border border-[#C9B8E8]/30 flex items-center justify-center"
-                whileHover={{ borderColor: "rgba(201,184,232,0.7)", backgroundColor: "rgba(155,127,200,0.15)" }}
-                animate={{ opacity: [0.55, 0.9, 0.55] }}
-                transition={{ duration: 3 + i * 0.5, repeat: Infinity, ease: "easeInOut", delay: i * 0.3 }}
+                key={i}
+                className="absolute rounded-full border border-[#C9B8E8]/30 flex items-center justify-center"
+                style={{
+                  width: item.size,
+                  height: item.size,
+                  top: item.top,
+                  left: item.left,
+                }}
+                animate={{ opacity: [0.5, 0.9, 0.5], y: [0, -8, 0] }}
+                transition={{
+                  duration: 4 + (i % 3),
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: item.delay,
+                }}
+                whileHover={{
+                  borderColor: "rgba(201,184,232,0.7)",
+                  backgroundColor: "rgba(155,127,200,0.12)",
+                  scale: 1.08,
+                }}
               >
-                <span className="font-playfair text-3xl text-[#C9B8E8]/75">{n}</span>
+                <span
+                  className="font-playfair text-[#C9B8E8]/75"
+                  style={{ fontSize: item.size * 0.32 }}
+                >
+                  {item.n}
+                </span>
+              </motion.div>
+            ))}
+          </motion.div><motion.div
+            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+            className="hidden lg:block relative h-[420px]"
+          >
+            {[
+              { n: "7", size: 90, top: "2%", left: "8%", delay: 0 },
+              { n: "3", size: 70, top: "8%", left: "55%", delay: 0.3 },
+              { n: "9", size: 110, top: "30%", left: "28%", delay: 0.6 },
+              { n: "1", size: 60, top: "15%", left: "82%", delay: 0.9 },
+              { n: "4", size: 80, top: "55%", left: "5%", delay: 1.2 },
+              { n: "11", size: 95, top: "60%", left: "60%", delay: 1.5 },
+              { n: "2", size: 65, top: "75%", left: "35%", delay: 1.8 },
+              { n: "8", size: 75, top: "42%", left: "78%", delay: 2.1 },
+              { n: "6", size: 55, top: "85%", left: "82%", delay: 2.4 },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                className="absolute rounded-full border border-[#C9B8E8]/30 flex items-center justify-center"
+                style={{
+                  width: item.size,
+                  height: item.size,
+                  top: item.top,
+                  left: item.left,
+                }}
+                animate={{ opacity: [0.5, 0.9, 0.5], y: [0, -8, 0] }}
+                transition={{
+                  duration: 4 + (i % 3),
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: item.delay,
+                }}
+                whileHover={{
+                  borderColor: "rgba(201,184,232,0.7)",
+                  backgroundColor: "rgba(155,127,200,0.12)",
+                  scale: 1.08,
+                }}
+              >
+                <span
+                  className="font-playfair text-[#C9B8E8]/75"
+                  style={{ fontSize: item.size * 0.32 }}
+                >
+                  {item.n}
+                </span>
               </motion.div>
             ))}
           </motion.div>
@@ -220,7 +314,7 @@ export default function NumerologiePage() {
               prénom. Chaque chiffre porte une énergie unique.
             </p>
             <p className="font-lato text-sm text-[#E8E0F5]/80 leading-relaxed">
-              Les nombres sont des vibrations — votre date de naissance correspond
+              Les nombres sont des vibrations, votre date de naissance correspond
               à des vibrations précises qui révèlent vos tendances, vos capacités
               et vos défis de vie.
             </p>
@@ -255,19 +349,19 @@ export default function NumerologiePage() {
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:items-start">
             {[
-              { icon: "◎", title: "Le Chemin de Vie", desc: "Votre direction intérieure, votre mission profonde." },
-              { icon: "◷", title: "Cycles & Années", desc: "Agir au bon moment, sans forcer. Comprendre vos rythmes." },
-              { icon: "◈", title: "Défis & Leçons", desc: "Transformer les obstacles en véritables leviers d'évolution." },
-              { icon: "✦", title: "Connaissance de soi", desc: "Se retrouver, se reconnaître dans ses propres vibrations." },
+              { icon: "◎", title: "Le Chemin de Vie", desc: "Votre direction intérieure, votre mission profonde.", offset: "lg:mt-0" },
+              { icon: "◷", title: "Cycles & Années", desc: "Agir au bon moment, sans forcer. Comprendre vos rythmes.", offset: "lg:mt-12" },
+              { icon: "◈", title: "Défis & Leçons", desc: "Transformer les obstacles en véritables leviers d'évolution.", offset: "lg:mt-4" },
+              { icon: "✦", title: "Connaissance de soi", desc: "Se retrouver, se reconnaître dans ses propres vibrations.", offset: "lg:mt-16" },
             ].map((item, i) => (
               <motion.div
                 key={item.title}
                 variants={fadeUp} initial="hidden" whileInView="visible"
                 viewport={{ once: true }} custom={i}
                 whileHover={{ y: -6, boxShadow: "0 20px 40px rgba(155,127,200,0.15)" }}
-                className="bg-white border border-[#C9B8E8]/50 rounded-3xl p-8 flex flex-col gap-4 transition-all duration-50 cursor-default"
+                className={`bg-white border border-[#C9B8E8]/50 rounded-3xl p-8 flex flex-col gap-4 transition-all duration-300 cursor-default ${item.offset}`}
               >
                 <span className="text-3xl text-[#9B7FC8]">{item.icon}</span>
                 <h3 className="font-playfair text-xl text-[#2D1B4E]">{item.title}</h3>
@@ -318,37 +412,53 @@ export default function NumerologiePage() {
 
           <motion.div
             variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}
-            className="order-1 lg:order-2"
+            className="order-1 lg:order-2 flex justify-center"
           >
-            <div className="relative bg-[#F5F0FF] rounded-3xl p-10 border border-[#C9B8E8]/50 overflow-hidden">
-              <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#9B7FC8]/5 rounded-tr-full" />
-              <div className="relative z-10 flex flex-col gap-6">
-                <span className="font-playfair text-7xl text-[#C9B8E8]/55 leading-none block -mb-4">"</span>
-                <p className="font-playfair text-lg text-[#2D1B4E] leading-relaxed">
-                  Découvrir ma vie à travers la numérologie a été une expérience
-                  inédite. Bluffée par la justesse des mots, j'ai mieux compris
-                  mes ressentis et ma place.
-                </p>
-                <div>
-                  <span className="font-lato text-xs text-[#9B7FC8] tracking-widest uppercase block">
-                    — Sophie M.
-                  </span>
-                  <span className="font-lato text-xs text-[#2D1B4E]/60 block mt-1">
-                    Séance de numérologie
-                  </span>
-                </div>
-              </div>
-            </div>
+            <BlobImage
+              variant={3}
+              className="w-full max-w-sm aspect-square bg-gradient-to-br from-[#9B7FC8] via-[#C9B8E8] to-[#F5F0FF]"
+            >
+              {[
+                { n: "3", size: 34, top: "12%", left: "15%", delay: 0 },
+                { n: "7", size: 44, top: "8%", left: "60%", delay: 0.3 },
+                { n: "1", size: 28, top: "35%", left: "78%", delay: 0.6 },
+                { n: "✦", size: 50, top: "42%", left: "38%", delay: 0.9 },
+                { n: "9", size: 30, top: "65%", left: "12%", delay: 1.2 },
+                { n: "4", size: 38, top: "70%", left: "55%", delay: 1.5 },
+                { n: "2", size: 26, top: "85%", left: "32%", delay: 1.8 },
+                { n: "8", size: 32, top: "20%", left: "35%", delay: 2.1 },
+                { n: "6", size: 28, top: "80%", left: "78%", delay: 2.4 },
+              ].map((item, i) => (
+                <motion.span
+                  key={i}
+                  className="absolute font-playfair text-[#2D1B4E]/70"
+                  style={{
+                    top: item.top,
+                    left: item.left,
+                    fontSize: item.size,
+                  }}
+                  animate={{ opacity: [0.4, 0.85, 0.4], y: [0, -8, 0] }}
+                  transition={{
+                    duration: 4 + (i % 3),
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: item.delay,
+                  }}
+                >
+                  {item.n}
+                </motion.span>
+              ))}
+            </BlobImage>
           </motion.div>
         </div>
       </section>
 
       {/* ── BÉNÉFICES ────────────────────────────────────────── */}
-      <section className="bg-[#2D1B4E] py-20">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="bg-[#2D1B4E] py-24">
+        <div className="max-w-4xl mx-auto px-6">
           <motion.div
             variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
-            className="text-center mb-14"
+            className="text-center mb-16"
           >
             <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#C9B8E8]/75">
               Ce que vous gagnez
@@ -357,35 +467,53 @@ export default function NumerologiePage() {
               Les résultats d'une consultation
             </h2>
           </motion.div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+          {/* Liste horizontale avec ligne de progression */}
+          <div className="flex flex-col gap-0">
             {[
-              { num: "01", label: "Comprendre ce que vous traversez et pourquoi" },
-              { num: "02", label: "Vous apaiser face aux situations récurrentes" },
-              { num: "03", label: "Poser des repères fiables pour décider" },
-              { num: "04", label: "Vous reconnecter à qui vous êtes profondément" },
-            ].map((item, i) => (
+              "Comprendre ce que vous traversez et pourquoi",
+              "Vous apaiser face aux situations récurrentes",
+              "Poser des repères fiables pour décider",
+              "Vous reconnecter à qui vous êtes profondément",
+            ].map((label, i, arr) => (
               <motion.div
-                key={item.num}
+                key={i}
                 variants={fadeUp} initial="hidden" whileInView="visible"
                 viewport={{ once: true }} custom={i}
-                className="flex flex-col gap-3 p-6 rounded-2xl border border-[#C9B8E8]/25 hover:border-[#C9B8E8]/50 transition-colors duration-300"
+                className="flex items-center gap-6 py-6 group"
               >
-                <span className="font-playfair text-4xl text-[#C9B8E8]/50">{item.num}</span>
-                <p className="font-lato text-sm text-[#E8E0F5]/85 leading-relaxed">{item.label}</p>
+                {/* Colonne ligne + pastille */}
+                <div className="flex flex-col items-center flex-shrink-0">
+                  <motion.div
+                    className="w-3 h-3 rounded-full bg-[#C9B8E8] flex-shrink-0"
+                    whileInView={{ scale: [0.5, 1.3, 1] }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: i * 0.15 }}
+                  />
+                  {i < arr.length - 1 && (
+                    <div className="w-px h-16 bg-gradient-to-b from-[#C9B8E8]/50 to-[#C9B8E8]/10 mt-1" />
+                  )}
+                </div>
+
+                {/* Texte */}
+                <p className="font-lato text-base md:text-lg text-[#E8E0F5]/90 leading-relaxed group-hover:text-white transition-colors duration-300">
+                  {label}
+                </p>
               </motion.div>
             ))}
           </div>
 
+          {/* Témoignage en clôture */}
           <motion.div
             variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
-            className="mt-16 max-w-2xl mx-auto text-center"
+            className="mt-16 max-w-2xl mx-auto text-center border-t border-[#C9B8E8]/20 pt-14"
           >
             <span className="font-playfair text-5xl text-[#C9B8E8]/50 block leading-none -mb-2">"</span>
             <p className="font-playfair text-xl text-white leading-relaxed">
               Je repars avec des clés pour toute ma vie.
             </p>
             <span className="font-lato text-xs text-[#C9B8E8]/70 tracking-widest uppercase mt-4 block">
-              — Laurent B. · 47 ans
+              - Laurent B. · 47 ans
             </span>
           </motion.div>
         </div>
@@ -406,28 +534,40 @@ export default function NumerologiePage() {
             </h2>
           </motion.div>
 
-          <div className="relative">
-            <div className="hidden md:block absolute top-[3.2rem] left-[16%] right-[16%] h-px bg-gradient-to-r from-transparent via-[#C9B8E8]/60 to-transparent" />
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                { num: "01", title: "La prise de contact", desc: "Vous me transmettez votre date de naissance et votre prénom. On échange sur vos attentes." },
-                { num: "02", title: "L'analyse", desc: "Je prépare votre portrait numérologique personnalisé avant notre séance ensemble." },
-                { num: "03", title: "La séance", desc: "En présentiel ou à distance, j'explique chaque élément et réponds à vos questions." },
-              ].map((step, i) => (
-                <motion.div
-                  key={step.num}
-                  variants={fadeUp} initial="hidden" whileInView="visible"
-                  viewport={{ once: true }} custom={i}
-                  className="bg-white border border-[#C9B8E8]/50 rounded-3xl p-8 flex flex-col gap-4 hover:shadow-xl hover:shadow-[#C9B8E8]/15 transition-all duration-500"
-                >
-                  <div className="w-12 h-12 rounded-full bg-[#F5F0FF] border border-[#C9B8E8]/50 flex items-center justify-center">
-                    <span className="font-playfair text-base text-[#9B7FC8]">{step.num}</span>
-                  </div>
-                  <h3 className="font-playfair text-xl text-[#2D1B4E]">{step.title}</h3>
-                  <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed">{step.desc}</p>
-                </motion.div>
-              ))}
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:items-start">
+            {[
+              {
+                num: "01",
+                title: "La prise de contact",
+                desc: "Vous me transmettez votre date de naissance et votre prénom. On échange sur vos attentes.",
+                offset: "md:mt-0",
+              },
+              {
+                num: "02",
+                title: "L'analyse",
+                desc: "Je prépare votre portrait numérologique personnalisé avant notre séance ensemble.",
+                offset: "md:mt-10",
+              },
+              {
+                num: "03",
+                title: "La séance",
+                desc: "En présentiel ou à distance, j'explique chaque élément et réponds à vos questions.",
+                offset: "md:mt-4",
+              },
+            ].map((step, i) => (
+              <motion.div
+                key={step.num}
+                variants={fadeUp} initial="hidden" whileInView="visible"
+                viewport={{ once: true }} custom={i}
+                className={`bg-white border border-[#C9B8E8]/50 rounded-3xl p-8 flex flex-col gap-4 hover:shadow-xl hover:shadow-[#C9B8E8]/15 hover:-translate-y-1 transition-all duration-500 ${step.offset}`}
+              >
+                <div className="w-12 h-12 rounded-full bg-[#F5F0FF] border border-[#C9B8E8]/50 flex items-center justify-center">
+                  <span className="font-playfair text-base text-[#9B7FC8]">{step.num}</span>
+                </div>
+                <h3 className="font-playfair text-xl text-[#2D1B4E]">{step.title}</h3>
+                <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed">{step.desc}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
