@@ -118,15 +118,37 @@ export const faqMagnetisme = [
   },
 ];
 
-// ─── Citation ────────────────────────────────────────────────
-export const citation = {
-  texte:
-    "Chaque chiffre, chaque énergie porte en lui un message. Mon rôle est de vous aider à l'entendre.",
-  auteur: "Maryse",
-};
-
 // ─── Infos contact ───────────────────────────────────────────
 export const contact = {
   email: "contact@maryse.fr",
   telephone: "+33 6 00 00 00 00",
+  adresse: {
+    nom: "Briand Maryse",
+    rue: "31, Rue du Colonel Jean-Muller",
+    codePostal: "56100",
+    ville: "Lorient",
+  },
 };
+
+export const citation = [
+  {
+    texte: "Connais-toi toi-même et tu connaîtras l'univers et les dieux.",
+    auteur: "Socrate",
+  },
+  {
+    texte: "Il n'y a pas de hasard, il n'y a que des rendez-vous.",
+    auteur: "Paul Éluard",
+  },
+  {
+    texte: "L'intuition est la intelligence qui s'est hâtée.",
+    auteur: "Rabindranath Tagore",
+  },
+  {
+    texte: "Tout ce qui arrive arrive à point pour qui sait attendre.",
+    auteur: "Léonard de Vinci",
+  },
+  {
+    texte: "Le silence est la langue de tous les grands changements intérieurs.",
+    auteur: "Rainer Maria Rilke",
+  },
+];
