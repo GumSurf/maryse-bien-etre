@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { citation } from "../lib/data";
 import BlobImage from "../components/BlobImage";
 import Cta from "../components/Cta";
+import Citation from "../components/Citation";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -240,28 +241,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── CITATION ─────────────────────────────────────────── */}
-      <section className="bg-[#FDF8FF] py-24">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <motion.span
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
-            className="text-[#C9B8E8]/70 font-playfair text-6xl leading-none block"
-          >
-            "
-          </motion.span>
-          <motion.p
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}
-            className="font-playfair text-xl md:text-2xl text-[#2D1B4E] leading-relaxed -mt-4"
-          >
-            {citation.texte}
-          </motion.p>
-          <motion.span
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={2}
-            className="block mt-4 font-lato text-xs tracking-widest text-[#9B7FC8] uppercase"
-          >
-            - {citation.auteur}
-          </motion.span>
-        </div>
-      </section>
+      <Citation />
 
       <Cta
         title="Envie d'en savoir plus ?"
