@@ -17,42 +17,42 @@ const fadeUp = {
 
 const parcours = [
   {
-    annee: "Lorem",
-    titre: "Ipsum dolor sit amet",
-    desc: "Consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    annee: "L'enfance",
+    titre: "Une grand-mère pas comme les autres",
+    desc: "J'ai grandi en Bretagne, dans une maison où les chiffres avaient une âme. C'est ma grand-mère qui m'a ouvert les yeux sur ce monde invisible, autour de sa table, face à l'océan, elle me parlait des vibrations, des cycles, de ce que les nombres racontent de nos vies.",
   },
   {
-    annee: "Ipsum",
-    titre: "Ut enim ad minim veniam",
-    desc: "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute.",
+    annee: "L'apprentissage",
+    titre: "Une transmission intime",
+    desc: "Ce n'était pas un cours, c'était une confidence. Ma grand-mère m'a transmis la numérologie comme on partage un secret de famille, avec douceur, avec patience, avec cette conviction bretonne que certaines choses se savent avant même d'être apprises.",
   },
   {
-    annee: "Dolor",
-    titre: "Irure dolor in reprehenderit",
-    desc: "In voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat.",
+    annee: "L'éveil",
+    titre: "Quand tout a pris son sens",
+    desc: "En grandissant, j'ai compris que ce qu'elle m'avait donné était un vrai cadeau. Les chiffres sont devenus pour moi un langage vivant, une façon de mieux me comprendre, et d'aider les autres à faire de même.",
   },
   {
-    annee: "Sit",
-    titre: "Non proident sunt in culpa",
-    desc: "Qui officia deserunt mollit anim id est laborum perspiciatis unde omnis iste natus error.",
+    annee: "Aujourd'hui",
+    titre: "Partager à mon tour",
+    desc: "Ancrée en Bretagne, je reçois en présentiel ou à distance les personnes qui souhaitent mieux se connaître. Je porte en moi l'héritage de ma grand-mère, et je le transmets avec la même bienveillance qu'elle m'a offerte.",
   },
 ];
 
 const valeurs = [
   {
     icon: "✦",
-    title: "Lorem ipsum",
-    desc: "Dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt.",
+    title: "L'authenticité",
+    desc: "Je travaille avec ce que vous êtes vraiment, pas avec ce que vous pensez devoir être. Chaque séance est un espace de vérité bienveillante.",
   },
   {
     icon: "◈",
-    title: "Dolor sit amet",
-    desc: "Ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud.",
+    title: "La transmission",
+    desc: "J'ai reçu ce savoir avec amour. Je le partage de la même façon, avec le temps qu'il faut, sans brusquer, en respectant votre rythme.",
   },
   {
     icon: "◎",
-    title: "Consectetur",
-    desc: "Exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute.",
+    title: "L'ancrage",
+    desc: "Bretonne dans l'âme, j'ai les pieds sur terre. Mon accompagnement est concret, ancré dans votre quotidien, loin des promesses vagues.",
   },
 ];
 
@@ -91,8 +91,9 @@ export default function AboutPage() {
               variants={fadeUp} initial="hidden" animate="visible" custom={2}
               className="font-lato text-base text-[#2D1B4E]/75 leading-relaxed max-w-md"
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Praticienne en numérologie et magnétisme, j'ai grandi en Bretagne auprès
+              d'une grand-mère qui m'a transmis l'amour des chiffres et de leurs vibrations.
+              Aujourd'hui, je partage ce savoir avec bienveillance, en présentiel ou à distance.
             </motion.p>
           </div>
 
@@ -123,24 +124,23 @@ export default function AboutPage() {
             variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}
             className="font-playfair text-4xl md:text-5xl text-[#2D1B4E] leading-tight"
           >
-            Lorem ipsum dolor sit amet consectetur
+            Un héritage transmis avec amour
           </motion.h2>
           <motion.p
             variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={2}
             className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed"
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            La numérologie n'est pas venue à moi par les livres, elle m'a été transmise
+            par ma grand-mère, ici en Bretagne, avec patience et tendresse, comme on
+            confie un trésor de famille.
           </motion.p>
           <motion.p
             variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={3}
             className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed"
           >
-            Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur excepteur sint occaecat
-            cupidatat non proident.
+            C'est cette intimité avec les chiffres, ce lien entre deux générations de femmes
+            curieuses de l'invisible, qui donne aujourd'hui à mon travail sa profondeur
+            et son authenticité.
           </motion.p>
         </div>
       </section>
