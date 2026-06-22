@@ -74,7 +74,7 @@ export default function Home() {
         </div>
       </section>
 
-      <Citation texte={citation.texte} auteur={citation.auteur} />
+      <Citation />
 
       {/* ── SERVICES ─────────────────────────────────────────── */}
       <section id="services" className="bg-[#FDF8FF] py-24">
