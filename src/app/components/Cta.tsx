@@ -23,6 +23,7 @@ export default function Cta({
         <Link
           href={buttonHref}
           className="font-lato text-sm px-8 py-3 rounded-full bg-[#C9B8E8] text-[#2D1B4E] hover:bg-white transition-colors duration-300 font-medium"
+          aria-label="Prendre rendez-vous avec Maryse"
         >
           {buttonLabel}
         </Link>

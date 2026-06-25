@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="bg-[#2D1B4E] text-[#E8E0F5] py-12">
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
         <div className="flex flex-col gap-2">
-          <span className="font-playfair text-xl text-white">Maryse</span>
+          <span className="font-playfair text-xl text-white">Maryse Briand</span>
           <span className="text-xs text-[#C9B8E8] tracking-[0.2em] uppercase">
             Numérologie & Magnétisme
           </span>
@@ -52,7 +52,7 @@ export default function Footer() {
 
       <div className="max-w-6xl mx-auto px-6 mt-10 pt-6 border-t border-[#C9B8E8]/30 flex flex-col md:flex-row justify-between items-center gap-2 text-xs text-[#C9B8E8]/65">
         <span>© {new Date().getFullYear()} Maryse - Tous droits réservés</span>
-        <span>Réalisé par Gabriel Christe ✦</span>
+        <span aria-hidden="true">Réalisé par Gabriel Christe ✦</span>
       </div>
     </footer>
   );

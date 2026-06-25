@@ -17,10 +17,9 @@ export default function Header() {
   return (
     <header className="w-full bg-[#F5F0FF] border-b border-[#C9B8E8]/40 sticky top-0 z-50 backdrop-blur-sm">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="flex flex-col leading-tight">
+        <Link href="/" aria-label="Maryse — Retour à l'accueil" className="flex flex-col leading-tight">
           <span className="font-playfair text-2xl text-[#2D1B4E] tracking-wide">
-            Maryse
+            Maryse Briand
           </span>
           <span className="text-xs text-[#9B7FC8] tracking-[0.2em] uppercase font-lato">
             Numérologie & Magnétisme
@@ -28,7 +27,7 @@ export default function Header() {
         </Link>
 
         {/* Nav desktop */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav aria-label="Navigation principale" className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -41,6 +40,7 @@ export default function Header() {
           ))}
           <Link
             href="/contact"
+            aria-label="Prendre rendez-vous avec Maryse"
             className="font-lato text-sm px-5 py-2 rounded-full bg-[#9B7FC8] text-white hover:bg-[#2D1B4E] transition-colors duration-300"
           >
             Prendre rendez-vous
@@ -51,7 +51,9 @@ export default function Header() {
         <button
           className="md:hidden text-[#2D1B4E]"
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Menu"
+          aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-menu"
         >
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -59,7 +61,11 @@ export default function Header() {
 
       {/* Menu mobile */}
       {menuOpen && (
-        <div className="md:hidden bg-[#F5F0FF] border-t border-[#C9B8E8]/40 px-6 py-4 flex flex-col gap-4">
+        <nav
+          id="mobile-menu"
+          aria-label="Navigation mobile"
+          className="md:hidden bg-[#F5F0FF] border-t border-[#C9B8E8]/40 px-6 py-4 flex flex-col gap-4"
+        >
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -72,12 +78,13 @@ export default function Header() {
           ))}
           <Link
             href="/contact"
+            aria-label="Prendre rendez-vous avec Maryse"
             className="font-lato text-sm px-5 py-2 rounded-full bg-[#9B7FC8] text-white text-center"
             onClick={() => setMenuOpen(false)}
           >
             Prendre rendez-vous
           </Link>
-        </div>
+        </nav>
       )}
     </header>
   );
