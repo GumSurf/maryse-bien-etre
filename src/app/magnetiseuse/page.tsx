@@ -22,7 +22,7 @@ export default function MagnetiseusePage() {
   return (
     <>
       {/* ── HERO ─────────────────────────────────────────────── */}
-      <section className="relative bg-[#F5F0FF] overflow-hidden min-h-[85vh] flex items-center">
+      <section className="relative bg-[#F5F0FF] overflow-hidden  min-h-[60vh] md:min-h-[85vh] flex items-center">
         <motion.div
           className="absolute top-[-100px] left-[-100px] w-[500px] h-[500px] rounded-full bg-[#C9B8E8]/25 blur-3xl pointer-events-none"
           animate={{ scale: [1, 1.08, 1], opacity: [0.4, 0.65, 0.4] }}
@@ -71,6 +71,7 @@ export default function MagnetiseusePage() {
             <motion.span
               variants={fadeUp} initial="hidden" animate="visible" custom={0}
               className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]"
+              aria-label="Magnétisme"
             >
               Magnétisme
             </motion.span>
@@ -97,12 +98,13 @@ export default function MagnetiseusePage() {
               >
                 Prendre rendez-vous
               </Link>
-              <a
+              <Link
                 href="#definition"
                 className="font-lato text-sm px-8 py-3.5 rounded-full border border-[#C9B8E8] text-[#9B7FC8] hover:bg-[#C9B8E8]/20 transition-colors duration-300 text-center"
+                aria-label="En savoir plus sur le magnétisme et ses bienfaits"
               >
                 En savoir plus
-              </a>
+              </Link>
             </motion.div>
           </div>
         </div>
@@ -112,13 +114,15 @@ export default function MagnetiseusePage() {
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          <span className="font-lato text-xs text-[#9B7FC8]/65 tracking-widest uppercase">Découvrir</span>
+          <span className="font-lato text-xs text-[#9B7FC8]/65 tracking-widest uppercase" aria-label="Découvrir">
+            Découvrir
+          </span>
           <div className="w-px h-10 bg-gradient-to-b from-[#9B7FC8]/50 to-transparent" />
         </motion.div>
       </section>
 
       {/* ── ACCROCHE ÉMOTIONNELLE ─────────────────────────────── */}
-      <section id="definition" className="bg-[#FDF8FF] py-28">
+      <section id="definition" className=" bg-white py-28">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
             variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -164,7 +168,7 @@ export default function MagnetiseusePage() {
           >
             <BlobImage
               variant={2}
-              className="w-full max-w-sm aspect-[4/5] bg-gradient-to-br from-[#9B7FC8] via-[#C9B8E8] to-[#2D1B4E]"
+              className="w-64 h-64 md:w-full md:max-w-sm md:aspect-[4/5] bg-gradient-to-br from-[#9B7FC8] via-[#C9B8E8] to-[#2D1B4E]"
             >
               <div className="absolute inset-0 flex items-center justify-center">
                 <motion.span
@@ -248,7 +252,7 @@ export default function MagnetiseusePage() {
                 transition={{ duration: 4 + (i % 3), repeat: Infinity, ease: "easeInOut", delay: item.delay }}
                 whileHover={{ borderColor: "rgba(201,184,232,0.7)", backgroundColor: "rgba(155,127,200,0.12)", scale: 1.08 }}
               >
-                <span className="text-[#C9B8E8]/75" style={{ fontSize: item.size * 0.3 }}>
+                <span className="text-[#C9B8E8]/75" style={{ fontSize: item.size * 0.3 }} aria-hidden="true">
                   {item.icon}
                 </span>
               </motion.div>
@@ -283,10 +287,10 @@ export default function MagnetiseusePage() {
                 key={item.title}
                 variants={fadeUp} initial="hidden" whileInView="visible"
                 viewport={{ once: true }} custom={i}
-                whileHover={{ y: -6, boxShadow: "0 20px 40px rgba(155,127,200,0.15)" }}
+                whileHover={{ y: -6, transition: { duration: 0.3 }, boxShadow: "0 20px 40px rgba(155,127,200,0.15)" }}
                 className={`bg-white border border-[#C9B8E8]/50 rounded-3xl p-8 flex flex-col gap-4 transition-all duration-300 cursor-default ${item.offset}`}
               >
-                <span className="text-3xl text-[#9B7FC8]">{item.icon}</span>
+                <span className="text-3xl text-[#9B7FC8]" aria-hidden="true">{item.icon}</span>
                 <h3 className="font-playfair text-xl text-[#2D1B4E]">{item.title}</h3>
                 <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed">{item.desc}</p>
               </motion.div>
@@ -296,7 +300,7 @@ export default function MagnetiseusePage() {
       </section>
 
       {/* ── MA PRATIQUE ──────────────────────────────────────── */}
-      <section className="bg-[#FDF8FF] py-28">
+      <section className=" bg-white py-28">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
             variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -341,6 +345,7 @@ export default function MagnetiseusePage() {
             <BlobImage
               variant={3}
               className="w-full max-w-sm aspect-square bg-gradient-to-br from-[#9B7FC8] via-[#C9B8E8] to-[#F5F0FF]"
+              shape="wide"
             >
               {[0, 1, 2].map((i) => (
                 <motion.div
@@ -412,11 +417,11 @@ export default function MagnetiseusePage() {
             variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
             className="mt-16 max-w-2xl mx-auto text-center border-t border-[#C9B8E8]/20 pt-14"
           >
-            <span className="font-playfair text-5xl text-[#C9B8E8]/50 block leading-none -mb-2">"</span>
+            <span className="font-playfair text-5xl text-[#C9B8E8]/50 block leading-none -mb-2" aria-hidden="true">"</span>
             <p className="font-playfair text-xl text-white leading-relaxed">
               Maryse dégage une énergie apaisante. J'ai vraiment pu lâcher prise.
             </p>
-            <span className="font-lato text-xs text-[#C9B8E8]/70 tracking-widest uppercase mt-4 block">
+            <span className="font-lato text-xs text-[#C9B8E8]/70 tracking-widest uppercase mt-4 block" aria-label="Témoignage de Laurent B. · 47 ans">
               - Laurent B.
             </span>
           </motion.div>
@@ -430,7 +435,7 @@ export default function MagnetiseusePage() {
             variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]">
+            <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]" aria-label="Étapes">
               Étapes
             </span>
             <h2 className="font-playfair text-4xl md:text-5xl text-[#2D1B4E] mt-2">
@@ -451,7 +456,9 @@ export default function MagnetiseusePage() {
                 className={`bg-white border border-[#C9B8E8]/50 rounded-3xl p-8 flex flex-col gap-4 hover:shadow-xl hover:shadow-[#C9B8E8]/15 hover:-translate-y-1 transition-all duration-500 ${step.offset}`}
               >
                 <div className="w-12 h-12 rounded-full bg-[#F5F0FF] border border-[#C9B8E8]/50 flex items-center justify-center">
-                  <span className="font-playfair text-base text-[#9B7FC8]">{step.num}</span>
+                  <span className="font-playfair text-base text-[#9B7FC8]" aria-label={`Étape ${step.num}`}>
+                    {step.num}
+                  </span>
                 </div>
                 <h3 className="font-playfair text-xl text-[#2D1B4E]">{step.title}</h3>
                 <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed">{step.desc}</p>
