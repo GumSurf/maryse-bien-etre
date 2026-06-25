@@ -12,7 +12,7 @@ type AvisClientsProps = {
 
 export default function AvisClients({ items, title, subtitle }: AvisClientsProps) {
   return (
-    <section className="bg-[#FDF8FF] py-24">
+    <section className=" bg-white py-24">
       <div className="max-w-6xl mx-auto px-6">
         {(title || subtitle) && (
           <div className="text-center mb-14">
