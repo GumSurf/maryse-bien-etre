@@ -6,6 +6,7 @@ import { citation } from "../lib/data";
 import BlobImage from "../components/BlobImage";
 import Cta from "../components/Cta";
 import Citation from "../components/Citation";
+import Image from "next/image";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -61,7 +62,7 @@ export default function AboutPage() {
   return (
     <>
       {/* ── HERO ─────────────────────────────────────────────── */}
-      <section className="relative bg-[#F5F0FF] overflow-hidden min-h-[95vh] flex items-center">
+      <section className="relative bg-[#F5F0FF] overflow-hidden  min-h-[60vh] md:min-h-[85vh] flex items-center">
         <motion.div
           className="absolute top-[-100px] right-[-100px] w-[450px] h-[450px] rounded-full bg-[#C9B8E8]/20 blur-3xl pointer-events-none"
           animate={{ scale: [1, 1.08, 1], opacity: [0.4, 0.6, 0.4] }}
@@ -104,16 +105,21 @@ export default function AboutPage() {
           >
             <BlobImage
               variant={1}
-              className="w-full max-w-sm aspect-[4/5] bg-gradient-to-br from-[#C9B8E8] via-[#9B7FC8] to-[#2D1B4E]"
+              className="w-64 h-64 md:w-full md:max-w-sm md:aspect-[4/5]"
             >
-              <span className="font-playfair text-7xl text-white/90">M</span>
+              <Image
+                src="/maryse_2.jpg"
+                alt="Photo de Maryse"
+                fill
+                className="object-cover"
+              />
             </BlobImage>
           </motion.div>
         </div>
       </section>
 
       {/* ── HISTOIRE ─────────────────────────────────────────── */}
-      <section className="bg-[#FDF8FF] py-28">
+      <section className=" bg-white py-28">
         <div className="max-w-3xl mx-auto px-6 text-center flex flex-col gap-6">
           <motion.span
             variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -226,12 +232,13 @@ export default function AboutPage() {
                 key={item.title}
                 variants={fadeUp} initial="hidden" whileInView="visible"
                 viewport={{ once: true }} custom={i}
-                whileHover={{ y: -6, boxShadow: "0 20px 40px rgba(155,127,200,0.15)" }}
-                className={`bg-white border border-[#C9B8E8]/50 rounded-3xl p-8 flex flex-col gap-4 transition-all duration-300 ${
-                  i === 1 ? "lg:mt-10" : ""
-                }`}
+                whileHover={{ y: -6, transition: { duration: 0.3 },boxShadow: "0 20px 40px rgba(155,127,200,0.15)" }}
+                className={`bg-white border border-[#C9B8E8]/50 rounded-3xl p-8 flex flex-col gap-4 transition-all duration-300 ${i === 1 ? "lg:mt-10" : ""
+                  }`}
               >
-                <span className="text-3xl text-[#9B7FC8]">{item.icon}</span>
+                <span className="text-3xl text-[#9B7FC8]" aria-label={item.icon}>
+                  {item.icon}
+                </span>
                 <h3 className="font-playfair text-xl text-[#2D1B4E]">{item.title}</h3>
                 <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed">{item.desc}</p>
               </motion.div>
