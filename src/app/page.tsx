@@ -7,6 +7,7 @@ import Faq from "./components/Faq";
 import Cta from "./components/Cta";
 import Citation from "./components/Citation";
 import BlobImage from "./components/BlobImage";
+import Image from "next/image";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -33,7 +34,7 @@ export default function Home() {
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
         />
 
-        <div className="max-w-6xl mx-auto px-6 py-24 md:py-36 min-h-[95vh] flex flex-col items-center text-center gap-6 relative z-10">
+        <div className="max-w-6xl mx-auto px-6 py-24 md:py-36  min-h-[60vh] md:min-h-[85vh] flex flex-col items-center text-center gap-6 relative z-10">
           <motion.span
             variants={fadeUp} initial="hidden" animate="visible" custom={0}
             className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]"
@@ -77,7 +78,7 @@ export default function Home() {
       <Citation />
 
       {/* ── SERVICES ─────────────────────────────────────────── */}
-      <section id="services" className="bg-[#FDF8FF] py-24">
+      <section id="services" className=" bg-white py-24">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
             variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -100,16 +101,17 @@ export default function Home() {
               >
                 <Link
                   href={s.href}
+                  aria-label={`En savoir plus sur la ${s.title}`}
                   className="group bg-white border border-[#C9B8E8]/50 rounded-3xl p-10 flex flex-col gap-4 hover:shadow-xl hover:shadow-[#C9B8E8]/20 hover:-translate-y-1 transition-all duration-300"
                 >
-                  <span className="text-3xl text-[#9B7FC8]">{s.icon}</span>
+                  <span className="text-3xl text-[#9B7FC8]" aria-hidden="true">{s.icon}</span>
                   <h3 className="font-playfair text-2xl text-[#2D1B4E]">
                     {s.title}
                   </h3>
                   <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed">
                     {s.description}
                   </p>
-                  <span className="font-lato text-sm text-[#9B7FC8] group-hover:underline mt-auto">
+                  <span className="font-lato text-sm text-[#9B7FC8] group-hover:underline mt-auto" aria-label={`En savoir plus sur la ${s.title}`}>
                     En savoir plus →
                   </span>
                 </Link>
@@ -128,9 +130,14 @@ export default function Home() {
           >
             <BlobImage
               variant={2}
-              className="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-[#C9B8E8] via-[#9B7FC8] to-[#2D1B4E]"
+              className="w-64 h-64 md:w-80 md:h-80"
             >
-              <span className="font-playfair text-6xl text-white/90">M</span>
+              <Image
+                src="/maryse_3.jpg"
+                alt="Photo de Maryse"
+                fill
+                className="object-cover"
+              />
             </BlobImage>
           </motion.div>
           <motion.div
@@ -152,6 +159,7 @@ export default function Home() {
               <Link
                 href="/about"
                 className="font-lato text-sm px-6 py-3 rounded-full border border-[#9B7FC8] text-[#9B7FC8] hover:bg-[#9B7FC8] hover:text-white transition-colors w-fit"
+                aria-label="En savoir plus sur Maryse"
               >
                 En savoir plus sur moi
               </Link>
@@ -167,7 +175,7 @@ export default function Home() {
       </section>
 
       {/* ── AVIS CLIENTS ─────────────────────────────────────── */}
-      <section className="bg-[#FDF8FF] py-24">
+      <section className=" bg-white py-24">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
             variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -186,17 +194,16 @@ export default function Home() {
                 key={a.nom}
                 variants={fadeUp} initial="hidden" whileInView="visible"
                 viewport={{ once: true }} custom={i}
-                className={`bg-white border border-[#C9B8E8]/50 rounded-2xl p-8 flex flex-col gap-4 ${
-                  i === 1 ? "md:mt-8" : i === 2 ? "md:mt-3" : ""
-                }`}
+                className={`bg-white border border-[#C9B8E8]/50 rounded-2xl p-8 flex flex-col gap-4 ${i === 1 ? "md:mt-8" : i === 2 ? "md:mt-3" : ""
+                  }`}
               >
-                <span className="text-[#C9B8E8] font-playfair text-4xl leading-none">
+                <span className="text-[#C9B8E8] font-playfair text-4xl leading-none" aria-hidden="true">
                   "
                 </span>
                 <p className="font-lato text-sm text-[#2D1B4E]/80 leading-relaxed -mt-2">
                   {a.texte}
                 </p>
-                <span className="font-lato text-xs text-[#9B7FC8] tracking-widest uppercase mt-auto">
+                <span className="font-lato text-xs text-[#9B7FC8] tracking-widest uppercase mt-auto" aria-label={`Témoignage de ${a.nom}`}>
                   - {a.nom}
                 </span>
               </motion.div>
