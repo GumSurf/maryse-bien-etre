@@ -20,7 +20,7 @@ export default function NumerologiePage() {
   return (
     <>
       {/* ── HERO ─────────────────────────────────────────────── */}
-      <section className="relative bg-[#F5F0FF] overflow-hidden min-h-[95vh] flex items-center">
+      <section className="relative bg-[#F5F0FF] overflow-hidden  min-h-[60vh] md:min-h-[85vh] flex items-center">
         <motion.div
           className="absolute top-[-120px] right-[-120px] w-[550px] h-[550px] rounded-full bg-[#C9B8E8]/25 blur-3xl pointer-events-none"
           animate={{ scale: [1, 1.08, 1], opacity: [0.4, 0.65, 0.4] }}
@@ -67,6 +67,7 @@ export default function NumerologiePage() {
               <a
                 href="#definition"
                 className="font-lato text-sm px-8 py-3.5 rounded-full border border-[#C9B8E8] text-[#9B7FC8] hover:bg-[#C9B8E8]/20 transition-colors duration-300 text-center"
+                aria-label="En savoir plus sur la numérologie et ses bienfaits"
               >
                 En savoir plus
               </a>
@@ -84,13 +85,16 @@ export default function NumerologiePage() {
               <div className="absolute inset-8 rounded-full border border-[#C9B8E8]/35" />
               <div className="absolute inset-16 rounded-full border border-[#9B7FC8]/30" />
               <div className="absolute inset-24 rounded-full bg-gradient-to-br from-[#C9B8E8]/40 to-[#9B7FC8]/20 backdrop-blur-sm flex items-center justify-center">
-                <motion.span
-                  className="font-playfair text-6xl text-[#9B7FC8]"
-                  animate={{ rotate: [0, 6, -6, 0] }}
-                  transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-                >
-                  ✦
-                </motion.span>
+                <div className="lg:hidden flex justify-center py-8">
+                  <motion.span
+                    className="font-playfair text-8xl text-[#C9B8E8]/50"
+                    animate={{ rotate: [0, 8, -8, 0], opacity: [0.4, 0.8, 0.4] }}
+                    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                    aria-hidden="true"
+                  >
+                    ✦
+                  </motion.span>
+                </div>
               </div>
               {["7", "3", "9", "1", "4", "11"].map((num, i) => (
                 <motion.span
@@ -115,13 +119,15 @@ export default function NumerologiePage() {
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          <span className="font-lato text-xs text-[#9B7FC8]/65 tracking-widest uppercase">Découvrir</span>
+          <span className="font-lato text-xs text-[#9B7FC8]/65 tracking-widest uppercase" aria-label="Découvrir">
+            Découvrir
+          </span>
           <div className="w-px h-10 bg-gradient-to-b from-[#9B7FC8]/50 to-transparent" />
         </motion.div>
       </section>
 
       {/* ── ACCROCHE ÉMOTIONNELLE ─────────────────────────────── */}
-      <section id="definition" className="bg-[#FDF8FF] py-28">
+      <section id="definition" className=" bg-white py-28">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
             variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -153,7 +159,7 @@ export default function NumerologiePage() {
                   viewport={{ once: true }} custom={i}
                   className="flex items-start gap-3 font-lato text-sm text-[#2D1B4E]/80 italic"
                 >
-                  <span className="text-[#9B7FC8] mt-0.5 not-italic">✦</span>
+                  <span className="text-[#9B7FC8] mt-0.5 not-italic" aria-hidden="true">✦</span>
                   {q}
                 </motion.li>
               ))}
@@ -166,13 +172,14 @@ export default function NumerologiePage() {
           >
             <BlobImage
               variant={1}
-              className="w-full max-w-sm aspect-[4/5] bg-gradient-to-br from-[#C9B8E8] via-[#9B7FC8] to-[#2D1B4E]"
+              className="w-64 h-64 md:w-full md:max-w-sm md:aspect-[4/5] bg-gradient-to-br from-[#C9B8E8] via-[#9B7FC8] to-[#2D1B4E]"
             >
               <div className="absolute inset-0 flex items-center justify-center">
                 <motion.span
                   className="font-playfair text-8xl text-white/90"
                   animate={{ rotate: [0, 8, -8, 0], scale: [1, 1.05, 1] }}
                   transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                  aria-hidden="true"
                 >
                   ✦
                 </motion.span>
@@ -188,6 +195,7 @@ export default function NumerologiePage() {
                   }}
                   animate={{ opacity: [0.3, 0.8, 0.3], y: [0, -6, 0] }}
                   transition={{ duration: 3 + i, repeat: Infinity, delay: i * 0.6 }}
+                  aria-hidden="true"
                 >
                   {s}
                 </motion.span>
@@ -237,6 +245,7 @@ export default function NumerologiePage() {
                   delay: item.delay,
                 }}
                 whileHover={{
+                  transition: { duration: 0.3 },
                   borderColor: "rgba(201,184,232,0.7)",
                   backgroundColor: "rgba(155,127,200,0.12)",
                   scale: 1.08,
@@ -282,6 +291,7 @@ export default function NumerologiePage() {
                   delay: item.delay,
                 }}
                 whileHover={{
+                  transition: { duration: 0.3 },
                   borderColor: "rgba(201,184,232,0.7)",
                   backgroundColor: "rgba(155,127,200,0.12)",
                   scale: 1.08,
@@ -360,10 +370,10 @@ export default function NumerologiePage() {
                 key={item.title}
                 variants={fadeUp} initial="hidden" whileInView="visible"
                 viewport={{ once: true }} custom={i}
-                whileHover={{ y: -6, boxShadow: "0 20px 40px rgba(155,127,200,0.15)" }}
+                whileHover={{ y: -6, transition: { duration: 0.3 }, boxShadow: "0 20px 40px rgba(155,127,200,0.15)" }}
                 className={`bg-white border border-[#C9B8E8]/50 rounded-3xl p-8 flex flex-col gap-4 transition-all duration-300 cursor-default ${item.offset}`}
               >
-                <span className="text-3xl text-[#9B7FC8]">{item.icon}</span>
+                <span className="text-3xl text-[#9B7FC8]" aria-hidden="true">{item.icon}</span>
                 <h3 className="font-playfair text-xl text-[#2D1B4E]">{item.title}</h3>
                 <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed">{item.desc}</p>
               </motion.div>
@@ -373,7 +383,7 @@ export default function NumerologiePage() {
       </section>
 
       {/* ── MA PRATIQUE ──────────────────────────────────────── */}
-      <section className="bg-[#FDF8FF] py-28">
+      <section className=" bg-white py-28">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
             variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -444,6 +454,7 @@ export default function NumerologiePage() {
                     ease: "easeInOut",
                     delay: item.delay,
                   }}
+                  aria-hidden="true"
                 >
                   {item.n}
                 </motion.span>
@@ -508,11 +519,11 @@ export default function NumerologiePage() {
             variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
             className="mt-16 max-w-2xl mx-auto text-center border-t border-[#C9B8E8]/20 pt-14"
           >
-            <span className="font-playfair text-5xl text-[#C9B8E8]/50 block leading-none -mb-2">"</span>
+            <span className="font-playfair text-5xl text-[#C9B8E8]/50 block leading-none -mb-2" aria-hidden="true">"</span>
             <p className="font-playfair text-xl text-white leading-relaxed">
               Je repars avec des clés pour toute ma vie.
             </p>
-            <span className="font-lato text-xs text-[#C9B8E8]/70 tracking-widest uppercase mt-4 block">
+            <span className="font-lato text-xs text-[#C9B8E8]/70 tracking-widest uppercase mt-4 block" aria-label="Témoignage de Laurent B. · 47 ans">
               - Laurent B. · 47 ans
             </span>
           </motion.div>
@@ -526,7 +537,7 @@ export default function NumerologiePage() {
             variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]">
+            <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]" aria-label="Étapes">
               Étapes
             </span>
             <h2 className="font-playfair text-4xl md:text-5xl text-[#2D1B4E] mt-2">
@@ -562,7 +573,9 @@ export default function NumerologiePage() {
                 className={`bg-white border border-[#C9B8E8]/50 rounded-3xl p-8 flex flex-col gap-4 hover:shadow-xl hover:shadow-[#C9B8E8]/15 hover:-translate-y-1 transition-all duration-500 ${step.offset}`}
               >
                 <div className="w-12 h-12 rounded-full bg-[#F5F0FF] border border-[#C9B8E8]/50 flex items-center justify-center">
-                  <span className="font-playfair text-base text-[#9B7FC8]">{step.num}</span>
+                  <span className="font-playfair text-base text-[#9B7FC8]" aria-label={`Étape ${step.num}`}>
+                    {step.num}
+                  </span>
                 </div>
                 <h3 className="font-playfair text-xl text-[#2D1B4E]">{step.title}</h3>
                 <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed">{step.desc}</p>
