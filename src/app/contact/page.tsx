@@ -5,13 +5,14 @@ import { contact } from "../lib/data";
 import BlobImage from "../components/BlobImage";
 import Citation from "../components/Citation";
 import Cta from "../components/Cta";
+import dynamic from "next/dynamic";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
   visible: (i = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, delay: i * 0.12, ease: "easeOut" as const},
+    transition: { duration: 0.7, delay: i * 0.12, ease: "easeOut" as const },
   }),
 };
 
@@ -28,21 +29,21 @@ const moyens = [
     label: "Téléphone",
     valeur: contact.telephone,
     description: "Disponible du lundi au vendredi pour échanger avec vous.",
-    action: { texte: "Appeler", href: `tel:${contact.telephone}` },
+    action: { texte: "Appeler Maryse", href: `tel:${contact.telephone}` },
   },
   {
     icon: "◎",
     label: "En présentiel",
     valeur: "À votre domicile, à Lorient et alentours",
     description: "Je me déplace directement chez vous pour que vous viviez la séance dans votre propre espace.",
-    action: { texte: "Prendre rendez-vous", href: `mailto:${contact.email}` },
+    action: { texte: "Appeler Maryse", href: `tel:${contact.telephone}` },
   },
   {
     icon: "◇",
     label: "En visioconférence",
     valeur: "Zoom, Google Meet ou téléphone",
     description: "Vous ne pouvez pas vous déplacer ? Les séances à distance fonctionnent tout aussi bien.",
-    action: { texte: "Prendre rendez-vous", href: `mailto:${contact.email}` },
+    action: { texte: "Appeler Maryse", href: `tel:${contact.telephone}` },
   },
 ];
 
@@ -105,6 +106,63 @@ export default function ContactPage() {
         </div>
       </section>
 
+            {/* ── MOYENS DE CONTACT ────────────────────────────────── */}
+      <section className="bg-[#F5F0FF] py-28">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.div
+            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]">
+              Me contacter
+            </span>
+            <h2 className="font-playfair text-4xl text-[#2D1B4E] mt-2">
+              Choisissez ce qui vous convient
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:items-start">
+            {moyens.map((m, i) => (
+              <motion.div
+                key={m.label}
+                variants={fadeUp} initial="hidden" whileInView="visible"
+                viewport={{ once: true }} custom={i}
+                className={`group bg-[#F5F0FF] border border-[#C9B8E8]/50 rounded-3xl p-8 flex flex-col gap-5 hover:shadow-xl hover:shadow-[#C9B8E8]/20 hover:-translate-y-1 transition-all duration-500 ${i === 1 ? "lg:mt-10" : i === 2 ? "lg:mt-4" : i === 3 ? "lg:mt-16" : ""
+                  }`}
+              >
+                <motion.div
+                  className="w-14 h-14 rounded-2xl bg-white border border-[#C9B8E8]/60 flex items-center justify-center shadow-sm"
+                  animate={{ y: [0, -4, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: i * 0.5 }}
+                >
+                  <span className="text-[#9B7FC8] text-2xl">{m.icon}</span>
+                </motion.div>
+                <div className="flex flex-col gap-2">
+                  <span className="font-lato text-xs tracking-[0.2em] uppercase text-[#9B7FC8]">
+                    {m.label}
+                  </span>
+                  <p className="font-playfair text-lg text-[#2D1B4E] leading-snug">
+                    {m.valeur}
+                  </p>
+                  <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed mt-1">
+                    {m.description}
+                  </p>
+                </div>
+                <div className="w-full h-px bg-[#C9B8E8]/40" />
+                <a
+                  href={m.action.href}
+                  target={m.action.href.startsWith("http") ? "_blank" : undefined}
+                  rel={m.action.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className="mt-auto font-lato text-sm px-6 py-3 rounded-full bg-white border border-[#C9B8E8]/60 text-[#9B7FC8] hover:bg-[#9B7FC8] hover:text-white hover:border-[#9B7FC8] transition-all duration-300 text-center shadow-sm"
+                >
+                  {m.action.texte}
+                </a>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── J'HÉSITE ENCORE ──────────────────────────────────── */}
       <section className="bg-[#2D1B4E] py-28 relative overflow-hidden">
         <motion.div
@@ -164,66 +222,8 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* ── MOYENS DE CONTACT ────────────────────────────────── */}
-      <section className="bg-[#F5F0FF] py-28">
-        <div className="max-w-6xl mx-auto px-6">
-          <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]">
-              Me contacter
-            </span>
-            <h2 className="font-playfair text-4xl text-[#2D1B4E] mt-2">
-              Choisissez ce qui vous convient
-            </h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:items-start">
-            {moyens.map((m, i) => (
-              <motion.div
-                key={m.label}
-                variants={fadeUp} initial="hidden" whileInView="visible"
-                viewport={{ once: true }} custom={i}
-                className={`group bg-[#F5F0FF] border border-[#C9B8E8]/50 rounded-3xl p-8 flex flex-col gap-5 hover:shadow-xl hover:shadow-[#C9B8E8]/20 hover:-translate-y-1 transition-all duration-500 ${
-                  i === 1 ? "lg:mt-10" : i === 2 ? "lg:mt-4" : i === 3 ? "lg:mt-16" : ""
-                }`}
-              >
-                <motion.div
-                  className="w-14 h-14 rounded-2xl bg-white border border-[#C9B8E8]/60 flex items-center justify-center shadow-sm"
-                  animate={{ y: [0, -4, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: i * 0.5 }}
-                >
-                  <span className="text-[#9B7FC8] text-2xl">{m.icon}</span>
-                </motion.div>
-                <div className="flex flex-col gap-2">
-                  <span className="font-lato text-xs tracking-[0.2em] uppercase text-[#9B7FC8]">
-                    {m.label}
-                  </span>
-                  <p className="font-playfair text-lg text-[#2D1B4E] leading-snug">
-                    {m.valeur}
-                  </p>
-                  <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed mt-1">
-                    {m.description}
-                  </p>
-                </div>
-                <div className="w-full h-px bg-[#C9B8E8]/40" />
-                <a
-                  href={m.action.href}
-                  target={m.action.href.startsWith("http") ? "_blank" : undefined}
-                  rel={m.action.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="mt-auto font-lato text-sm px-6 py-3 rounded-full bg-white border border-[#C9B8E8]/60 text-[#9B7FC8] hover:bg-[#9B7FC8] hover:text-white hover:border-[#9B7FC8] transition-all duration-300 text-center shadow-sm"
-                >
-                  {m.action.texte}
-                </a>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── LOCALISATION ─────────────────────────────────────── */}
-      <section className="bg-[#FDF8FF] py-28">
+      <section className=" bg-white py-28">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
             variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -265,40 +265,19 @@ export default function ContactPage() {
               </div>
             </div>
           </motion.div>
-
-          <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}
-            className="flex justify-center"
-          >
-            <BlobImage
-              variant={4}
-              className="w-full max-w-sm aspect-square bg-gradient-to-br from-[#C9B8E8] via-[#9B7FC8] to-[#2D1B4E]"
-            >
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 z-10">
-                <motion.span
-                  className="font-playfair text-6xl text-white/90"
-                  animate={{ rotate: [0, 6, -6, 0] }}
-                  transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-                >
-                  ◎
-                </motion.span>
-                <span className="font-lato text-xs text-white/75 tracking-widest uppercase">
-                  Lorient, Bretagne
-                </span>
-              </div>
-            </BlobImage>
-          </motion.div>
         </div>
       </section>
 
-      <Citation />
-
-      <Cta
-        title="Prête à faire le premier pas ?"
-        description="Contactez-moi dès aujourd'hui pour réserver votre séance ou simplement pour en savoir plus sur mon accompagnement."
-        buttonLabel="Écrire à Maryse"
-        buttonHref={`mailto:${contact.email}`}
-      />
+      <section className="bg-[#F5F0FF] py-16">
+        <div className="max-w-2xl mx-auto px-6 text-center">
+          <p className="font-playfair text-2xl text-[#2D1B4E] leading-relaxed">
+            À très bientôt, j'ai hâte d'échanger avec vous.
+          </p>
+          <span className="block mt-4 font-lato text-xs tracking-widest text-[#9B7FC8] uppercase">
+            - Maryse
+          </span>
+        </div>
+      </section>
     </>
   );
 }
