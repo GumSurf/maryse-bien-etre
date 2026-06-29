@@ -53,7 +53,7 @@ export default function Home() {
             className="font-lato text-base md:text-lg text-[#2D1B4E]/75 max-w-xl leading-relaxed"
           >
             Maryse vous accompagne avec bienveillance dans votre chemin vers le
-            mieux-être, en présentiel ou à distance.
+            bien-être, en présentiel ou à distance.
           </motion.p>
           <motion.div
             variants={fadeUp} initial="hidden" animate="visible" custom={3}

@@ -20,7 +20,7 @@ export const services = [
     slug: "magnetiseuse",
     title: "Magnétisme",
     description:
-      "Le magnétisme agit sur votre énergie vitale pour soulager les tensions, rééquilibrer votre corps et favoriser un mieux-être profond.",
+      "Le magnétisme agit sur votre énergie vitale pour soulager les tensions, rééquilibrer votre corps et favoriser un bien-être profond.",
     href: "/magnetiseuse",
     icon: "◈",
     intro:
@@ -76,7 +76,7 @@ export const faqGlobale = [
   {
     question: "Comment prendre rendez-vous ?",
     reponse:
-      "Vous pouvez me contacter via le formulaire de contact, par email ou directement par téléphone. Je vous répondrai dans les plus brefs délais.",
+      "Rien de plus simple : appelez-moi ou envoyez-moi un email, et nous trouverons ensemble un créneau qui vous convient. Je réponds généralement sous 24h.",
   },
 ];
 
@@ -140,12 +140,12 @@ export const citation = [
     auteur: "Paul Éluard",
   },
   {
-    texte: "L'intuition est la intelligence qui s'est hâtée.",
-    auteur: "Rabindranath Tagore",
+    texte: "La vie, c'est ce qui arrive quand on avait prévu autre chose.",
+    auteur: "John Lennon",
   },
   {
-    texte: "Tout ce qui arrive arrive à point pour qui sait attendre.",
-    auteur: "Léonard de Vinci",
+    texte: "Tout vient à point à qui sait attendre.",
+    auteur: "Proverbe français",
   },
   {
     texte: "Le silence est la langue de tous les grands changements intérieurs.",
