@@ -52,7 +52,7 @@ export default function Home() {
             variants={fadeUp} initial="hidden" animate="visible" custom={2}
             className="font-lato text-base md:text-lg text-[#2D1B4E]/75 max-w-xl leading-relaxed"
           >
-            Maryse vous accompagne avec bienveillance dans votre chemin vers le
+            Je vous accompagne avec bienveillance dans votre chemin vers le
             bien-être, en présentiel ou à distance.
           </motion.p>
           <motion.div
@@ -159,7 +159,7 @@ export default function Home() {
               <Link
                 href="/about"
                 className="font-lato text-sm px-6 py-3 rounded-full border border-[#9B7FC8] text-[#9B7FC8] hover:bg-[#9B7FC8] hover:text-white transition-colors w-fit"
-                aria-label="En savoir plus sur Maryse"
+                aria-label="En savoir plus sur moi"
               >
                 En savoir plus sur moi
               </Link>

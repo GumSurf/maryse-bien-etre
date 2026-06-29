@@ -24,7 +24,7 @@ export const services = [
     href: "/magnetiseuse",
     icon: "◈",
     intro:
-      "Le magnétisme est une approche énergétique naturelle qui consiste à canaliser et transmettre une énergie bienveillante pour rééquilibrer le corps et l'esprit. Maryse pratique le magnétisme en présentiel comme à distance.",
+      "Le magnétisme est une approche énergétique naturelle qui consiste à canaliser et transmettre une énergie bienveillante pour rééquilibrer le corps et l'esprit. Je pratique le magnétisme en présentiel comme à distance.",
     details: [
       "Soulagement des tensions physiques et émotionnelles",
       "Rééquilibrage énergétique",
@@ -95,7 +95,7 @@ export const faqNumerologie = [
   {
     question: "Combien de temps dure une séance de numérologie ?",
     reponse:
-      "Une séance dure en moyenne 1h à 1h30. Maryse prend le temps d'expliquer chaque élément de votre analyse personnalisée.",
+      "Une séance dure en moyenne 1h à 1h30. Je prends le temps d'expliquer chaque élément de votre analyse personnalisée.",
   },
 ];
 

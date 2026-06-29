@@ -29,21 +29,21 @@ const moyens = [
     label: "Téléphone",
     valeur: contact.telephone,
     description: "Disponible du lundi au vendredi pour échanger avec vous.",
-    action: { texte: "Appeler Maryse", href: `tel:${contact.telephone}` },
+    action: { texte: "M'appeler", href: `tel:${contact.telephone}` },
   },
   {
     icon: "◎",
     label: "En présentiel",
     valeur: "À votre domicile, à Lorient et alentours",
     description: "Je me déplace directement chez vous pour que vous viviez la séance dans votre propre espace.",
-    action: { texte: "Appeler Maryse", href: `tel:${contact.telephone}` },
+    action: { texte: "M'appeler", href: `tel:${contact.telephone}` },
   },
   {
     icon: "◇",
     label: "En visioconférence",
     valeur: "Zoom, Google Meet ou téléphone",
     description: "Vous ne pouvez pas vous déplacer ? Les séances à distance fonctionnent tout aussi bien.",
-    action: { texte: "Appeler Maryse", href: `tel:${contact.telephone}` },
+    action: { texte: "M'appeler", href: `tel:${contact.telephone}` },
   },
 ];
 

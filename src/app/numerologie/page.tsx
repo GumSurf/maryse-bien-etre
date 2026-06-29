@@ -51,7 +51,7 @@ export default function NumerologiePage() {
               variants={fadeUp} initial="hidden" animate="visible" custom={2}
               className="font-lato text-base text-[#2D1B4E]/75 leading-relaxed max-w-md"
             >
-              En présentiel ou à distance, Maryse vous propose une lecture claire
+              En présentiel ou à distance, je vous propose une lecture claire
               et personnalisée de vos cycles de vie.
             </motion.p>
             <motion.div
@@ -397,7 +397,7 @@ export default function NumerologiePage() {
               <em className="text-[#9B7FC8] not-italic">profondément humaine</em>
             </h2>
             <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed">
-              Maryse pratique la numérologie avec une démarche claire, bienveillante
+              Je pratique la numérologie avec une démarche claire, bienveillante
               et toujours en lien direct avec ce que vous vivez aujourd'hui.
             </p>
             <div className="flex flex-col gap-3">
@@ -593,7 +593,7 @@ export default function NumerologiePage() {
 
       <Cta
         title="Prête à découvrir vos chiffres ?"
-        description="Réservez votre séance de numérologie en présentiel ou à distance. Maryse vous accueille avec bienveillance."
+        description="Réservez votre séance de numérologie en présentiel ou à distance. Je vous accueille avec bienveillance."
         buttonLabel="Prendre rendez-vous"
       />
     </>

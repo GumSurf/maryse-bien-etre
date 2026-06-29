@@ -40,7 +40,7 @@ export default function Header() {
           ))}
           <Link
             href="/contact"
-            aria-label="Prendre rendez-vous avec Maryse"
+            aria-label="Prendre rendez-vous avec moi"
             className="font-lato text-sm px-5 py-2 rounded-full bg-[#9B7FC8] text-white hover:bg-[#2D1B4E] transition-colors duration-300"
           >
             Prendre rendez-vous
@@ -78,7 +78,7 @@ export default function Header() {
           ))}
           <Link
             href="/contact"
-            aria-label="Prendre rendez-vous avec Maryse"
+            aria-label="Prendre rendez-vous avec moi"
             className="font-lato text-sm px-5 py-2 rounded-full bg-[#9B7FC8] text-white text-center"
             onClick={() => setMenuOpen(false)}
           >

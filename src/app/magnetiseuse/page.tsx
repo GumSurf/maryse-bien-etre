@@ -314,9 +314,8 @@ export default function MagnetiseusePage() {
               <em className="text-[#9B7FC8] not-italic">à votre écoute</em>
             </h2>
             <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed">
-              Maryse pratique le magnétisme avec bienveillance, en toute
-              simplicité, en s'adaptant à ce que vous traversez au moment de la
-              séance.
+              Je pratique le magnétisme avec bienveillance, en toute simplicité,
+              en m'adaptant à ce que vous traversez au moment de la séance.
             </p>
             <div className="flex flex-col gap-3">
               {[
@@ -476,7 +475,7 @@ export default function MagnetiseusePage() {
 
       <Cta
         title="Envie de retrouver votre équilibre ?"
-        description="Réservez votre séance de magnétisme en présentiel ou à distance. Maryse vous accompagne avec douceur."
+        description="Réservez votre séance de magnétisme en présentiel ou à distance. Je vous accompagne avec douceur."
         buttonLabel="Prendre rendez-vous"
       />
     </>
