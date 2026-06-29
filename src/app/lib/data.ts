@@ -140,8 +140,8 @@ export const citation = [
     auteur: "Paul Éluard",
   },
   {
-    texte: "La vie, c'est ce qui arrive quand on avait prévu autre chose.",
-    auteur: "John Lennon",
+    texte: "Ce n'est pas ce qui t'arrive qui compte, c'est ce que tu fais de ce qui t'arrive.",
+    auteur: "Épictète",
   },
   {
     texte: "Tout vient à point à qui sait attendre.",
@@ -151,4 +151,8 @@ export const citation = [
     texte: "Le silence est la langue de tous les grands changements intérieurs.",
     auteur: "Rainer Maria Rilke",
   },
+  {
+    texte: "Fais du bien à ton corps pour que ton âme ait envie d'y rester",
+    auteur: "Thérèse de Lisieux",
+  }
 ];
