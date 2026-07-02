@@ -6,6 +6,7 @@ import { faqNumerologie, citation } from "../lib/data";
 import Faq from "../components/Faq";
 import Cta from "../components/Cta";
 import BlobImage from "../components/BlobImage";
+import Image from "next/image";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -171,35 +172,15 @@ export default function NumerologiePage() {
             className="flex justify-center"
           >
             <BlobImage
-              variant={1}
-              className="w-64 h-64 md:w-full md:max-w-sm md:aspect-[4/5] bg-gradient-to-br from-[#C9B8E8] via-[#9B7FC8] to-[#2D1B4E]"
+              variant={2}
+              className="w-64 h-64 md:w-full md:max-w-sm md:aspect-[4/5]"
             >
-              <div className="absolute inset-0 flex items-center justify-center">
-                <motion.span
-                  className="font-playfair text-8xl text-white/90"
-                  animate={{ rotate: [0, 8, -8, 0], scale: [1, 1.05, 1] }}
-                  transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                  aria-hidden="true"
-                >
-                  ✦
-                </motion.span>
-              </div>
-              {/* Petites étoiles flottantes */}
-              {["✧", "✦", "✧"].map((s, i) => (
-                <motion.span
-                  key={i}
-                  className="absolute text-white/50 text-xl"
-                  style={{
-                    top: `${[20, 70, 45][i]}%`,
-                    left: `${[20, 25, 75][i]}%`,
-                  }}
-                  animate={{ opacity: [0.3, 0.8, 0.3], y: [0, -6, 0] }}
-                  transition={{ duration: 3 + i, repeat: Infinity, delay: i * 0.6 }}
-                  aria-hidden="true"
-                >
-                  {s}
-                </motion.span>
-              ))}
+              <Image
+                src="/numerologie/numerologie_1.jpg"
+                alt="Photo de Numerologie"
+                fill
+                className="object-cover"
+              />
             </BlobImage>
           </motion.div>
         </div>
@@ -425,40 +406,15 @@ export default function NumerologiePage() {
             className="order-1 lg:order-2 flex justify-center"
           >
             <BlobImage
-              variant={3}
-              className="w-full max-w-sm aspect-square bg-gradient-to-br from-[#9B7FC8] via-[#C9B8E8] to-[#F5F0FF]"
+              variant={1}
+              className="w-64 h-64 md:w-full md:max-w-sm md:aspect-[4/5]"
             >
-              {[
-                { n: "3", size: 34, top: "12%", left: "15%", delay: 0 },
-                { n: "7", size: 44, top: "8%", left: "60%", delay: 0.3 },
-                { n: "1", size: 28, top: "35%", left: "78%", delay: 0.6 },
-                { n: "✦", size: 50, top: "42%", left: "38%", delay: 0.9 },
-                { n: "9", size: 30, top: "65%", left: "12%", delay: 1.2 },
-                { n: "4", size: 38, top: "70%", left: "55%", delay: 1.5 },
-                { n: "2", size: 26, top: "85%", left: "32%", delay: 1.8 },
-                { n: "8", size: 32, top: "20%", left: "35%", delay: 2.1 },
-                { n: "6", size: 28, top: "80%", left: "78%", delay: 2.4 },
-              ].map((item, i) => (
-                <motion.span
-                  key={i}
-                  className="absolute font-playfair text-[#2D1B4E]/70"
-                  style={{
-                    top: item.top,
-                    left: item.left,
-                    fontSize: item.size,
-                  }}
-                  animate={{ opacity: [0.4, 0.85, 0.4], y: [0, -8, 0] }}
-                  transition={{
-                    duration: 4 + (i % 3),
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: item.delay,
-                  }}
-                  aria-hidden="true"
-                >
-                  {item.n}
-                </motion.span>
-              ))}
+              <Image
+                src="/numerologie/numerologie_2.jpg"
+                alt="Photo de Numerologie"
+                fill
+                className="object-cover"
+              />
             </BlobImage>
           </motion.div>
         </div>

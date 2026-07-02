@@ -8,6 +8,7 @@ const navLinks = [
   { href: "/about", label: "À propos" },
   { href: "/numerologie", label: "Numérologie" },
   { href: "/magnetiseuse", label: "Magnétiseuse" },
+  { href: "/tarifs", label: "Tarifs" },
   { href: "/contact", label: "Contact" },
 ];
 

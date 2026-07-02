@@ -156,3 +156,97 @@ export const citation = [
     auteur: "Thérèse de Lisieux",
   }
 ];
+
+export const tarifsMagnetisme = [
+  {
+    id: "magnetisme-domicile",
+    titre: "À domicile",
+    prix: "60€",
+    duree: "~1h",
+    description:
+      "Je me déplace chez vous, dans le confort de votre foyer, pour un accompagnement dans un cadre familier.",
+  },
+  {
+    id: "magnetisme-cabinet",
+    titre: "En cabinet",
+    prix: "55€",
+    duree: "~1h",
+    description:
+      "Vous venez à ma rencontre à Lorient, dans un espace pensé pour votre tranquillité.",
+  },
+  {
+    id: "magnetisme-distance",
+    titre: "À distance",
+    prix: "50€",
+    duree: "~45 min",
+    description:
+      "Le magnétisme ne connaît pas la distance. Par téléphone, l'énergie circule tout aussi efficacement.",
+  },
+];
+
+export const tarifsNumerologie = [
+  {
+    id: "numero-decouverte",
+    titre: "Découverte",
+    prix: "45€",
+    duree: "~45 min",
+    description:
+      "Une première lecture de votre chemin de vie et de vos nombres essentiels.",
+  },
+  {
+    id: "numero-complet",
+    titre: "Thème complet",
+    prix: "70€",
+    duree: "~1h30",
+    description:
+      "Une analyse approfondie de l'ensemble de votre grille : chemin de vie, expression, âme, réalisation.",
+  },
+  {
+    id: "numero-annee",
+    titre: "Année personnelle",
+    prix: "35€",
+    duree: "~30 min",
+    description:
+      "Un éclairage sur les énergies et les cycles qui traversent votre année en cours.",
+  },
+];
+
+export const infosPratiques = [
+  {
+    icon: "◈",
+    titre: "Paiement",
+    description:
+      "Espèces ou virement bancaire, à régler le jour de la séance. Aucun acompte n'est demandé.",
+  },
+  {
+    icon: "◎",
+    titre: "Déplacement",
+    description:
+      "Les visites à domicile sont incluses dans un rayon de 15 km autour de Lorient. Au-delà, une participation aux frais pourra être ajoutée.",
+  },
+  {
+    icon: "◷",
+    titre: "Annulation",
+    description:
+      "Je vous demande simplement de me prévenir au moins 24h à l'avance en cas d'empêchement.",
+  },
+];
+
+// Adapter la clé "answer" au nom réellement utilisé dans faqNumerologie (ex: "reponse")
+export const faqTarifs = [
+  {
+    question: "Le tarif change-t-il selon ma problématique ?",
+    reponse:
+      "Non, mes tarifs sont fixes quelle que soit la nature de votre demande, qu'il s'agisse de douleurs physiques, de fatigue ou de difficultés plus émotionnelles.",
+  },
+  {
+    question: "Faut-il prévoir plusieurs séances ?",
+    reponse:
+      "Cela dépend de chaque personne. Certaines ressentent un mieux dès la première séance, d'autres préfèrent un suivi sur deux ou trois rendez-vous. Je vous conseille au cas par cas.",
+  },
+  {
+    question: "Puis-je régler par carte bancaire ?",
+    reponse:
+      "Pour l'instant, je fonctionne uniquement en espèces ou par virement bancaire, réglés le jour de la séance.",
+  },
+];

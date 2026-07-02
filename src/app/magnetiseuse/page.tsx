@@ -6,6 +6,7 @@ import { services, faqMagnetisme, citation } from "../lib/data";
 import Faq from "../components/Faq";
 import Cta from "../components/Cta";
 import BlobImage from "../components/BlobImage";
+import Image from "next/image";
 
 const service = services.find((s) => s.slug === "magnetiseuse")!;
 
@@ -168,25 +169,14 @@ export default function MagnetiseusePage() {
           >
             <BlobImage
               variant={2}
-              className="w-64 h-64 md:w-full md:max-w-sm md:aspect-[4/5] bg-gradient-to-br from-[#9B7FC8] via-[#C9B8E8] to-[#2D1B4E]"
+              className="w-64 h-64 md:w-full md:max-w-sm md:aspect-[4/5]"
             >
-              <div className="absolute inset-0 flex items-center justify-center">
-                <motion.span
-                  className="font-playfair text-8xl text-white/90"
-                  animate={{ scale: [1, 1.08, 1], opacity: [0.85, 1, 0.85] }}
-                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                >
-                  ◈
-                </motion.span>
-              </div>
-              {[0, 1].map((i) => (
-                <motion.div
-                  key={i}
-                  className="absolute top-1/2 left-1/2 w-24 h-24 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/30"
-                  animate={{ scale: [1, 2.4], opacity: [0.5, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeOut", delay: i * 1.5 }}
-                />
-              ))}
+              <Image
+                src="/magnetisme/magnetisme_3.jpg"
+                alt="Photo de Magnetisme"
+                fill
+                className="object-cover"
+              />
             </BlobImage>
           </motion.div>
         </div>
@@ -343,24 +333,14 @@ export default function MagnetiseusePage() {
           >
             <BlobImage
               variant={3}
-              className="w-full max-w-sm aspect-square bg-gradient-to-br from-[#9B7FC8] via-[#C9B8E8] to-[#F5F0FF]"
-              shape="wide"
+              className="w-64 h-64 md:w-full md:max-w-sm md:aspect-[4/5]"
             >
-              {[0, 1, 2].map((i) => (
-                <motion.div
-                  key={i}
-                  className="absolute top-1/2 left-1/2 w-20 h-20 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#2D1B4E]/30"
-                  animate={{ scale: [1, 2.6], opacity: [0.6, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeOut", delay: i * 1.3 }}
-                />
-              ))}
-              <motion.span
-                className="font-playfair text-6xl text-[#2D1B4E]/70 relative z-10"
-                animate={{ scale: [1, 1.06, 1] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              >
-                ◈
-              </motion.span>
+              <Image
+                src="/magnetisme/magnetisme_2.jpg"
+                alt="Photo de Magnetisme"
+                fill
+                className="object-cover"
+              />
             </BlobImage>
           </motion.div>
         </div>
