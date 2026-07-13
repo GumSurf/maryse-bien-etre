@@ -93,9 +93,7 @@ export default function AboutPage() {
               variants={fadeUp} initial="hidden" animate="visible" custom={2}
               className="font-lato text-base text-[#2D1B4E]/75 leading-relaxed max-w-md"
             >
-              Praticienne en numérologie et magnétisme, j'ai grandi en Bretagne auprès
-              d'une grand-mère qui m'a transmis l'amour des chiffres et de leurs vibrations.
-              Aujourd'hui, je partage ce savoir avec bienveillance, en présentiel ou à distance.
+              véritable bretonne, née à Vannes dans le Morbihan, depuis mon enfance je suis magnétiseuse ignicié par ma grand-mère Eléonore qui m'a transmis sais connaissance et ses gestes précis dés l'age de 10 ans. Aujourd'hui je poursuis cette héritage avec respects et rigueur, en offrant un accompagnement sur mesure au services du bien être de chacun, en plus de son savoir ma grand-mère m'a donnée un objet précieux, qui lui appartenait un symbole de notre lien, qui renforce ca présence lors de mes soins.
             </motion.p>
           </div>
 
