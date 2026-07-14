@@ -193,7 +193,12 @@ export default function TarifsPage() {
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:items-start">
+          <div
+            className={`grid gap-6 ${tarifsNumerologie.length === 2
+                ? "md:grid-cols-2 max-w-4xl mx-auto"
+                : "md:grid-cols-3"
+              }`}
+          >
             {tarifsNumerologie.map((tarif, i) => (
               <TarifCard key={tarif.id} tarif={tarif} index={i} />
             ))}
@@ -234,9 +239,11 @@ export default function TarifsPage() {
                 }}
                 className="rounded-3xl border border-[#C9B8E8]/30 p-8 flex flex-col gap-4 transition-colors duration-300"
               >
-                <span className="text-3xl text-[#C9B8E8]" aria-hidden="true">
-                  {info.icon}
-                </span>
+                <info.icon
+                  className="w-8 h-8 text-[#C9B8E8]"
+                  strokeWidth={1.7}
+                  aria-hidden="true"
+                />
                 <h3 className="font-playfair text-xl text-white">{info.titre}</h3>
                 <p className="font-lato text-sm text-[#E8E0F5]/80 leading-relaxed">
                   {info.description}
@@ -244,6 +251,9 @@ export default function TarifsPage() {
               </motion.div>
             ))}
           </div>
+          <p className="text-sm text-[#E8E0F5]/80 mt-8 text-center">
+            N-B: Certaines mutuelles participent au remboursement des médecines douces. N'hésitez pas à vous renseigner auprès de celle-ci. Numéro de siret : 81133490300010.
+          </p>
         </div>
       </section>
 

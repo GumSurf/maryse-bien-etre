@@ -2,13 +2,14 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { services, faqMagnetisme, citation } from "../lib/data";
+import { services, faqMagnetisme } from "../lib/data";
 import Faq from "../components/Faq";
 import Cta from "../components/Cta";
 import BlobImage from "../components/BlobImage";
 import Image from "next/image";
+import { Flame, Leaf, HeartPulse, Moon, CircleDot, Ruler, Gem, Bell, Sparkles, HandHeart } from "lucide-react";
 
-const service = services.find((s) => s.slug === "magnetiseuse")!;
+const service = services.find((s) => s.slug === "magnetisme")!;
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -36,7 +37,6 @@ export default function MagnetiseusePage() {
         />
 
         <div className="max-w-6xl mx-auto px-6 py-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full relative z-10">
-          {/* Orbe décorative à gauche cette fois */}
           <motion.div
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -56,7 +56,6 @@ export default function MagnetiseusePage() {
                   ◈
                 </motion.span>
               </div>
-              {/* Ondes d'énergie animées */}
               {[0, 1, 2].map((i) => (
                 <motion.div
                   key={i}
@@ -136,19 +135,21 @@ export default function MagnetiseusePage() {
               Réharmoniser votre corps et votre esprit
             </h2>
             <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed">
-              Vous ressentez une fatigue persistante ? Des tensions qui ne
-              partent jamais vraiment ? Vous avez l'impression que votre énergie
-              ne circule plus comme avant ?
+              Le stress, la fatigue, certaines douleurs ou encore les émotions peuvent parfois
+              déséquilibrer notre énergie et avoir un impact sur notre bien-être.
             </p>
+
             <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed">
-              Le magnétisme ne soigne pas au sens médical, il accompagne,
-              rééquilibre et libère ce qui est bloqué en vous.
+              Le magnétisme est une approche énergétique qui vise à réharmoniser cette
+              énergie afin d'accompagner la personne vers un bien être physique,
+              émotionnel et intérieur. Cette pratique intervient toujours en complément
+              d'un suivi médical, sans jamais s'y substituer.
             </p>
             <ul className="flex flex-col gap-3 mt-2">
               {[
-                "Pourquoi je me sens vidé(e) sans raison apparente ?",
-                "Comment retrouver une sensation de calme durable ?",
-                "Qu'est-ce qui bloque mon énergie aujourd'hui ?",
+                "Vous ressentez une fatigue difficile à expliquer ?",
+                "Vous traversez une période de stress ou d'émotions intenses ?",
+                "Vous souhaitez retrouver davantage d'équilibre au quotidien ?",
               ].map((q, i) => (
                 <motion.li
                   key={i}
@@ -205,10 +206,9 @@ export default function MagnetiseusePage() {
               {service.intro}
             </p>
             <p className="font-lato text-sm text-[#E8E0F5]/80 leading-relaxed">
-              Chaque corps possède sa propre énergie vitale. Lorsqu'elle est
-              bloquée ou affaiblie, des tensions physiques ou émotionnelles
-              peuvent apparaître. Le magnétisme aide à la faire circuler à
-              nouveau librement.
+              C'est une pratique énergétique ancestrale qui accompagne les
+              personnes dans leur recherche de bien être. Chaque séance est adaptée à vos
+              besoins et se déroule à votre rythme.
             </p>
             <div className="flex flex-col gap-3 mt-2">
               {service.details.map((item) => (
@@ -220,7 +220,6 @@ export default function MagnetiseusePage() {
             </div>
           </motion.div>
 
-          {/* Ondes flottantes organiques (équivalent grille 1-9) */}
           <motion.div
             variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}
             className="hidden lg:block relative h-[420px]"
@@ -268,10 +267,30 @@ export default function MagnetiseusePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:items-start">
             {[
-              { icon: "✦", title: "Apaisement du stress", desc: "Relâcher les tensions nerveuses et retrouver un état de calme profond.", offset: "lg:mt-0" },
-              { icon: "◈", title: "Rééquilibrage énergétique", desc: "Restaurer une circulation fluide de l'énergie dans tout le corps.", offset: "lg:mt-12" },
-              { icon: "❋", title: "Soulagement physique", desc: "Douleurs, fatigue chronique, tensions musculaires soulagées en douceur.", offset: "lg:mt-4" },
-              { icon: "◇", title: "Soutien émotionnel", desc: "Un accompagnement doux en période de deuil, transition ou anxiété.", offset: "lg:mt-16" },
+              {
+                icon: Flame,
+                title: "Brûlures",
+                desc: "J'interviens également comme coupeuse de feu afin d'accompagner les personnes souffrant de brûlures (ménagères, traitements médicaux...).",
+                offset: "lg:mt-0",
+              },
+              {
+                icon: Leaf,
+                title: "Stress & fatigue",
+                desc: "Le magnétisme peut contribuer à retrouver davantage de calme, de sérénité et un meilleur équilibre énergétique.",
+                offset: "lg:mt-4",
+              },
+              {
+                icon: HeartPulse,
+                title: "Douleurs & peau",
+                desc: "Le magnétisme peut accompagner certaines douleurs et problèmes de peau, toujours en complément d'un suivi médical.",
+                offset: "lg:mt-10",
+              },
+              {
+                icon: Moon,
+                title: "Sommeil & détente",
+                desc: "Un accompagnement énergétique peut favoriser un sommeil plus réparateur et un véritable lâcher-prise.",
+                offset: "lg:mt-4",
+              },
             ].map((item, i) => (
               <motion.div
                 key={item.title}
@@ -280,10 +299,92 @@ export default function MagnetiseusePage() {
                 whileHover={{ y: -6, transition: { duration: 0.3 }, boxShadow: "0 20px 40px rgba(155,127,200,0.15)" }}
                 className={`bg-white border border-[#C9B8E8]/50 rounded-3xl p-8 flex flex-col gap-4 transition-all duration-300 cursor-default ${item.offset}`}
               >
-                <span className="text-3xl text-[#9B7FC8]" aria-hidden="true">{item.icon}</span>
+                <div className="w-12 h-12 rounded-xl bg-[#F5F0FF] flex items-center justify-center">
+                  <item.icon
+                    size={26}
+                    strokeWidth={1.3}
+                    className="text-[#9B7FC8]"
+                  />
+                </div>
                 <h3 className="font-playfair text-xl text-[#2D1B4E]">{item.title}</h3>
                 <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed">{item.desc}</p>
               </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── OUTILS (seule occurrence sur la page) ────────────── */}
+      <section className="bg-white py-28">
+        <div className="max-w-6xl mx-auto px-6">
+
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]">
+              Les outils utilisés
+            </span>
+
+            <h2 className="font-playfair text-4xl text-[#2D1B4E] mt-2">
+              Des soins énergétiques personnalisés
+            </h2>
+
+            <p className="font-lato text-sm text-[#2D1B4E]/75 max-w-3xl mx-auto mt-5 leading-relaxed">
+              Chaque séance est unique. Selon vos besoins, j'utilise différents outils
+              énergétiques afin de mieux identifier les déséquilibres et accompagner
+              votre rééquilibrage.
+            </p>
+
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                icon: CircleDot,
+                title: "Pendule",
+                desc: "Utilisé pour rechercher les causes, détecter les blocages énergétiques et évaluer le taux vibratoire."
+              },
+              {
+                icon: Ruler,
+                title: "Planche vibratoire",
+                desc: "Permet d'affiner les recherches énergétiques et d'orienter le soin."
+              },
+              {
+                icon: Gem,
+                title: "Pierres & cristaux",
+                desc: "Ils accompagnent le rééquilibrage des centres énergétiques et des chakras."
+              },
+              {
+                icon: Bell,
+                title: "Bols tibétains",
+                desc: "Les vibrations sonores favorisent la détente et l'harmonisation énergétique."
+              },
+              {
+                icon: Sparkles,
+                title: "Rééquilibrage énergétique",
+                desc: "Travail sur la circulation de l'énergie afin de retrouver davantage d'harmonie."
+              },
+              {
+                icon: HandHeart,
+                title: "Accompagnement personnalisé",
+                desc: "Chaque soin est adapté à votre situation et à vos besoins."
+              }
+            ].map((item) => (
+              <div key={item.title} className="flex flex-col gap-4">
+                <div className="w-12 h-12 rounded-xl bg-[#F5F0FF] flex items-center justify-center">
+                  <item.icon
+                    size={26}
+                    strokeWidth={1.3}
+                    className="text-[#9B7FC8]"
+                  />
+                </div>
+                <h3 className="font-playfair text-xl text-[#2D1B4E]">{item.title}</h3>
+                <p className="font-lato text-sm text-[#2D1B4E]/75">{item.desc}</p>
+              </div>
             ))}
           </div>
         </div>
@@ -304,15 +405,23 @@ export default function MagnetiseusePage() {
               <em className="text-[#9B7FC8] not-italic">à votre écoute</em>
             </h2>
             <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed">
-              Je pratique le magnétisme avec bienveillance, en toute simplicité,
-              en m'adaptant à ce que vous traversez au moment de la séance.
+              Chaque séance est unique. Avant de commencer, je prends le temps d'échanger avec
+              vous afin de comprendre votre situation et vos besoins. Mon accompagnement est
+              personnalisé et adapté à chaque personne.
             </p>
+
+            <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed">
+              Les outils que j'utilise me permettent d'identifier les déséquilibres
+              énergétiques, d'évaluer le taux vibratoire et d'accompagner le rééquilibrage
+              des centres énergétiques (chakras), selon ce que révèle chaque séance.
+            </p>
+
             <div className="flex flex-col gap-3">
               {[
-                "Approche douce et respectueuse de votre rythme",
-                "Aucune manipulation physique invasive",
-                "Séances en présentiel ou à distance",
-                "Échange avant et après chaque séance",
+                "Un temps d'écoute avant chaque séance pour cerner vos besoins",
+                "Un accompagnement pensé pour chaque étape de la vie",
+                "Une approche bienveillante, sans jugement",
+                "Un suivi possible entre les séances si besoin",
               ].map((item, i) => (
                 <motion.div
                   key={i}
@@ -343,6 +452,55 @@ export default function MagnetiseusePage() {
               />
             </BlobImage>
           </motion.div>
+        </div>
+      </section>
+
+      {/* ── ADAPTÉ À CHACUN ──────────────────────────────────── */}
+      <section className="bg-[#F5F0FF] py-28">
+        <div className="max-w-6xl mx-auto px-6">
+
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]">
+              Un accompagnement personnalisé
+            </span>
+
+            <h2 className="font-playfair text-4xl text-[#2D1B4E] mt-2">
+              Des séances adaptées à vos besoins
+            </h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+
+            <div className="bg-white rounded-3xl p-8 border border-[#C9B8E8]/40">
+              <h3 className="font-playfair text-2xl text-[#2D1B4E] mb-4">
+                Pour toute la famille
+              </h3>
+
+              <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed">
+                J'accompagne les adultes, les adolescents, les enfants ainsi que les
+                nourrissons, avec une approche douce adaptée à chaque âge.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-3xl p-8 border border-[#C9B8E8]/40">
+              <h3 className="font-playfair text-2xl text-[#2D1B4E] mb-4">
+                Combien de séances ?
+              </h3>
+
+              <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed">
+                Le nombre de séances dépend de chaque situation. On en discute ensemble
+                dès le premier échange, et le rythme s'ajuste en fonction de votre évolution.
+              </p>
+            </div>
+
+          </div>
+
         </div>
       </section>
 
@@ -400,7 +558,7 @@ export default function MagnetiseusePage() {
             <p className="font-playfair text-xl text-white leading-relaxed">
               Maryse dégage une énergie apaisante. J'ai vraiment pu lâcher prise.
             </p>
-            <span className="font-lato text-xs text-[#C9B8E8]/70 tracking-widest uppercase mt-4 block" aria-label="Témoignage de Laurent B. · 47 ans">
+            <span className="font-lato text-xs text-[#C9B8E8]/70 tracking-widest uppercase mt-4 block" aria-label="Témoignage de Laurent B.">
               - Laurent B.
             </span>
           </motion.div>
@@ -447,6 +605,74 @@ export default function MagnetiseusePage() {
         </div>
       </section>
 
+      {/* ── DISTANCIEL (seule occurrence sur la page) ────────── */}
+      <section className="bg-[#F5F0FF] py-28">
+        <div className="max-w-5xl mx-auto px-6">
+          <motion.div
+            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]" aria-label="Magnétisme à distance">
+              Magnétisme à distance
+            </span>
+            <h2 className="font-playfair text-4xl md:text-5xl text-[#2D1B4E] mt-2">
+              Cabinet, domicile ou accompagnement à distance
+            </h2>
+          </motion.div>
+
+          <motion.p
+            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}
+            className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed max-w-3xl mx-auto"
+          >
+            Les séances peuvent se dérouler au cabinet, chez vous, ou à distance à partir
+            d'une photo récente lorsque le déplacement n'est pas possible. Cette dernière
+            option permet aussi d'accompagner les personnes vivant loin du cabinet, sans
+            que l'efficacité du soin en soit affectée.
+          </motion.p>
+        </div>
+        <Image
+          src="/magnetisme/magnetisme_distance.jpg"
+          alt="Magnétisme à distance"
+          width={1200}
+          height={800}
+          className="mt-12 w-full max-w-5xl mx-auto rounded-3xl object-cover shadow-lg shadow-[#9B7FC8]/20"
+        />
+      </section>
+
+      {/* ── ANIMAUX (seule occurrence sur la page) ───────────── */}
+      <section className="bg-[#F5F0FF] py-28">
+        <div className="max-w-5xl mx-auto px-6">
+          <motion.div
+            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]" aria-label="Magnétisme pour les animaux">
+              Magnétisme pour les animaux
+            </span>
+            <h2 className="font-playfair text-4xl md:text-5xl text-[#2D1B4E] mt-2">
+              Les animaux aussi peuvent bénéficier du magnétisme
+            </h2>
+          </motion.div>
+
+          <motion.p
+            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}
+            className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed max-w-3xl mx-auto"
+          >
+            Les animaux sont sensibles aux déséquilibres énergétiques. Le magnétisme peut
+            les accompagner lors de périodes de stress, de fatigue, après une intervention
+            ou un changement important dans leur environnement.
+          </motion.p>
+
+          <motion.p
+            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={2}
+            className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed max-w-3xl mx-auto mt-4"
+          >
+            Chaque soin est réalisé avec douceur et patience, en tenant compte du
+            tempérament de l'animal.
+          </motion.p>
+        </div>
+      </section>
+
       <Faq
         items={faqMagnetisme}
         subtitle="Questions fréquentes"
@@ -454,8 +680,8 @@ export default function MagnetiseusePage() {
       />
 
       <Cta
-        title="Envie de retrouver votre équilibre ?"
-        description="Réservez votre séance de magnétisme en présentiel ou à distance. Je vous accompagne avec douceur."
+        title="Prenez un moment pour vous"
+        description="Vous souhaitez retrouver davantage de sérénité ou en savoir plus sur le magnétisme ? Je suis à votre écoute pour répondre à vos questions et vous accompagner."
         buttonLabel="Prendre rendez-vous"
       />
     </>

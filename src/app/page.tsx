@@ -8,6 +8,7 @@ import Cta from "./components/Cta";
 import Citation from "./components/Citation";
 import BlobImage from "./components/BlobImage";
 import Image from "next/image";
+import { Leaf, HeartHandshake, Hash, HandHeart, BookOpen, SunMedium, Unlock} from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -39,21 +40,33 @@ export default function Home() {
             variants={fadeUp} initial="hidden" animate="visible" custom={0}
             className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]"
           >
-            Numérologie & Magnétisme
+            Magnétisme & Numérologie
           </motion.span>
           <motion.h1
-            variants={fadeUp} initial="hidden" animate="visible" custom={1}
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            custom={1}
             className="font-playfair text-5xl md:text-7xl text-[#2D1B4E] leading-tight"
           >
-            Retrouvez votre <br />
-            <em className="text-[#9B7FC8] not-italic">équilibre intérieur</em>
+            Retrouvez votre
+            <br />
+            <em className="text-[#9B7FC8] not-italic">
+              harmonie intérieure
+            </em>
           </motion.h1>
+
           <motion.p
-            variants={fadeUp} initial="hidden" animate="visible" custom={2}
-            className="font-lato text-base md:text-lg text-[#2D1B4E]/75 max-w-xl leading-relaxed"
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            custom={2}
+            className="font-lato text-base md:text-lg text-[#2D1B4E]/75 max-w-2xl leading-relaxed"
           >
-            Je vous accompagne avec bienveillance dans votre chemin vers le
-            bien-être, en présentiel ou à distance.
+            Depuis mon enfance, j'accompagne les personnes grâce au magnétisme transmis
+            par ma grand-mère Éléonore. Aujourd'hui, cette pratique est enrichie par la
+            numérologie afin de vous proposer un accompagnement personnalisé, en cabinet
+            ou à distance.
           </motion.p>
           <motion.div
             variants={fadeUp} initial="hidden" animate="visible" custom={3}
@@ -75,6 +88,86 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── POURQUOI CONSULTER ───────────────────────────────────── */}
+      <section className="bg-white py-24">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]">
+              Pourquoi consulter ?
+            </span>
+
+            <h2 className="font-playfair text-4xl md:text-5xl text-[#2D1B4E] mt-2">
+              Un accompagnement adapté à votre situation
+            </h2>
+
+            <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed max-w-2xl mx-auto mt-5">
+              Le magnétisme et la numérologie peuvent vous accompagner dans différentes
+              étapes de votre vie afin de retrouver davantage de sérénité et
+              d'équilibre.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            {[
+              {
+                icon: Leaf,
+                title: "Stress & anxiété",
+                text: "Retrouvez calme et apaisement dans votre quotidien."
+              },
+              {
+                icon: SunMedium,
+                title: "Fatigue",
+                text: "Favorisez un meilleur équilibre énergétique."
+              },
+              {
+                icon: Unlock,
+                title: "Blocages",
+                text: "Avancez plus sereinement face aux difficultés émotionnelles."
+              },
+              {
+                icon: Hash,
+                title: "Numérologie",
+                text: "Mieux comprendre votre personnalité et votre chemin de vie."
+              }
+            ].map((item, i) => (
+              <motion.div
+                key={item.title}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                custom={i}
+                whileHover={{ y: -6 }}
+                className="bg-[#F5F0FF] rounded-3xl p-8 text-center"
+              >
+                <div className="w-16 h-16 rounded-full bg-white/70 flex items-center justify-center mx-auto">
+                  <item.icon
+                    size={34}
+                    strokeWidth={1.3}
+                    className="text-[#9B7FC8]"
+                  />
+                </div>
+
+                <h3 className="font-playfair text-2xl text-[#2D1B4E] mt-5">
+                  {item.title}
+                </h3>
+
+                <p className="font-lato text-sm text-[#2D1B4E]/75 mt-3 leading-relaxed">
+                  {item.text}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <Citation />
 
       {/* ── SERVICES ─────────────────────────────────────────── */}
@@ -88,35 +181,51 @@ export default function Home() {
               Mes accompagnements
             </span>
             <h2 className="font-playfair text-4xl text-[#2D1B4E] mt-2">
-              Comment puis-je vous aider ?
+              Choisissez l'accompagnement qui vous correspond
             </h2>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:items-start">
-            {services.map((s, i) => (
-              <motion.div
-                key={s.slug}
-                variants={fadeUp} initial="hidden" whileInView="visible"
-                viewport={{ once: true }} custom={i}
-                className={i === 1 ? "md:mt-10" : ""}
-              >
-                <Link
-                  href={s.href}
-                  aria-label={`En savoir plus sur la ${s.title}`}
-                  className="group bg-white border border-[#C9B8E8]/50 rounded-3xl p-10 flex flex-col gap-4 hover:shadow-xl hover:shadow-[#C9B8E8]/20 hover:-translate-y-1 transition-all duration-300"
+            {services.map((s, i) => {
+              const Icon = s.icon;
+
+              return (
+                <motion.div
+                  key={s.slug}
+                  variants={fadeUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  custom={i}
+                  className={i === 1 ? "md:mt-10" : ""}
                 >
-                  <span className="text-3xl text-[#9B7FC8]" aria-hidden="true">{s.icon}</span>
-                  <h3 className="font-playfair text-2xl text-[#2D1B4E]">
-                    {s.title}
-                  </h3>
-                  <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed">
-                    {s.description}
-                  </p>
-                  <span className="font-lato text-sm text-[#9B7FC8] group-hover:underline mt-auto" aria-label={`En savoir plus sur la ${s.title}`}>
-                    En savoir plus →
-                  </span>
-                </Link>
-              </motion.div>
-            ))}
+                  <Link
+                    href={s.href}
+                    aria-label={`En savoir plus sur la ${s.title}`}
+                    className="group bg-white border border-[#C9B8E8]/50 rounded-3xl p-10 flex flex-col gap-4 hover:shadow-xl hover:shadow-[#C9B8E8]/20 hover:-translate-y-1 transition-all duration-300"
+                  >
+                    <div className="w-16 h-16 rounded-2xl bg-[#F5F0FF] flex items-center justify-center group-hover:bg-[#9B7FC8]/10 transition-colors">
+                      <Icon
+                        size={38}
+                        strokeWidth={1.2}
+                        className="text-[#9B7FC8]"
+                      />
+                    </div>
+
+                    <h3 className="font-playfair text-2xl text-[#2D1B4E]">
+                      {s.title}
+                    </h3>
+
+                    <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed">
+                      {s.description}
+                    </p>
+
+                    <span className="font-lato text-sm text-[#9B7FC8] group-hover:underline mt-auto">
+                      En savoir plus →
+                    </span>
+                  </Link>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -151,9 +260,11 @@ export default function Home() {
               Bonjour, je suis Maryse
             </h2>
             <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed max-w-lg">
-              Praticienne en numérologie et magnétisme, je vous accompagne avec
-              douceur dans votre chemin vers l'équilibre. Mes séances se
-              déroulent en présentiel ou à distance, selon vos besoins.
+              Véritable Bretonne née à Vannes, j'ai découvert le magnétisme dès mon enfance
+              grâce à ma grand-mère Éléonore qui m'a transmis son savoir à partir de ma jeunesse
+              . Souhaitant enrichir mon accompagnement, je me suis ensuite formée à
+              la numérologie. Aujourd'hui, j'associe ces deux approches afin de vous aider
+              à retrouver un bien être durable.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-2">
               <Link
@@ -174,6 +285,83 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── POURQUOI MOI ───────────────────────────────────── */}
+      <section className="bg-[#F5F0FF] py-24">
+        <div className="max-w-6xl mx-auto px-6">
+
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]">
+              Pourquoi me faire confiance ?
+            </span>
+
+            <h2 className="font-playfair text-4xl text-[#2D1B4E] mt-2">
+              Une approche basée sur l'écoute et la transmission
+            </h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+
+            <div className="bg-white rounded-3xl p-8 border border-[#C9B8E8]/40">
+              <div className="w-20 h-20 rounded-full bg-[#F5F0FF] flex items-center justify-center mx-auto">
+                <HandHeart
+                  size={38}
+                  strokeWidth={1.3}
+                  className="text-[#9B7FC8]"
+                />
+              </div>
+              <h3 className="font-playfair text-2xl text-[#2D1B4E]">
+                Héritage familial
+              </h3>
+              <p className="font-lato text-sm mt-3 text-[#2D1B4E]/75 leading-relaxed">
+                Le magnétisme m'a été transmis dès mon enfance par ma grand-mère
+                Éléonore.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-3xl p-8 border border-[#C9B8E8]/40">
+              <div className="w-20 h-20 rounded-full bg-[#F5F0FF] flex items-center justify-center mx-auto">
+                <BookOpen
+                  size={38}
+                  strokeWidth={1.3}
+                  className="text-[#9B7FC8]"
+                />
+              </div>
+              <h3 className="font-playfair text-2xl text-[#2D1B4E]">
+                Formation en numérologie
+              </h3>
+              <p className="font-lato text-sm mt-3 text-[#2D1B4E]/75 leading-relaxed">
+                J'ai complété ma pratique par une formation afin de proposer un
+                accompagnement plus complet.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-3xl p-8 border border-[#C9B8E8]/40">
+              <div className="w-20 h-20 rounded-full bg-[#F5F0FF] flex items-center justify-center mx-auto">
+                <HeartHandshake
+                  size={38}
+                  strokeWidth={1.3}
+                  className="text-[#9B7FC8]"
+                />
+              </div>
+              <h3 className="font-playfair text-2xl text-[#2D1B4E]">
+                Accompagnement personnalisé
+              </h3>
+              <p className="font-lato text-sm mt-3 text-[#2D1B4E]/75 leading-relaxed">
+                Chaque séance est adaptée à votre situation, vos besoins et votre
+                rythme.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* ── AVIS CLIENTS ─────────────────────────────────────── */}
       <section className=" bg-white py-24">
         <div className="max-w-6xl mx-auto px-6">
@@ -185,7 +373,7 @@ export default function Home() {
               Témoignages
             </span>
             <h2 className="font-playfair text-4xl text-[#2D1B4E] mt-2">
-              Ce qu'ils en disent
+              Ils m'ont fait confiance
             </h2>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:items-start">
@@ -214,7 +402,11 @@ export default function Home() {
 
       <Faq items={faqGlobale} subtitle="Questions fréquentes" title="Vous avez des questions ?" />
 
-      <Cta />
+      <Cta
+        title="Et si nous faisions le premier pas ensemble ?"
+        description="Vous souhaitez en savoir davantage sur le magnétisme ou la numérologie ? Je suis à votre écoute pour répondre à vos questions et vous accompagner vers un bien être durable."
+        buttonLabel="Me contacter"
+      />
     </>
   );
 }

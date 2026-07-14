@@ -6,8 +6,8 @@ import { Menu, X } from "lucide-react";
 const navLinks = [
   { href: "/", label: "Accueil" },
   { href: "/about", label: "À propos" },
+  { href: "/magnetisme", label: "Magnétisme" },
   { href: "/numerologie", label: "Numérologie" },
-  { href: "/magnetiseuse", label: "Magnétiseuse" },
   { href: "/tarifs", label: "Tarifs" },
   { href: "/contact", label: "Contact" },
 ];
@@ -23,7 +23,7 @@ export default function Header() {
             Maryse Briand
           </span>
           <span className="text-xs text-[#9B7FC8] tracking-[0.2em] uppercase font-lato">
-            Numérologie & Magnétisme
+            Magnétisme & Numérologie
           </span>
         </Link>
 

@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="flex flex-col gap-2">
           <span className="font-playfair text-xl text-white">Maryse Briand</span>
           <span className="text-xs text-[#C9B8E8] tracking-[0.2em] uppercase">
-            Numérologie & Magnétisme
+            Magnétisme & Numérologie
           </span>
           <p className="text-sm text-[#E8E0F5]/80 mt-2 leading-relaxed">
             Accompagnement holistique pour retrouver équilibre et sérénité.
@@ -21,8 +21,8 @@ export default function Footer() {
           {[
             { href: "/", label: "Accueil" },
             { href: "/about", label: "À propos" },
+            { href: "/magnetisme", label: "Magnétisme" },
             { href: "/numerologie", label: "Numérologie" },
-            { href: "/magnetiseuse", label: "Magnétiseuse" },
             { href: "/contact", label: "Contact" },
           ].map((link) => (
             <Link

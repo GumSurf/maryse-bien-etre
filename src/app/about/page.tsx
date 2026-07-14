@@ -7,6 +7,7 @@ import BlobImage from "../components/BlobImage";
 import Cta from "../components/Cta";
 import Citation from "../components/Citation";
 import Image from "next/image";
+import { HeartHandshake, HandHeart, Gem } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -20,41 +21,41 @@ const fadeUp = {
 const parcours = [
   {
     annee: "L'enfance",
-    titre: "Une grand-mère pas comme les autres",
-    desc: "J'ai grandi en Bretagne, dans une maison où les chiffres avaient une âme. C'est ma grand-mère qui m'a ouvert les yeux sur ce monde invisible, autour de sa table, face à l'océan, elle me parlait des vibrations, des cycles, de ce que les nombres racontent de nos vies.",
+    titre: "La découverte du magnétisme",
+    desc: "Née à Vannes, j'ai grandi en Bretagne auprès de ma grand-mère Éléonore qui m'a transmis les premières bases du magnétisme.",
   },
   {
-    annee: "L'apprentissage",
-    titre: "Une transmission intime",
-    desc: "Ce n'était pas un cours, c'était une confidence. Ma grand-mère m'a transmis la numérologie comme on partage un secret de famille, avec douceur, avec patience, avec cette conviction bretonne que certaines choses se savent avant même d'être apprises.",
+    annee: "Ma jeunesse",
+    titre: "Une transmission familiale",
+    desc: "À partir de ma jeunesse, elle m'a enseigné ses gestes, son savoir-faire et les valeurs qui guident encore aujourd'hui ma pratique.",
   },
   {
-    annee: "L'éveil",
-    titre: "Quand tout a pris son sens",
-    desc: "En grandissant, j'ai compris que ce qu'elle m'avait donné était un vrai cadeau. Les chiffres sont devenus pour moi un langage vivant, une façon de mieux me comprendre, et d'aider les autres à faire de même.",
+    annee: "Ma formation",
+    titre: "Découvrir la numérologie",
+    desc: "Animée par l'envie d'accompagner les personnes de manière plus complète, je me suis formée à la numérologie afin d'acquérir des connaissances solides dans cette discipline.",
   },
   {
     annee: "Aujourd'hui",
-    titre: "Partager à mon tour",
-    desc: "Ancrée en Bretagne, je reçois en présentiel ou à distance les personnes qui souhaitent mieux se connaître. Je porte en moi l'héritage de ma grand-mère, et je le transmets avec la même bienveillance qu'elle m'a offerte.",
+    titre: "Deux approches complémentaires",
+    desc: "Je mets à votre disposition le magnétisme, qui constitue le cœur de mon activité, ainsi que la numérologie pour vous accompagner avec une approche globale et personnalisée.",
   },
 ];
 
 const valeurs = [
   {
-    icon: "✦",
-    title: "L'authenticité",
-    desc: "Je travaille avec ce que vous êtes vraiment, pas avec ce que vous pensez devoir être. Chaque séance est un espace de vérité bienveillante.",
+    icon: HeartHandshake,
+    title: "La bienveillance",
+    desc: "Chaque personne est accueillie avec écoute, respect et sans jugement afin de proposer un accompagnement adapté à ses besoins.",
   },
   {
-    icon: "◈",
+    icon: HandHeart,
     title: "La transmission",
-    desc: "J'ai reçu ce savoir avec amour. Je le partage de la même façon, avec le temps qu'il faut, sans brusquer, en respectant votre rythme.",
+    desc: "Je poursuis le savoir que ma grand-mère Éléonore m'a transmis avec le même respect et la même passion qui ont guidé son enseignement.",
   },
   {
-    icon: "◎",
-    title: "L'ancrage",
-    desc: "Bretonne dans l'âme, j'ai les pieds sur terre. Mon accompagnement est concret, ancré dans votre quotidien, loin des promesses vagues.",
+    icon: Gem,
+    title: "L'authenticité",
+    desc: "Je pratique le magnétisme avec sincérité et humilité, en restant fidèle aux valeurs qui m'ont été transmises depuis mon enfance.",
   },
 ];
 
@@ -90,10 +91,20 @@ export default function AboutPage() {
               <em className="text-[#9B7FC8] not-italic">Maryse</em>
             </motion.h1>
             <motion.p
-              variants={fadeUp} initial="hidden" animate="visible" custom={2}
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              custom={2}
               className="font-lato text-base text-[#2D1B4E]/75 leading-relaxed max-w-md"
             >
-              véritable bretonne, née à Vannes dans le Morbihan, depuis mon enfance je suis magnétiseuse ignicié par ma grand-mère Eléonore qui m'a transmis sais connaissance et ses gestes précis dés l'age de 10 ans. Aujourd'hui je poursuis cette héritage avec respects et rigueur, en offrant un accompagnement sur mesure au services du bien être de chacun, en plus de son savoir ma grand-mère m'a donnée un objet précieux, qui lui appartenait un symbole de notre lien, qui renforce ca présence lors de mes soins.
+              Véritable Bretonne, née à Vannes dans le Morbihan, j'ai découvert le
+              magnétisme dès mon enfance auprès de ma grand-mère Éléonore. À partir de
+              ma jeunesse, elle m'a transmis son savoir, ses gestes et sa façon
+              d'accompagner les personnes avec bienveillance. Aujourd'hui, je poursuis
+              cet héritage avec respect et sincérité en proposant des soins
+              personnalisés adaptés aux besoins de chacun. Elle m'a également confié un
+              objet qui lui appartenait, symbole de notre lien, qui m'accompagne encore
+              aujourd'hui lors de chacun de mes soins.
             </motion.p>
           </div>
 
@@ -129,23 +140,19 @@ export default function AboutPage() {
             variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}
             className="font-playfair text-4xl md:text-5xl text-[#2D1B4E] leading-tight"
           >
-            Un héritage transmis avec amour
+            Un héritage familial
           </motion.h2>
           <motion.p
             variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={2}
             className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed"
           >
-            La numérologie n'est pas venue à moi par les livres, elle m'a été transmise
-            par ma grand-mère, ici en Bretagne, avec patience et tendresse, comme on
-            confie un trésor de famille.
+            Mon histoire a commencé auprès de ma grand-mère Éléonore, qui m'a initiée très jeune au magnétisme. Dès l'âge de ma jeunesse, elle m'a transmis ses gestes, son expérience et sa façon d'accompagner les personnes avec écoute et bienveillance.
           </motion.p>
           <motion.p
             variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={3}
             className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed"
           >
-            C'est cette intimité avec les chiffres, ce lien entre deux générations de femmes
-            curieuses de l'invisible, qui donne aujourd'hui à mon travail sa profondeur
-            et son authenticité.
+            Quelques années plus tard, désireuse d'approfondir ma compréhension de chacun, j'ai choisi de me former à la numérologie. Cette discipline complète aujourd'hui ma pratique du magnétisme et me permet de proposer un accompagnement encore plus personnalisé.
           </motion.p>
         </div>
       </section>
@@ -234,9 +241,13 @@ export default function AboutPage() {
                 className={`bg-white border border-[#C9B8E8]/50 rounded-3xl p-8 flex flex-col gap-4 transition-all duration-300 ${i === 1 ? "lg:mt-10" : ""
                   }`}
               >
-                <span className="text-3xl text-[#9B7FC8]" aria-label={item.icon}>
-                  {item.icon}
-                </span>
+                <div className="w-16 h-16 rounded-full bg-[#F5F0FF] flex items-center justify-center">
+                  <item.icon
+                    size={34}
+                    strokeWidth={1.3}
+                    className="text-[#9B7FC8]"
+                  />
+                </div>
                 <h3 className="font-playfair text-xl text-[#2D1B4E]">{item.title}</h3>
                 <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed">{item.desc}</p>
               </motion.div>
@@ -249,8 +260,8 @@ export default function AboutPage() {
       <Citation />
 
       <Cta
-        title="Envie d'en savoir plus ?"
-        description="Découvrez mes accompagnements en numérologie et magnétisme, ou contactez-moi directement pour échanger."
+        title="Prenons le temps d'échanger"
+        description="Vous souhaitez en savoir plus sur mes soins en magnétisme ou prendre rendez-vous ? Je suis à votre écoute pour répondre à vos questions et vous accompagner."
         buttonLabel="Me contacter"
       />
     </>

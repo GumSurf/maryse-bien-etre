@@ -2,10 +2,8 @@
 
 import { motion } from "framer-motion";
 import { contact } from "../lib/data";
-import BlobImage from "../components/BlobImage";
-import Citation from "../components/Citation";
 import Cta from "../components/Cta";
-import dynamic from "next/dynamic";
+import { PhoneCall, HouseHeart, Camera, } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -18,30 +16,23 @@ const fadeUp = {
 
 const moyens = [
   {
-    icon: "✦",
-    label: "Email",
-    valeur: contact.email,
-    description: "Pour toute question ou demande de rendez-vous, je vous réponds sous 24h.",
-    action: { texte: "Écrire un email", href: `mailto:${contact.email}` },
-  },
-  {
-    icon: "◈",
+    icon: PhoneCall,
     label: "Téléphone",
     valeur: contact.telephone,
-    description: "Disponible du lundi au vendredi pour échanger avec vous.",
+    description: "Le moyen le plus simple pour me joindre et échanger sur votre situation.",
     action: { texte: "M'appeler", href: `tel:${contact.telephone}` },
   },
   {
-    icon: "◎",
-    label: "En présentiel",
-    valeur: "À votre domicile, à Lorient et alentours",
-    description: "Je me déplace directement chez vous pour que vous viviez la séance dans votre propre espace.",
+    icon: HouseHeart,
+    label: "À domicile",
+    valeur: "Lorient et alentours, sur rendez-vous",
+    description: "Je me déplace directement chez vous, dans le confort de votre foyer.",
     action: { texte: "M'appeler", href: `tel:${contact.telephone}` },
   },
   {
-    icon: "◇",
-    label: "En visioconférence",
-    valeur: "Zoom, Google Meet ou téléphone",
+    icon: Camera,
+    label: "À distance",
+    valeur: "Par téléphone, à partir d'une photo",
     description: "Vous ne pouvez pas vous déplacer ? Les séances à distance fonctionnent tout aussi bien.",
     action: { texte: "M'appeler", href: `tel:${contact.telephone}` },
   },
@@ -50,11 +41,11 @@ const moyens = [
 const objections = [
   {
     question: "Je ne sais pas par où commencer.",
-    reponse: "C'est tout à fait normal. Écrivez-moi simplement un message en me disant ce que vous traversez en ce moment, je vous guiderai vers le service le plus adapté à votre situation.",
+    reponse: "C'est tout à fait normal. Appelez-moi simplement en me disant ce que vous traversez en ce moment, je vous guiderai vers le service le plus adapté à votre situation.",
   },
   {
     question: "Je ne suis pas sûre que ça soit fait pour moi.",
-    reponse: "Le doute est une bonne raison de poser des questions, pas de renoncer. N'hésitez pas à me contacter pour qu'on échange librement, sans engagement. Je vous répondrai avec honnêteté.",
+    reponse: "Le doute est une bonne raison de poser des questions, pas de renoncer. N'hésitez pas à m'appeler pour qu'on échange librement, sans engagement. Je vous répondrai avec honnêteté.",
   },
   {
     question: "J'ai peur de ne pas être prête.",
@@ -62,7 +53,7 @@ const objections = [
   },
   {
     question: "Est-ce que ça fonctionne vraiment à distance ?",
-    reponse: "Oui, tout à fait. L'énergie ne connaît pas de frontières physiques. De nombreuses personnes vivent des séances à distance avec les mêmes effets qu'en présentiel.",
+    reponse: "Oui, tout à fait. L'énergie ne connaît pas de frontières physiques. De nombreuses personnes vivent des séances à distance, à partir d'une photo, avec les mêmes effets qu'en présentiel.",
   },
 ];
 
@@ -101,12 +92,12 @@ export default function ContactPage() {
           >
             Que vous ayez une question, une envie d'en savoir plus, ou simplement
             l'envie d'échanger, je suis là. Le premier pas est toujours le plus
-            simple.
+            simple : un appel suffit.
           </motion.p>
         </div>
       </section>
 
-            {/* ── MOYENS DE CONTACT ────────────────────────────────── */}
+      {/* ── MOYENS DE CONTACT ────────────────────────────────── */}
       <section className="bg-[#F5F0FF] py-28">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
@@ -121,21 +112,25 @@ export default function ContactPage() {
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:items-start">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:items-start">
             {moyens.map((m, i) => (
               <motion.div
                 key={m.label}
                 variants={fadeUp} initial="hidden" whileInView="visible"
                 viewport={{ once: true }} custom={i}
-                className={`group bg-[#F5F0FF] border border-[#C9B8E8]/50 rounded-3xl p-8 flex flex-col gap-5 hover:shadow-xl hover:shadow-[#C9B8E8]/20 hover:-translate-y-1 transition-all duration-500 ${i === 1 ? "lg:mt-10" : i === 2 ? "lg:mt-4" : i === 3 ? "lg:mt-16" : ""
-                  }`}
+                className={`group bg-[#F5F0FF] border border-[#C9B8E8]/50 rounded-3xl p-8 flex flex-col gap-5 hover:shadow-xl hover:shadow-[#C9B8E8]/20 hover:-translate-y-1 transition-all duration-500 ${
+                  i === 1 ? "lg:mt-10" : ""
+                }`}
               >
                 <motion.div
                   className="w-14 h-14 rounded-2xl bg-white border border-[#C9B8E8]/60 flex items-center justify-center shadow-sm"
                   animate={{ y: [0, -4, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: i * 0.5 }}
                 >
-                  <span className="text-[#9B7FC8] text-2xl">{m.icon}</span>
+                  <m.icon
+                    className="w-7 h-7 text-[#9B7FC8]"
+                    strokeWidth={1.7}
+                  />
                 </motion.div>
                 <div className="flex flex-col gap-2">
                   <span className="font-lato text-xs tracking-[0.2em] uppercase text-[#9B7FC8]">
@@ -151,8 +146,6 @@ export default function ContactPage() {
                 <div className="w-full h-px bg-[#C9B8E8]/40" />
                 <a
                   href={m.action.href}
-                  target={m.action.href.startsWith("http") ? "_blank" : undefined}
-                  rel={m.action.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   className="mt-auto font-lato text-sm px-6 py-3 rounded-full bg-white border border-[#C9B8E8]/60 text-[#9B7FC8] hover:bg-[#9B7FC8] hover:text-white hover:border-[#9B7FC8] transition-all duration-300 text-center shadow-sm"
                 >
                   {m.action.texte}
@@ -222,49 +215,21 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* ── LOCALISATION ─────────────────────────────────────── */}
-      <section className=" bg-white py-28">
-        <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
-            className="flex flex-col gap-6"
-          >
-            <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]">
-              Où me trouver
-            </span>
-            <h2 className="font-playfair text-4xl md:text-5xl text-[#2D1B4E] leading-tight">
-              Je viens à{" "}
-              <em className="text-[#9B7FC8] not-italic">votre domicile</em>
-            </h2>
-            <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed">
-              Je me déplace directement chez vous, à Lorient et dans les
-              alentours, pour que vous viviez votre séance dans votre propre
-              espace, en toute sérénité. Les séances à distance sont également
-              disponibles par téléphone ou visioconférence.
-            </p>
-
-            <div className="bg-white border border-[#C9B8E8]/50 rounded-3xl p-8 flex flex-col gap-5">
-              <div className="flex items-start gap-4">
-                <span className="text-[#9B7FC8] text-xl mt-0.5">◎</span>
-                <div className="flex flex-col gap-1">
-                  <span className="font-playfair text-lg text-[#2D1B4E]">
-                    {contact.adresse.nom}
-                  </span>
-                  <span className="font-lato text-sm text-[#2D1B4E]/75">
-                    {contact.adresse.rue}
-                  </span>
-                  <span className="font-lato text-sm text-[#2D1B4E]/75">
-                    {contact.adresse.codePostal} {contact.adresse.ville}
-                  </span>
-                </div>
-              </div>
-              <div className="border-t border-[#C9B8E8]/30 pt-4">
-                <p className="font-lato text-xs text-[#2D1B4E]/60 leading-relaxed">
-                  Lorient et alentours · Séances à distance disponibles
-                </p>
-              </div>
-            </div>
-          </motion.div>
+      {/* ── ZONE D'INTERVENTION ──────────────────────────────── */}
+      <section className="bg-white py-28">
+        <div className="max-w-3xl mx-auto px-6 text-center flex flex-col items-center gap-6">
+          <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]">
+            Où me trouver
+          </span>
+          <h2 className="font-playfair text-4xl md:text-5xl text-[#2D1B4E] leading-tight">
+            Je viens à{" "}
+            <em className="text-[#9B7FC8] not-italic">votre domicile</em>
+          </h2>
+          <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed max-w-xl">
+            J'interviens à Lorient et dans les alentours, directement chez vous,
+            sur rendez-vous. Les séances à distance sont également disponibles
+            par téléphone, à partir d'une photo récente.
+          </p>
         </div>
       </section>
 

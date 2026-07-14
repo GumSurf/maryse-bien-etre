@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { faqNumerologie, citation } from "../lib/data";
+import { faqNumerologie } from "../lib/data";
 import Faq from "../components/Faq";
 import Cta from "../components/Cta";
 import BlobImage from "../components/BlobImage";
 import Image from "next/image";
+import { Compass, CalendarDays, Sparkles, UserRound } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -145,8 +146,10 @@ export default function NumerologiePage() {
               certains événements suivent un cycle sans pouvoir l'expliquer ?
             </p>
             <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed">
-              La numérologie ne prédit rien, elle éclaire. Elle aide à répondre
-              à des questions essentielles sur votre chemin de vie.
+              Cette vie, c'est vous qui l'avez choisie, avec vos propres buts et votre
+              propre chemin. Ce destin est révélé dans votre date de naissance et dans
+              les lettres qui composent votre nom et vos prénoms. La numérologie ne
+              prédit rien, elle éclaire.
             </p>
             <ul className="flex flex-col gap-3 mt-2">
               {[
@@ -240,52 +243,6 @@ export default function NumerologiePage() {
                 </span>
               </motion.div>
             ))}
-          </motion.div><motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
-            className="hidden lg:block relative h-[420px]"
-          >
-            {[
-              { n: "7", size: 90, top: "2%", left: "8%", delay: 0 },
-              { n: "3", size: 70, top: "8%", left: "55%", delay: 0.3 },
-              { n: "9", size: 110, top: "30%", left: "28%", delay: 0.6 },
-              { n: "1", size: 60, top: "15%", left: "82%", delay: 0.9 },
-              { n: "4", size: 80, top: "55%", left: "5%", delay: 1.2 },
-              { n: "11", size: 95, top: "60%", left: "60%", delay: 1.5 },
-              { n: "2", size: 65, top: "75%", left: "35%", delay: 1.8 },
-              { n: "8", size: 75, top: "42%", left: "78%", delay: 2.1 },
-              { n: "6", size: 55, top: "85%", left: "82%", delay: 2.4 },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                className="absolute rounded-full border border-[#C9B8E8]/30 flex items-center justify-center"
-                style={{
-                  width: item.size,
-                  height: item.size,
-                  top: item.top,
-                  left: item.left,
-                }}
-                animate={{ opacity: [0.5, 0.9, 0.5], y: [0, -8, 0] }}
-                transition={{
-                  duration: 4 + (i % 3),
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: item.delay,
-                }}
-                whileHover={{
-                  transition: { duration: 0.3 },
-                  borderColor: "rgba(201,184,232,0.7)",
-                  backgroundColor: "rgba(155,127,200,0.12)",
-                  scale: 1.08,
-                }}
-              >
-                <span
-                  className="font-playfair text-[#C9B8E8]/75"
-                  style={{ fontSize: item.size * 0.32 }}
-                >
-                  {item.n}
-                </span>
-              </motion.div>
-            ))}
           </motion.div>
 
           <motion.div
@@ -302,12 +259,15 @@ export default function NumerologiePage() {
             <p className="font-lato text-sm text-[#E8E0F5]/80 leading-relaxed">
               La numérologie est une discipline ancestrale qui consiste à analyser
               les vibrations des chiffres liés à votre date de naissance et à votre
-              prénom. Chaque chiffre porte une énergie unique.
+              prénom. Elle révèle les messages cachés derrière ces chiffres pour
+              mieux vous aligner avec votre véritable essence.
             </p>
             <p className="font-lato text-sm text-[#E8E0F5]/80 leading-relaxed">
-              Les nombres sont des vibrations, votre date de naissance correspond
-              à des vibrations précises qui révèlent vos tendances, vos capacités
-              et vos défis de vie.
+              Chaque nombre est une énergie, une vibration en mouvement constant,
+              qui porte en elle une part d'ombre et une part de lumière, fluctuante
+              selon chaque personne. Les nombres se manifestent dans notre quotidien
+              sous les formes les plus variées : il n'y a pas de hasard, il n'y a
+              que des rendez-vous.
             </p>
             <div className="flex flex-col gap-3 mt-2">
               {[
@@ -342,10 +302,30 @@ export default function NumerologiePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:items-start">
             {[
-              { icon: "◎", title: "Le Chemin de Vie", desc: "Votre direction intérieure, votre mission profonde.", offset: "lg:mt-0" },
-              { icon: "◷", title: "Cycles & Années", desc: "Agir au bon moment, sans forcer. Comprendre vos rythmes.", offset: "lg:mt-12" },
-              { icon: "◈", title: "Défis & Leçons", desc: "Transformer les obstacles en véritables leviers d'évolution.", offset: "lg:mt-4" },
-              { icon: "✦", title: "Connaissance de soi", desc: "Se retrouver, se reconnaître dans ses propres vibrations.", offset: "lg:mt-16" },
+              {
+                icon: Compass,
+                title: "Le Chemin de Vie",
+                desc: "Votre direction intérieure, votre mission profonde.",
+                offset: "lg:mt-0",
+              },
+              {
+                icon: CalendarDays,
+                title: "Cycles & Années",
+                desc: "Agir au bon moment, sans forcer. Comprendre vos rythmes.",
+                offset: "lg:mt-12",
+              },
+              {
+                icon: Sparkles,
+                title: "Défis & Leçons",
+                desc: "Transformer les obstacles en véritables leviers d'évolution.",
+                offset: "lg:mt-4",
+              },
+              {
+                icon: UserRound,
+                title: "Connaissance de soi",
+                desc: "Se retrouver, se reconnaître dans ses propres vibrations.",
+                offset: "lg:mt-16",
+              },
             ].map((item, i) => (
               <motion.div
                 key={item.title}
@@ -354,7 +334,11 @@ export default function NumerologiePage() {
                 whileHover={{ y: -6, transition: { duration: 0.3 }, boxShadow: "0 20px 40px rgba(155,127,200,0.15)" }}
                 className={`bg-white border border-[#C9B8E8]/50 rounded-3xl p-8 flex flex-col gap-4 transition-all duration-300 cursor-default ${item.offset}`}
               >
-                <span className="text-3xl text-[#9B7FC8]" aria-hidden="true">{item.icon}</span>
+                <item.icon
+                  className="w-8 h-8 text-[#9B7FC8]"
+                  strokeWidth={1.7}
+                  aria-hidden="true"
+                />
                 <h3 className="font-playfair text-xl text-[#2D1B4E]">{item.title}</h3>
                 <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed">{item.desc}</p>
               </motion.div>
@@ -363,8 +347,52 @@ export default function NumerologiePage() {
         </div>
       </section>
 
+      {/* ── DETTES KARMIQUES & MÉMOIRES FAMILIALES (nouveau) ─── */}
+      <section className="bg-white py-28">
+        <div className="max-w-5xl mx-auto px-6">
+          <motion.div
+            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]" aria-label="Dettes karmiques et mémoires familiales">
+              Un héritage à transformer
+            </span>
+            <h2 className="font-playfair text-4xl md:text-5xl text-[#2D1B4E] mt-2">
+              Dettes karmiques et mémoires familiales
+            </h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <motion.div
+              variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+              className="bg-[#F5F0FF] rounded-3xl p-8 border border-[#C9B8E8]/40 flex flex-col gap-4"
+            >
+              <h3 className="font-playfair text-2xl text-[#2D1B4E]">Les dettes karmiques</h3>
+              <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed">
+                En numérologie, certaines dettes karmiques peuvent se transmettre à
+                travers les nombres. Elles révèlent des schémas répétitifs ou des
+                blocages qui reviennent, comme des leçons à comprendre pour avancer
+                plus librement.
+              </p>
+            </motion.div>
+
+            <motion.div
+              variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}
+              className="bg-[#F5F0FF] rounded-3xl p-8 border border-[#C9B8E8]/40 flex flex-col gap-4"
+            >
+              <h3 className="font-playfair text-2xl text-[#2D1B4E]">Les mémoires familiales</h3>
+              <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed">
+                Certains schémas se transmettent aussi à travers l'histoire familiale.
+                Les identifier permet de comprendre d'où viennent certains blocages,
+                pour les transformer plutôt que de continuer à les revivre.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* ── MA PRATIQUE ──────────────────────────────────────── */}
-      <section className=" bg-white py-28">
+      <section className=" bg-[#F5F0FF] py-28">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
             variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -378,21 +406,23 @@ export default function NumerologiePage() {
               <em className="text-[#9B7FC8] not-italic">profondément humaine</em>
             </h2>
             <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed">
-              Je pratique la numérologie avec une démarche claire, bienveillante
-              et toujours en lien direct avec ce que vous vivez aujourd'hui.
+              Je me suis formée à la numérologie par passion, avec l'envie sincère
+              de comprendre ce que les nombres racontent de nous. Je la pratique
+              aujourd'hui avec une démarche claire, bienveillante et toujours en
+              lien direct avec ce que vous vivez aujourd'hui.
             </p>
             <div className="flex flex-col gap-3">
               {[
+                "Formée par passion, pour la justesse de l'analyse",
                 "Lecture précise, sans jargon",
                 "Lien direct avec votre vécu actuel",
                 "Séances vivantes, en présentiel ou à distance",
-                "Chaque analyse est entièrement personnalisée",
               ].map((item, i) => (
                 <motion.div
                   key={i}
                   variants={fadeUp} initial="hidden" whileInView="visible"
                   viewport={{ once: true }} custom={i}
-                  className="flex items-center gap-3 p-4 rounded-2xl bg-[#F5F0FF] border border-[#C9B8E8]/40"
+                  className="flex items-center gap-3 p-4 rounded-2xl bg-white border border-[#C9B8E8]/40"
                 >
                   <span className="w-2 h-2 rounded-full bg-[#9B7FC8] flex-shrink-0" />
                   <span className="font-lato text-sm text-[#2D1B4E]/80">{item}</span>
@@ -420,6 +450,43 @@ export default function NumerologiePage() {
         </div>
       </section>
 
+      {/* ── CYCLES DE 9 ANS & ANNÉE PERSONNELLE (nouveau) ────── */}
+      <section className="bg-white py-28">
+        <div className="max-w-5xl mx-auto px-6">
+          <motion.div
+            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]" aria-label="Cycles de vie">
+              Vos cycles de vie
+            </span>
+            <h2 className="font-playfair text-4xl md:text-5xl text-[#2D1B4E] mt-2">
+              Les cycles de 9 ans et l'année personnelle
+            </h2>
+          </motion.div>
+
+          <motion.p
+            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}
+            className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed max-w-3xl mx-auto"
+          >
+            Votre chiffre de chemin de vie et votre chiffre d'année personnelle
+            s'inscrivent dans des cycles de 9 ans. Chaque année personnelle est
+            propice à des événements différents : mariage, changement de travail,
+            déménagement, voyage, ou encore une période plus intérieure de
+            transition.
+          </motion.p>
+
+          <motion.p
+            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={2}
+            className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed max-w-3xl mx-auto mt-4"
+          >
+            Connaître votre année personnelle permet d'agir au bon moment, sans
+            forcer, et de mieux comprendre pourquoi certaines périodes sont plus
+            propices que d'autres à tel ou tel changement.
+          </motion.p>
+        </div>
+      </section>
+
       {/* ── BÉNÉFICES ────────────────────────────────────────── */}
       <section className="bg-[#2D1B4E] py-24">
         <div className="max-w-4xl mx-auto px-6">
@@ -435,7 +502,6 @@ export default function NumerologiePage() {
             </h2>
           </motion.div>
 
-          {/* Liste horizontale avec ligne de progression */}
           <div className="flex flex-col gap-0">
             {[
               "Comprendre ce que vous traversez et pourquoi",
@@ -449,7 +515,6 @@ export default function NumerologiePage() {
                 viewport={{ once: true }} custom={i}
                 className="flex items-center gap-6 py-6 group"
               >
-                {/* Colonne ligne + pastille */}
                 <div className="flex flex-col items-center flex-shrink-0">
                   <motion.div
                     className="w-3 h-3 rounded-full bg-[#C9B8E8] flex-shrink-0"
@@ -462,7 +527,6 @@ export default function NumerologiePage() {
                   )}
                 </div>
 
-                {/* Texte */}
                 <p className="font-lato text-base md:text-lg text-[#E8E0F5]/90 leading-relaxed group-hover:text-white transition-colors duration-300">
                   {label}
                 </p>
@@ -470,7 +534,6 @@ export default function NumerologiePage() {
             ))}
           </div>
 
-          {/* Témoignage en clôture */}
           <motion.div
             variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
             className="mt-16 max-w-2xl mx-auto text-center border-t border-[#C9B8E8]/20 pt-14"
@@ -479,8 +542,8 @@ export default function NumerologiePage() {
             <p className="font-playfair text-xl text-white leading-relaxed">
               Je repars avec des clés pour toute ma vie.
             </p>
-            <span className="font-lato text-xs text-[#C9B8E8]/70 tracking-widest uppercase mt-4 block" aria-label="Témoignage de Laurent B. · 47 ans">
-              - Laurent B. · 47 ans
+            <span className="font-lato text-xs text-[#C9B8E8]/70 tracking-widest uppercase mt-4 block" aria-label="Témoignage de Laurent B.">
+              - Laurent B.
             </span>
           </motion.div>
         </div>
