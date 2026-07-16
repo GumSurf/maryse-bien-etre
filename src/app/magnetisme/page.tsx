@@ -7,7 +7,7 @@ import Faq from "../components/Faq";
 import Cta from "../components/Cta";
 import BlobImage from "../components/BlobImage";
 import Image from "next/image";
-import { Flame, Leaf, HeartPulse, Moon, CircleDot, Ruler, Gem, Bell, Sparkles, HandHeart } from "lucide-react";
+import { Flame, Leaf, HeartPulse, Moon, CircleDot, Radar, Gem, Bell, Sparkles, HandHeart } from "lucide-react";
 
 const service = services.find((s) => s.slug === "magnetisme")!;
 
@@ -349,7 +349,7 @@ export default function MagnetiseusePage() {
                 desc: "Utilisé pour rechercher les causes, détecter les blocages énergétiques et évaluer le taux vibratoire."
               },
               {
-                icon: Ruler,
+                icon: Radar,
                 title: "Planche vibratoire",
                 desc: "Permet d'affiner les recherches énergétiques et d'orienter le soin."
               },
