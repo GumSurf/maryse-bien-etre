@@ -179,7 +179,7 @@ export default function NumerologiePage() {
               className="w-64 h-64 md:w-full md:max-w-sm md:aspect-[4/5]"
             >
               <Image
-                src="/numerologie/numerologie_1.jpg"
+                src="/maryse_2.jpg"
                 alt="Photo de Numerologie"
                 fill
                 className="object-cover"
@@ -440,7 +440,7 @@ export default function NumerologiePage() {
               className="w-64 h-64 md:w-full md:max-w-sm md:aspect-[4/5]"
             >
               <Image
-                src="/numerologie/numerologie_2.jpg"
+                src="/numerologie/numerologie_1.jpg"
                 alt="Photo de Numerologie"
                 fill
                 className="object-cover"

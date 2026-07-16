@@ -170,10 +170,10 @@ export default function MagnetiseusePage() {
           >
             <BlobImage
               variant={2}
-              className="w-64 h-64 md:w-full md:max-w-sm md:aspect-[4/5]"
+              className="w-64 aspect-[4/5] md:w-full md:max-w-sm"
             >
               <Image
-                src="/magnetisme/magnetisme_3.jpg"
+                src="/maryse_6.jpeg"
                 alt="Photo de Magnetisme"
                 fill
                 className="object-cover"
@@ -445,7 +445,7 @@ export default function MagnetiseusePage() {
               className="w-64 h-64 md:w-full md:max-w-sm md:aspect-[4/5]"
             >
               <Image
-                src="/magnetisme/magnetisme_2.jpg"
+                src="/magnetisme/bol_tibétain01.jpg"
                 alt="Photo de Magnetisme"
                 fill
                 className="object-cover"
@@ -607,36 +607,43 @@ export default function MagnetiseusePage() {
 
       {/* ── DISTANCIEL (seule occurrence sur la page) ────────── */}
       <section className="bg-[#F5F0FF] py-28">
-        <div className="max-w-5xl mx-auto px-6">
+        <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
           <motion.div
             variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
-            className="text-center mb-16"
           >
-            <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]" aria-label="Magnétisme à distance">
+            <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]">
               Magnétisme à distance
             </span>
             <h2 className="font-playfair text-4xl md:text-5xl text-[#2D1B4E] mt-2">
               Cabinet, domicile ou accompagnement à distance
             </h2>
+            <motion.p
+              variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}
+              className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed mt-6"
+            >
+              Les séances peuvent se dérouler au cabinet, chez vous, ou à distance à partir
+              d'une photo récente lorsque le déplacement n'est pas possible. Cette dernière
+              option permet aussi d'accompagner les personnes vivant loin du cabinet, sans
+              que l'efficacité du soin en soit affectée.
+            </motion.p>
           </motion.div>
 
-          <motion.p
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}
-            className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed max-w-3xl mx-auto"
+          <motion.div
+            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={2}
           >
-            Les séances peuvent se dérouler au cabinet, chez vous, ou à distance à partir
-            d'une photo récente lorsque le déplacement n'est pas possible. Cette dernière
-            option permet aussi d'accompagner les personnes vivant loin du cabinet, sans
-            que l'efficacité du soin en soit affectée.
-          </motion.p>
+            <BlobImage
+              variant={4}
+              className="w-64 h-64 md:w-full md:max-w-sm md:aspect-[4/5]"
+            >
+              <Image
+                src="/magnetisme/magnetisme_distance.jpg"
+                alt="Magnétisme à distance"
+                width={600}
+                height={600}
+              />
+            </BlobImage>
+          </motion.div>
         </div>
-        <Image
-          src="/magnetisme/magnetisme_distance.jpg"
-          alt="Magnétisme à distance"
-          width={1200}
-          height={800}
-          className="mt-12 w-full max-w-5xl mx-auto rounded-3xl object-cover shadow-lg shadow-[#9B7FC8]/20"
-        />
       </section>
 
       {/* ── ANIMAUX (seule occurrence sur la page) ───────────── */}

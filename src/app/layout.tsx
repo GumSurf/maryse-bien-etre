@@ -18,14 +18,30 @@ const nunito = Nunito({
   variable: "--font-lato",
   display: "swap",
 });
-
-
+  
 export const metadata: Metadata = {
-  title: "Maryse — Numérologie & Magnétisme",
-  description: "Accompagnement holistique par Maryse, praticienne en numérologie et magnétisme.",
+  title: "Maryse Bien-Être — Magnétisme & Numérologie à Lorient",
+  description: "Séances de magnétisme et consultations de numérologie à Lorient, en Bretagne. Accompagnement au cabinet, à domicile ou à distance, dans une approche bienveillante et sincère.",
   icons: {
     icon: "/Logo-Maryse.png",
     apple: "/Logo-Maryse.png",
+  },
+  openGraph: {
+    title: "Maryse Bien-Être — Magnétisme & Numérologie à Lorient",
+    description:
+      "Séances de magnétisme et consultations de numérologie à Lorient, en Bretagne.",
+    url: "https://www.maryse-bien-etre.fr",
+    siteName: "Maryse Bien-Être",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Maryse Bien-Être — Magnétisme et Numérologie à Lorient",
+      },
+    ],
+    locale: "fr_FR",
+    type: "website",
   },
 };
 

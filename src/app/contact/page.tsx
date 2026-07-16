@@ -61,7 +61,7 @@ export default function ContactPage() {
   return (
     <>
       {/* ── HERO ─────────────────────────────────────────────── */}
-      <section className="relative bg-[#F5F0FF] overflow-hidden min-h-[60vh] flex items-center">
+      <section className="relative bg-[#F5F0FF] overflow-hidden min-h-[60vh] md:min-h-[85vh] flex items-center">
         <motion.div
           className="absolute top-[-100px] right-[-100px] w-[450px] h-[450px] rounded-full bg-[#C9B8E8]/20 blur-3xl pointer-events-none"
           animate={{ scale: [1, 1.08, 1], opacity: [0.4, 0.6, 0.4] }}
@@ -95,6 +95,17 @@ export default function ContactPage() {
             simple : un appel suffit.
           </motion.p>
         </div>
+
+        <motion.div
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        >
+          <span className="font-lato text-xs text-[#9B7FC8]/65 tracking-widest uppercase" aria-label="Découvrir">
+            Découvrir
+          </span>
+          <div className="w-px h-10 bg-gradient-to-b from-[#9B7FC8]/50 to-transparent" />
+        </motion.div>
       </section>
 
       {/* ── MOYENS DE CONTACT ────────────────────────────────── */}

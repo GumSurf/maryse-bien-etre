@@ -132,7 +132,7 @@ export const faqMagnetisme = [
 // ─── Infos contact ───────────────────────────────────────────
 export const contact = {
   email: "contact@maryse.fr",
-  telephone: "+33 6 00 00 00 00",
+  telephone: "+33 7 80 34 26 18",
   adresse: {
     nom: "Briand Maryse",
     rue: "31, Rue du Colonel Jean-Muller",
@@ -143,25 +143,25 @@ export const contact = {
 
 export const citation = [
   {
-    texte: "Connais-toi toi-même et tu connaîtras l'univers et les dieux.",
-    auteur: "Socrate",
-  },
-  {
-    texte: "Ce n'est pas ce qui t'arrive qui compte, c'est ce que tu fais de ce qui t'arrive.",
-    auteur: "Épictète",
-  },
-  {
-    texte: "Tout vient à point à qui sait attendre.",
-    auteur: "Proverbe français",
-  },
-  {
-    texte: "Le silence est la langue de tous les grands changements intérieurs.",
-    auteur: "Rainer Maria Rilke",
+    texte: "Guéris le corps, l'esprit suivra le chemin de la lumière.",
+    auteur: "Hippocrate",
   },
   {
     texte: "Fais du bien à ton corps pour que ton âme ait envie d'y rester",
     auteur: "Thérèse de Lisieux",
-  }
+  },
+  {
+    texte: "La nature ne se hâte pas, et pourtant tout s'accomplit.",
+    auteur: "Lao Tseu",
+  },
+  {
+    texte: "C'est dans le calme et la confiance que sera votre force.",
+    auteur: "Isaïe",
+  },
+  {
+    texte: "Ce que l'on sème dans le silence, on le récolte dans la paix.",
+    auteur: "Proverbe breton",
+  },
 ];
 
 

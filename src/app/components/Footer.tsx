@@ -40,7 +40,7 @@ export default function Footer() {
             Contact
           </span>
           <p className="text-sm text-[#E8E0F5]/85">contact@maryse.fr</p>
-          <p className="text-sm text-[#E8E0F5]/85">+33 6 00 00 00 00</p>
+          <p className="text-sm text-[#E8E0F5]/85">+33 7 80 34 26 18</p>
           <Link
             href="/contact"
             className="mt-2 text-sm px-5 py-2 rounded-full border border-[#C9B8E8]/70 text-[#C9B8E8] hover:bg-[#C9B8E8] hover:text-[#2D1B4E] transition-colors w-fit"

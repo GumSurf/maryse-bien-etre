@@ -125,6 +125,17 @@ export default function AboutPage() {
             </BlobImage>
           </motion.div>
         </div>
+
+        <motion.div
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        >
+          <span className="font-lato text-xs text-[#9B7FC8]/65 tracking-widest uppercase" aria-label="Découvrir">
+            Découvrir
+          </span>
+          <div className="w-px h-10 bg-gradient-to-b from-[#9B7FC8]/50 to-transparent" />
+        </motion.div>
       </section>
 
       {/* ── HISTOIRE ─────────────────────────────────────────── */}

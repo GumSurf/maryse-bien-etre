@@ -65,7 +65,7 @@ export default function TarifsPage() {
   return (
     <>
       {/* ── HERO ─────────────────────────────────────────────── */}
-      <section className="relative bg-[#F5F0FF] overflow-hidden min-h-[55vh] md:min-h-[70vh] flex items-center">
+      <section className="relative bg-[#F5F0FF] overflow-hidden min-h-[55vh] md:min-h-[85vh] flex items-center">
         <motion.div
           className="absolute top-[-120px] left-[-120px] w-[550px] h-[550px] rounded-full bg-[#C9B8E8]/25 blur-3xl pointer-events-none"
           animate={{ scale: [1, 1.08, 1], opacity: [0.4, 0.65, 0.4] }}
@@ -110,6 +110,17 @@ export default function TarifsPage() {
             </Link>
           </motion.div>
         </div>
+        
+        <motion.div
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        >
+          <span className="font-lato text-xs text-[#9B7FC8]/65 tracking-widest uppercase" aria-label="Découvrir">
+            Découvrir
+          </span>
+          <div className="w-px h-10 bg-gradient-to-b from-[#9B7FC8]/50 to-transparent" />
+        </motion.div>
       </section>
 
       {/* ── ACCROCHE ─────────────────────────────────────────── */}
@@ -145,7 +156,7 @@ export default function TarifsPage() {
               className="w-64 h-64 md:w-full md:max-w-sm md:aspect-[4/5]"
             >
               <Image
-                src="/numerologie/numerologie_5.jpg"
+                src="/tarif/tarif_1.jpg"
                 alt="Photo de Numérologie"
                 fill
                 className="object-cover"
