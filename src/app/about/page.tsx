@@ -109,16 +109,16 @@ export default function AboutPage() {
           </div>
 
           <motion.div
-            variants={fadeUp} initial="hidden" animate="visible" custom={1}
+            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}
             className="flex justify-center"
           >
             <BlobImage
-              variant={1}
-              className="w-64 h-64 md:w-full md:max-w-sm md:aspect-[4/5]"
+              variant={4}
+              className="w-64 aspect-[4/5] md:w-full md:max-w-sm"
             >
               <Image
-                src="/maryse_2.jpg"
-                alt="Photo de Maryse"
+                src="/maryse_6.jpeg"
+                alt="Photo de Magnetisme"
                 fill
                 className="object-cover"
               />
