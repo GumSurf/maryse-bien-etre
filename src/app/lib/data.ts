@@ -118,9 +118,9 @@ export const faqMagnetisme = [
       "Non. Je ne suis pas médecin et le magnétisme ne remplace en aucun cas un diagnostic, un traitement ou un suivi médical. Il intervient uniquement en complément, pour accompagner votre bien-être.",
   },
   {
-    question: "Y a-t-il des contre-indications ?",
+    question: "Un enfant doit t'il être accompagné d'un adulte pour une séance de magnétisme ?",
     reponse:
-      "Le magnétisme est doux et sans danger. Il est cependant déconseillé comme unique recours en cas de pathologie médicale sérieuse.",
+      "Oui, pour les enfants de moins de 12 ans, la présence d'un parent ou d'un tuteur est nécessaire pendant la séance afin de garantir leur confort et leur sécurité.",
   },
   {
     question: "Comment se déroule le choix entre une séance en présentiel ou à distance ?",
@@ -148,11 +148,7 @@ export const citation = [
   },
   {
     texte: "Fais du bien à ton corps pour que ton âme ait envie d'y rester",
-    auteur: "Thérèse de Lisieux",
-  },
-  {
-    texte: "La nature ne se hâte pas, et pourtant tout s'accomplit.",
-    auteur: "Lao Tseu",
+    auteur: "Proverbe Indien",
   },
   {
     texte: "C'est dans le calme et la confiance que sera votre force.",
@@ -160,7 +156,7 @@ export const citation = [
   },
   {
     texte: "Ce que l'on sème dans le silence, on le récolte dans la paix.",
-    auteur: "Proverbe breton",
+    auteur: "Proverbe Breton",
   },
 ];
 
@@ -178,7 +174,7 @@ export const tarifsMagnetisme = [
   {
     id: "energetique",
     titre: "Soin Énergétique",
-    prix: "55€",
+    prix: "65€",
     duree: "1h",
     description:
       "Un soin énergétique pour accompagner votre démarche de bien-être et d'harmonisation.",
@@ -187,17 +183,25 @@ export const tarifsMagnetisme = [
     id: "magnetisme-enfant",
     titre: "Magnétisme enfant",
     prix: "40€",
-    duree: "Jusqu'à 12 ans",
+    duree: "45 min à 1h",
     description:
       "Une séance adaptée aux enfants jusqu'à 12 ans.",
   },
+  {
+    id: "magnetisme-animaux",
+    titre: "Magnétisme animaux",
+    prix: "35€",
+    duree: "30 à 45 min",
+    description:
+      "Une séance de magnétisme pour vos animaux de compagnie, adaptée à leurs besoins.",
+  }
 ];
 
 export const tarifsNumerologie = [
   {
     id: "theme-complet",
     titre: "Thème complet",
-    prix: "90€",
+    prix: "110€",
     duree: "",
     description:
       "Analyse complète incluant le plan de l'année, le calendrier annuel et le cycle des 9 ans.",
@@ -205,7 +209,7 @@ export const tarifsNumerologie = [
   {
     id: "annee-en-cours",
     titre: "Étude de l'année en cours",
-    prix: "55€",
+    prix: "60€",
     duree: "1h",
     description:
       "Une lecture des énergies et des cycles de votre année actuelle.",

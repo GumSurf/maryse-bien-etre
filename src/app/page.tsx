@@ -128,22 +128,22 @@ export default function Home() {
 
             {[
               {
-                icon: Leaf,
+                icon: Leaf, //#00c131
                 title: "Stress & anxiété",
                 text: "Retrouvez calme et apaisement dans votre quotidien."
               },
               {
-                icon: SunMedium,
+                icon: SunMedium, //#fffd00
                 title: "Fatigue",
                 text: "Favorisez un meilleur équilibre énergétique."
               },
               {
-                icon: Unlock,
+                icon: Unlock, //#ff6000
                 title: "Blocages",
                 text: "Avancez plus sereinement face aux difficultés émotionnelles."
               },
               {
-                icon: Hash,
+                icon: Hash, //#b800e3
                 title: "Numérologie",
                 text: "Mieux comprendre votre personnalité et votre chemin de vie."
               }
@@ -320,7 +320,7 @@ export default function Home() {
 
             <div className="bg-white rounded-3xl p-8 border border-[#C9B8E8]/40">
               <div className="w-20 h-20 rounded-full bg-[#F5F0FF] flex items-center justify-center mx-auto">
-                <HandHeart
+                <HandHeart //#ee00ff
                   size={38}
                   strokeWidth={1.3}
                   className="text-[#9B7FC8]"

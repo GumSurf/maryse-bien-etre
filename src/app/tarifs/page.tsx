@@ -96,8 +96,7 @@ export default function TarifsPage() {
             className="font-lato text-base text-[#2D1B4E]/75 leading-relaxed max-w-lg"
           >
             Que vous choisissiez une séance de magnétisme ou une consultation
-            de numérologie, à domicile, en cabinet ou à distance, voici mes
-            tarifs en toute clarté.
+            de numérologie, à domicile, en cabinet ou à distance.
           </motion.p>
           <motion.div
             variants={fadeUp} initial="hidden" animate="visible" custom={3}

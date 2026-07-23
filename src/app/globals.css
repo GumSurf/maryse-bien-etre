@@ -10,8 +10,15 @@ html {
 }
 
 body {
-  font-family: var(--font-lato), sans-serif;
+  font-family: var(--font-montecarlo), sans-serif;
 }
+
+.montecarlo-regular {
+  font-family: "MonteCarlo", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-playfair), serif;

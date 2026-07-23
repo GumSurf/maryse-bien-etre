@@ -419,7 +419,7 @@ export default function MagnetiseusePage() {
             <div className="flex flex-col gap-3">
               {[
                 "Un temps d'écoute avant chaque séance pour cerner vos besoins",
-                "Un accompagnement pensé pour chaque étape de la vie",
+                "je m'engage à respecter le secret professionnel et la confidentialité de nos échanges",
                 "Une approche bienveillante, sans jugement",
                 "Un suivi possible entre les séances si besoin",
               ].map((item, i) => (
@@ -583,7 +583,7 @@ export default function MagnetiseusePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:items-start">
             {[
               { num: "01", title: "L'échange initial", desc: "On discute ensemble de ce que vous ressentez, de vos besoins et de vos attentes.", offset: "md:mt-0" },
-              { num: "02", title: "La séance", desc: "En présentiel ou à distance, je transmets une énergie bienveillante sur les zones qui en ont besoin.", offset: "md:mt-10" },
+              { num: "02", title: "La séance", desc: "En présentiel ou à distance, je transmets une énergie bienveillante pour votre corps qui en ont besoin.", offset: "md:mt-10" },
               { num: "03", title: "Le retour", desc: "Après la séance, on échange sur ce que vous avez ressenti et je vous donne quelques conseils.", offset: "md:mt-4" },
             ].map((step, i) => (
               <motion.div
