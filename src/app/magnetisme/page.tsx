@@ -8,6 +8,8 @@ import Cta from "../components/Cta";
 import BlobImage from "../components/BlobImage";
 import Image from "next/image";
 import { Flame, Leaf, HeartPulse, Moon, CircleDot, Radar, Gem, Bell, Sparkles, HandHeart } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBell, faCircleDot, faFire, faGem, faHandHoldingHeart, faHeartPulse, faLeaf, faLegal, faCloudMoon, faWandSparkles, faWaveSquare, faWifi, faCompass, faScaleBalanced, faMortarPestle, faHeartCircleCheck } from "@fortawesome/free-solid-svg-icons";
 
 const service = services.find((s) => s.slug === "magnetisme")!;
 
@@ -44,24 +46,35 @@ export default function MagnetiseusePage() {
             className="hidden lg:flex justify-center order-1"
           >
             <div className="relative w-96 h-96">
-              <div className="absolute inset-0 rounded-full border border-[#C9B8E8]/40" />
-              <div className="absolute inset-8 rounded-full border border-[#C9B8E8]/35" />
-              <div className="absolute inset-16 rounded-full border border-[#9B7FC8]/30" />
-              <div className="absolute inset-24 rounded-full bg-gradient-to-br from-[#C9B8E8]/40 to-[#9B7FC8]/20 backdrop-blur-sm flex items-center justify-center">
+              <div className="absolute inset-0 rounded-full border-2 border-[#B08AD6]" />
+              <div className="absolute inset-8 rounded-full border-2 border-[#9B7FC8]" />
+              <div className="absolute inset-16 rounded-full border-2 border-[#7D5BB3]" />
+
+              <div className="absolute inset-24 rounded-full bg-gradient-to-br from-[#D8C4EE] to-[#9B7FC8]/70 backdrop-blur-sm flex items-center justify-center">
                 <motion.span
-                  className="font-playfair text-6xl text-[#9B7FC8]"
-                  animate={{ scale: [1, 1.1, 1], opacity: [0.8, 1, 0.8] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                  className="font-playfair text-6xl text-[#2D1B4E]"
+                  animate={{ scale: [1, 1.08, 1] }}
+                  transition={{
+                    duration: 5,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
                 >
                   ◈
                 </motion.span>
               </div>
+
               {[0, 1, 2].map((i) => (
                 <motion.div
                   key={i}
-                  className="absolute inset-24 rounded-full border border-[#9B7FC8]/40"
-                  animate={{ scale: [1, 1.8], opacity: [0.6, 0] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeOut", delay: i }}
+                  className="absolute inset-24 rounded-full border-2 border-[#9B7FC8]"
+                  animate={{ scale: [1, 1.8], opacity: [0.5, 0] }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeOut",
+                    delay: i
+                  }}
                 />
               ))}
             </div>
@@ -173,7 +186,7 @@ export default function MagnetiseusePage() {
               className="w-64 aspect-[4/5] md:w-full md:max-w-sm"
             >
               <Image
-                src="/maryse_6.jpeg"
+                src="/maryse_7.jpeg"
                 alt="Photo de Magnetisme"
                 fill
                 className="object-cover"
@@ -268,25 +281,29 @@ export default function MagnetiseusePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:items-start">
             {[
               {
-                icon: Flame,
+                icon: faFire,
+                color: "var(--burn-color)",
                 title: "Brûlures",
                 desc: "J'interviens également comme coupeuse de feu afin d'accompagner les personnes souffrant de brûlures (ménagères, traitements médicaux...).",
                 offset: "lg:mt-0",
               },
               {
-                icon: Leaf,
+                icon: faLeaf,
+                color: "var(--stress-color)",
                 title: "Stress & fatigue",
                 desc: "Le magnétisme peut contribuer à retrouver davantage de calme, de sérénité et un meilleur équilibre énergétique.",
                 offset: "lg:mt-4",
               },
               {
-                icon: HeartPulse,
+                icon: faHeartPulse,
+                color: "var(--pain-color)",
                 title: "Douleurs & peau",
                 desc: "Le magnétisme peut accompagner certaines douleurs et problèmes de peau, toujours en complément d'un suivi médical.",
                 offset: "lg:mt-10",
               },
               {
-                icon: Moon,
+                icon: faCloudMoon,
+                color: "var(--sleep-color)",
                 title: "Sommeil & détente",
                 desc: "Un accompagnement énergétique peut favoriser un sommeil plus réparateur et un véritable lâcher-prise.",
                 offset: "lg:mt-4",
@@ -300,10 +317,10 @@ export default function MagnetiseusePage() {
                 className={`bg-white border border-[#C9B8E8]/50 rounded-3xl p-8 flex flex-col gap-4 transition-all duration-300 cursor-default ${item.offset}`}
               >
                 <div className="w-12 h-12 rounded-xl bg-[#F5F0FF] flex items-center justify-center">
-                  <item.icon
-                    size={26}
-                    strokeWidth={1.3}
-                    className="text-[#9B7FC8]"
+                  <FontAwesomeIcon
+                    icon={item.icon}
+                    className="text-[34px]"
+                    style={{ color: item.color }}
                   />
                 </div>
                 <h3 className="font-playfair text-xl text-[#2D1B4E]">{item.title}</h3>
@@ -344,42 +361,48 @@ export default function MagnetiseusePage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                icon: CircleDot,
+                icon: faCompass,
+                color: "var(--pendulum-color)",
                 title: "Pendule",
                 desc: "Utilisé pour rechercher les causes, détecter les blocages énergétiques et évaluer le taux vibratoire."
               },
               {
-                icon: Radar,
+                icon: faWifi,
+                color: "var(--vibration-color)",
                 title: "Planche vibratoire",
                 desc: "Permet d'affiner les recherches énergétiques et d'orienter le soin."
               },
               {
-                icon: Gem,
+                icon: faGem,
+                color: "var(--crystal-color)",
                 title: "Pierres & cristaux",
                 desc: "Ils accompagnent le rééquilibrage des centres énergétiques et des chakras."
               },
               {
-                icon: Bell,
+                icon: faMortarPestle,
+                color: "var(--sound-color)",
                 title: "Bols tibétains",
                 desc: "Les vibrations sonores favorisent la détente et l'harmonisation énergétique."
               },
               {
-                icon: Sparkles,
+                icon: faScaleBalanced,
+                color: "var(--energy-balance-color)",
                 title: "Rééquilibrage énergétique",
                 desc: "Travail sur la circulation de l'énergie afin de retrouver davantage d'harmonie."
               },
               {
-                icon: HandHeart,
+                icon: faHeartCircleCheck,
+                color: "var(--accompaniment-color)",
                 title: "Accompagnement personnalisé",
                 desc: "Chaque soin est adapté à votre situation et à vos besoins."
               }
             ].map((item) => (
               <div key={item.title} className="flex flex-col gap-4">
                 <div className="w-12 h-12 rounded-xl bg-[#F5F0FF] flex items-center justify-center">
-                  <item.icon
-                    size={26}
-                    strokeWidth={1.3}
-                    className="text-[#9B7FC8]"
+                  <FontAwesomeIcon
+                    icon={item.icon}
+                    className="text-[34px]"
+                    style={{ color: item.color }}
                   />
                 </div>
                 <h3 className="font-playfair text-xl text-[#2D1B4E]">{item.title}</h3>

@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { contact } from "../lib/data";
 import Cta from "../components/Cta";
 import { PhoneCall, HouseHeart, Camera, } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCamera, faHouse, faPhone, faPhoneVolume } from "@fortawesome/free-solid-svg-icons";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -16,21 +18,24 @@ const fadeUp = {
 
 const moyens = [
   {
-    icon: PhoneCall,
+    icon: faPhoneVolume,
+    color: "var(--support-color)",
     label: "Téléphone",
     valeur: contact.telephone,
     description: "Le moyen le plus simple pour me joindre et échanger sur votre situation.",
     action: { texte: "M'appeler", href: `tel:${contact.telephone}` },
   },
   {
-    icon: HouseHeart,
+    icon: faHouse,
+    color: "var(--family-color)",
     label: "À domicile",
     valeur: "Lorient et alentours, sur rendez-vous",
     description: "Je me déplace directement chez vous, dans le confort de votre foyer.",
     action: { texte: "M'appeler", href: `tel:${contact.telephone}` },
   },
   {
-    icon: Camera,
+    icon: faCamera,
+    color: "var(--number-color)",
     label: "À distance",
     valeur: "Par téléphone, à partir d'une photo",
     description: "Vous ne pouvez pas vous déplacer ? Les séances à distance fonctionnent tout aussi bien.",
@@ -109,7 +114,7 @@ export default function ContactPage() {
       </section>
 
       {/* ── MOYENS DE CONTACT ────────────────────────────────── */}
-      <section className="bg-[#F5F0FF] py-28">
+      <section className="bg-white py-28">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
             variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -138,9 +143,10 @@ export default function ContactPage() {
                   animate={{ y: [0, -4, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: i * 0.5 }}
                 >
-                  <m.icon
-                    className="w-7 h-7 text-[#9B7FC8]"
-                    strokeWidth={1.7}
+                  <FontAwesomeIcon
+                    icon={m.icon}
+                    className="text-[34px]"
+                    style={{ color: m.color }}
                   />
                 </motion.div>
                 <div className="flex flex-col gap-2">

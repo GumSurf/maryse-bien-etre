@@ -8,6 +8,8 @@ import Cta from "../components/Cta";
 import BlobImage from "../components/BlobImage";
 import Image from "next/image";
 import { Compass, CalendarDays, Sparkles, UserRound } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCalendar, faCalendarDay, faCalendarDays, faCompass, faSeedling, faSprayCanSparkles, faTrophy, faUser } from "@fortawesome/free-solid-svg-icons";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -83,10 +85,10 @@ export default function NumerologiePage() {
             className="hidden lg:flex justify-center"
           >
             <div className="relative w-96 h-96">
-              <div className="absolute inset-0 rounded-full border border-[#C9B8E8]/40" />
-              <div className="absolute inset-8 rounded-full border border-[#C9B8E8]/35" />
-              <div className="absolute inset-16 rounded-full border border-[#9B7FC8]/30" />
-              <div className="absolute inset-24 rounded-full bg-gradient-to-br from-[#C9B8E8]/40 to-[#9B7FC8]/20 backdrop-blur-sm flex items-center justify-center">
+              <div className="absolute inset-0 rounded-full border-2 border-[#B08AD6]" />
+              <div className="absolute inset-8 rounded-full border-2 border-[#9B7FC8]" />
+              <div className="absolute inset-16 rounded-full border-2 border-[#7D5BB3]" />
+              <div className="absolute inset-24 rounded-full bg-gradient-to-br from-[#D8C4EE] to-[#9B7FC8] flex items-center justify-center">
                 <div className="lg:hidden flex justify-center py-8">
                   <motion.span
                     className="font-playfair text-8xl text-[#C9B8E8]/50"
@@ -101,13 +103,18 @@ export default function NumerologiePage() {
               {["7", "3", "9", "1", "4", "11"].map((num, i) => (
                 <motion.span
                   key={i}
-                  className="absolute font-playfair text-xl text-[#9B7FC8]/55"
+                  className="absolute font-playfair text-xl text-[#7D5BB3]"
                   style={{
                     top: `${[8, 65, 82, 15, 50, 35][i]}%`,
                     left: `${[78, 82, 40, 5, 2, 90][i]}%`,
                   }}
-                  animate={{ y: [0, -10, 0], opacity: [0.4, 0.8, 0.4] }}
-                  transition={{ duration: 3 + i * 0.8, repeat: Infinity, ease: "easeInOut", delay: i * 0.4 }}
+                  animate={{ y: [0, -10, 0], opacity: [0.7, 1, 0.7] }}
+                  transition={{
+                    duration: 3 + i * 0.8,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: i * 0.4
+                  }}
                 >
                   {num}
                 </motion.span>
@@ -303,25 +310,29 @@ export default function NumerologiePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:items-start">
             {[
               {
-                icon: Compass,
+                icon: faSeedling,
+                color: "var(--support-color)",
                 title: "Le Chemin de Vie",
                 desc: "Votre direction intérieure, votre mission profonde.",
                 offset: "lg:mt-0",
               },
               {
-                icon: CalendarDays,
+                icon: faCalendarDays,
+                color: "var(--energy-color)",
                 title: "Cycles & Années",
                 desc: "Agir au bon moment, sans forcer. Comprendre vos rythmes.",
                 offset: "lg:mt-12",
               },
               {
-                icon: Sparkles,
+                icon: faTrophy,
+                color: "var(--number-color)",
                 title: "Défis & Leçons",
                 desc: "Transformer les obstacles en véritables leviers d'évolution.",
                 offset: "lg:mt-4",
               },
               {
-                icon: UserRound,
+                icon: faUser,
+                color: "var(--family-color)",
                 title: "Connaissance de soi",
                 desc: "Se retrouver, se reconnaître dans ses propres vibrations.",
                 offset: "lg:mt-16",
@@ -334,10 +345,10 @@ export default function NumerologiePage() {
                 whileHover={{ y: -6, transition: { duration: 0.3 }, boxShadow: "0 20px 40px rgba(155,127,200,0.15)" }}
                 className={`bg-white border border-[#C9B8E8]/50 rounded-3xl p-8 flex flex-col gap-4 transition-all duration-300 cursor-default ${item.offset}`}
               >
-                <item.icon
-                  className="w-8 h-8 text-[#9B7FC8]"
-                  strokeWidth={1.7}
-                  aria-hidden="true"
+                <FontAwesomeIcon
+                  icon={item.icon}
+                  className="text-[34px]"
+                  style={{ color: item.color }}
                 />
                 <h3 className="font-playfair text-xl text-[#2D1B4E]">{item.title}</h3>
                 <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed">{item.desc}</p>

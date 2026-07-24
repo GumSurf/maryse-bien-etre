@@ -1,4 +1,6 @@
 import { HandHeart, Hash, CreditCard, Map, Ban } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHandsHoldingCircle, fa8, faCreditCard, faMapLocation, faBan } from "@fortawesome/free-solid-svg-icons";
 
 // ─── Services ───────────────────────────────────────────────
 export const services = [
@@ -7,7 +9,8 @@ export const services = [
     title: "Magnétisme",
     description: "Hérité de ma grand-mère Éléonore dès mon enfance, le magnétisme est au cœur de ma pratique. Je vous accompagne avec bienveillance afin de favoriser un rééquilibrage énergétique et retrouver davantage de sérénité au quotidien.",
     href: "/magnetisme",
-    icon: HandHeart,
+    icon: faHandsHoldingCircle,
+    color: "var(--magnetisme-color)",
     intro:
       "Le magnétisme est une approche énergétique naturelle qui consiste à canaliser et transmettre une énergie bienveillante pour rééquilibrer le corps et l'esprit. Je pratique le magnétisme en présentiel comme à distance.",
     details: [
@@ -23,7 +26,8 @@ export const services = [
     description:
       "Découvrez les messages cachés dans vos chiffres. La numérologie vous aide à mieux vous connaître et à comprendre les cycles de votre vie.",
     href: "/numerologie",
-    icon: Hash,
+    icon: fa8,
+    color: "var(--number-color)",
     intro:
       "La numérologie est une discipline ancestrale qui consiste à analyser les vibrations des chiffres liés à votre date de naissance et à votre prénom. Chaque chiffre porte une énergie unique qui éclaire votre personnalité, vos talents et vos défis.",
     details: [
@@ -218,22 +222,25 @@ export const tarifsNumerologie = [
 
 export const infosPratiques = [
   {
-    icon: CreditCard,
+    icon: faCreditCard,
+    color: "var(--number-color)",
     titre: "Paiement",
     description:
-      "Espèces ou virement bancaire, à régler le jour de la séance. Aucun acompte n'est demandé.",
+      "Espèces, chèque ou virement bancaire, à régler le jour de la séance. Un acompte est demandé pour la numérologie.",
   },
   {
-    icon: Map,
+    icon: faMapLocation,
+    color: "var(--support-color)",
     titre: "Déplacement",
     description:
-      "Les visites à domicile sont incluses dans un rayon de 15 km autour de Lorient. Au-delà, une participation de 0,75€/km est appliquée.",
+      "Les déplacements à domicile sont incluses dans un rayon de 8 km autour de Lorient. Au-delà, entre 8 et 15 km, un supplément de 10 € est appliqué.",
   },
   {
-    icon: Ban,
+    icon: faBan,
+    color: "var(--family-color)",
     titre: "Annulation",
     description:
-      "Je vous demande simplement de me prévenir au moins 24h à l'avance en cas d'empêchement.",
+      "En cas d'empêchement, merci de prévenir 24 heures à l'avance.",
   },
 ];
 
@@ -247,11 +254,11 @@ export const faqTarifs = [
   {
     question: "Faut-il prévoir plusieurs séances ?",
     reponse:
-      "Cela dépend de chaque personne. Certaines ressentent un mieux dès la première séance, d'autres préfèrent un suivi sur deux ou trois rendez-vous. Je vous conseille au cas par cas.",
+      "Il n'existe pas de réponse unique. Certaines personnes ressentent déjà un soulagement après une seule séance, tandis que d'autres ont besoin de plusieurs accompagnements. Chaque personne est différente et évolue à son propre rythme.",
   },
   {
     question: "Puis-je régler par carte bancaire ?",
     reponse:
-      "Pour l'instant, je fonctionne uniquement en espèces ou par virement bancaire, réglés le jour de la séance.",
+      "Pour l'instant, je fonctionne uniquement en espèces, par chèque ou par virement bancaire, réglés le jour de la séance.",
   },
 ];

@@ -7,7 +7,8 @@ import BlobImage from "../components/BlobImage";
 import Cta from "../components/Cta";
 import Citation from "../components/Citation";
 import Image from "next/image";
-import { HeartHandshake, HandHeart, Gem } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart, faHandHoldingHeart, faLeaf, faHandsHoldingChild } from "@fortawesome/free-solid-svg-icons";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -43,20 +44,23 @@ const parcours = [
 
 const valeurs = [
   {
-    icon: HeartHandshake,
+    icon: faHeart,
     title: "La bienveillance",
     desc: "Chaque personne est accueillie avec écoute, respect et sans jugement afin de proposer un accompagnement adapté à ses besoins.",
+    color: "#D48B8B"
   },
   {
-    icon: HandHeart,
+    icon: faHandsHoldingChild,
     title: "La transmission",
     desc: "Je poursuis le savoir que ma grand-mère Éléonore m'a transmis avec le même respect et la même passion qui ont guidé son enseignement.",
+    color: "#C9A35B"
   },
   {
-    icon: Gem,
+    icon: faLeaf,
     title: "L'authenticité",
     desc: "Je pratique le magnétisme avec sincérité et humilité, en restant fidèle aux valeurs qui m'ont été transmises depuis mon enfance.",
-  },
+    color: "#7BAE7F"
+  }
 ];
 
 export default function AboutPage() {
@@ -253,10 +257,10 @@ export default function AboutPage() {
                   }`}
               >
                 <div className="w-16 h-16 rounded-full bg-[#F5F0FF] flex items-center justify-center">
-                  <item.icon
-                    size={34}
-                    strokeWidth={1.3}
-                    className="text-[#9B7FC8]"
+                  <FontAwesomeIcon
+                    icon={item.icon}
+                    className="text-[34px]"
+                    style={{ color: item.color }}
                   />
                 </div>
                 <h3 className="font-playfair text-xl text-[#2D1B4E]">{item.title}</h3>

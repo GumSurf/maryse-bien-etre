@@ -1,8 +1,44 @@
 @import "tailwindcss";
 
 :root {
+  /* Couleurs principales */
+  --primary-color: #9B7FC8;
   --background: #ffffff;
   --foreground: #171717;
+  --text-color: #2D1B4E;
+  --border-color: #C9B8E8;
+
+  /* Accompagnement / accueil */
+  --leaf-color: #7BAE7F;
+  --energy-color: #D9B44A;
+  --blockage-color: #D98B5F;
+  --number-color: #9B7FC8;
+  --magnetisme-color: #D48B8B;
+
+  /* Valeurs page À propos */
+  --family-color: #D48B8B;
+  --formation-color: #C9A35B;
+  --support-color: #7BAE7F;
+
+  /* Magnétisme */
+  --burn-color: #D9826B;
+  --stress-color: #7BAE7F;
+  --pain-color: #D48B8B;
+  --sleep-color: #8C82B8;
+
+  /* Outils magnétisme */
+  --pendulum-color: #9B7FC8;
+  --vibration-color: #9B7FC8;
+  --crystal-color: #C9A35B;
+  --sound-color: #7BAE7F;
+  --energy-balance-color: #9B7FC8;
+  --accompaniment-color: #D48B8B;
+
+  /*  --leaf-color: #00c131;
+  --sun-color: #fffd00;
+  --lock-color: #ff6000;
+  --number-color: #b800e3;
+  --magnetisme-color: #be0600;*/
 }
 
 html {
@@ -42,5 +78,5 @@ h1, h2, h3, h4, h5, h6 {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-montecarlo), sans-serif;
 }

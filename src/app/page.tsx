@@ -8,7 +8,9 @@ import Cta from "./components/Cta";
 import Citation from "./components/Citation";
 import BlobImage from "./components/BlobImage";
 import Image from "next/image";
-import { Leaf, HeartHandshake, Hash, HandHeart, BookOpen, SunMedium, Unlock} from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHandsHoldingCircle, fa8, faLockOpen, faBolt, faLeaf, faBookOpen, faHandshake, faHandsHolding, faHouseChimneyUser, faHandHoldingHeart } from "@fortawesome/free-solid-svg-icons";
+
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -18,6 +20,27 @@ const fadeUp = {
     transition: { duration: 0.7, delay: i * 0.12, ease: "easeOut" as const },
   }),
 };
+
+const values = [
+  {
+    icon: faHouseChimneyUser,
+    color: "var(--family-color)",
+    title: "Héritage familial",
+    text: "Le magnétisme m'a été transmis dès mon enfance par ma grand-mère Éléonore.",
+  },
+  {
+    icon: faBookOpen,
+    color: "var(--formation-color)",
+    title: "Formation en numérologie",
+    text: "J'ai complété ma pratique par une formation afin de proposer un accompagnement plus complet.",
+  },
+  {
+    icon: faHandHoldingHeart,
+    color: "var(--support-color)",
+    title: "Accompagnement personnalisé",
+    text: "Chaque séance est adaptée à votre situation, vos besoins et votre rythme.",
+  },
+];
 
 export default function Home() {
   return (
@@ -128,24 +151,32 @@ export default function Home() {
 
             {[
               {
-                icon: Leaf, //#00c131
+                icon: faLeaf,
+                type: "fontawesome",
                 title: "Stress & anxiété",
-                text: "Retrouvez calme et apaisement dans votre quotidien."
+                text: "Retrouvez calme et apaisement dans votre quotidien.",
+                color: "var(--leaf-color)"
               },
               {
-                icon: SunMedium, //#fffd00
+                icon: faBolt,
+                type: "fontawesome",
                 title: "Fatigue",
-                text: "Favorisez un meilleur équilibre énergétique."
+                text: "Favorisez un meilleur équilibre énergétique.",
+                color: "var(--energy-color)"
               },
               {
-                icon: Unlock, //#ff6000
+                icon: faLockOpen,
+                type: "fontawesome",
                 title: "Blocages",
-                text: "Avancez plus sereinement face aux difficultés émotionnelles."
+                text: "Avancez plus sereinement face aux difficultés émotionnelles.",
+                color: "var(--blockage-color)"
               },
               {
-                icon: Hash, //#b800e3
+                icon: fa8,
+                type: "fontawesome",
                 title: "Numérologie",
-                text: "Mieux comprendre votre personnalité et votre chemin de vie."
+                text: "Mieux comprendre votre personnalité et votre chemin de vie.",
+                color: "var(--number-color)"
               }
             ].map((item, i) => (
               <motion.div
@@ -159,10 +190,10 @@ export default function Home() {
                 className="bg-[#F5F0FF] rounded-3xl p-8 text-center"
               >
                 <div className="w-16 h-16 rounded-full bg-white/70 flex items-center justify-center mx-auto">
-                  <item.icon
-                    size={34}
-                    strokeWidth={1.3}
-                    className="text-[#9B7FC8]"
+                  <FontAwesomeIcon
+                    icon={item.icon}
+                    className="text-[34px]"
+                    style={{ color: item.color }}
                   />
                 </div>
 
@@ -215,10 +246,10 @@ export default function Home() {
                     className="group bg-white border border-[#C9B8E8]/50 rounded-3xl p-10 flex flex-col gap-4 hover:shadow-xl hover:shadow-[#C9B8E8]/20 hover:-translate-y-1 transition-all duration-300"
                   >
                     <div className="w-16 h-16 rounded-2xl bg-[#F5F0FF] flex items-center justify-center group-hover:bg-[#9B7FC8]/10 transition-colors">
-                      <Icon
-                        size={38}
-                        strokeWidth={1.2}
-                        className="text-[#9B7FC8]"
+                      <FontAwesomeIcon
+                        icon={s.icon}
+                        className="text-[34px]"
+                        style={{ color: s.color }}
                       />
                     </div>
 
@@ -317,58 +348,28 @@ export default function Home() {
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-6">
+            {values.map((item) => (
+              <div
+                key={item.title}
+                className="bg-white rounded-3xl p-8 border border-[#C9B8E8]/40"
+              >
+                <div className="w-20 h-20 rounded-full bg-[#F5F0FF] flex items-center justify-center mx-auto">
+                  <FontAwesomeIcon
+                    icon={item.icon}
+                    className="text-[38px]"
+                    style={{ color: item.color }}
+                  />
+                </div>
 
-            <div className="bg-white rounded-3xl p-8 border border-[#C9B8E8]/40">
-              <div className="w-20 h-20 rounded-full bg-[#F5F0FF] flex items-center justify-center mx-auto">
-                <HandHeart //#ee00ff
-                  size={38}
-                  strokeWidth={1.3}
-                  className="text-[#9B7FC8]"
-                />
+                <h3 className="font-playfair text-2xl text-[#2D1B4E] mt-5">
+                  {item.title}
+                </h3>
+
+                <p className="font-lato text-sm mt-3 text-[#2D1B4E]/75 leading-relaxed">
+                  {item.text}
+                </p>
               </div>
-              <h3 className="font-playfair text-2xl text-[#2D1B4E]">
-                Héritage familial
-              </h3>
-              <p className="font-lato text-sm mt-3 text-[#2D1B4E]/75 leading-relaxed">
-                Le magnétisme m'a été transmis dès mon enfance par ma grand-mère
-                Éléonore.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-3xl p-8 border border-[#C9B8E8]/40">
-              <div className="w-20 h-20 rounded-full bg-[#F5F0FF] flex items-center justify-center mx-auto">
-                <BookOpen
-                  size={38}
-                  strokeWidth={1.3}
-                  className="text-[#9B7FC8]"
-                />
-              </div>
-              <h3 className="font-playfair text-2xl text-[#2D1B4E]">
-                Formation en numérologie
-              </h3>
-              <p className="font-lato text-sm mt-3 text-[#2D1B4E]/75 leading-relaxed">
-                J'ai complété ma pratique par une formation afin de proposer un
-                accompagnement plus complet.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-3xl p-8 border border-[#C9B8E8]/40">
-              <div className="w-20 h-20 rounded-full bg-[#F5F0FF] flex items-center justify-center mx-auto">
-                <HeartHandshake
-                  size={38}
-                  strokeWidth={1.3}
-                  className="text-[#9B7FC8]"
-                />
-              </div>
-              <h3 className="font-playfair text-2xl text-[#2D1B4E]">
-                Accompagnement personnalisé
-              </h3>
-              <p className="font-lato text-sm mt-3 text-[#2D1B4E]/75 leading-relaxed">
-                Chaque séance est adaptée à votre situation, vos besoins et votre
-                rythme.
-              </p>
-            </div>
-
+            ))}
           </div>
         </div>
       </section>

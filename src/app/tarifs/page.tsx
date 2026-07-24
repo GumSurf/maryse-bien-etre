@@ -12,6 +12,7 @@ import Faq from "../components/Faq";
 import Cta from "../components/Cta";
 import BlobImage from "../components/BlobImage";
 import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -249,10 +250,10 @@ export default function TarifsPage() {
                 }}
                 className="rounded-3xl border border-[#C9B8E8]/30 p-8 flex flex-col gap-4 transition-colors duration-300"
               >
-                <info.icon
-                  className="w-8 h-8 text-[#C9B8E8]"
-                  strokeWidth={1.7}
-                  aria-hidden="true"
+                <FontAwesomeIcon
+                  icon={info.icon}
+                  className="text-[34px]"
+                  style={{ color: info.color }}
                 />
                 <h3 className="font-playfair text-xl text-white">{info.titre}</h3>
                 <p className="font-lato text-sm text-[#E8E0F5]/80 leading-relaxed">
