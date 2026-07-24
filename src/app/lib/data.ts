@@ -122,7 +122,7 @@ export const faqMagnetisme = [
       "Non. Je ne suis pas médecin et le magnétisme ne remplace en aucun cas un diagnostic, un traitement ou un suivi médical. Il intervient uniquement en complément, pour accompagner votre bien-être.",
   },
   {
-    question: "Un enfant doit t'il être accompagné d'un adulte pour une séance de magnétisme ?",
+    question: "Un enfant doit-il être accompagné d'un adulte pour une séance de magnétisme ?",
     reponse:
       "Oui, pour les enfants de moins de 12 ans, la présence d'un parent ou d'un tuteur est nécessaire pendant la séance afin de garantir leur confort et leur sécurité.",
   },
@@ -130,6 +130,11 @@ export const faqMagnetisme = [
     question: "Comment se déroule le choix entre une séance en présentiel ou à distance ?",
     reponse:
       "C'est vous qui choisissez selon ce qui vous convient le mieux : en présentiel au cabinet ou à domicile, ou à distance à partir d'une photo récente si le déplacement n'est pas possible.",
+  },
+  {
+    question: "Puis-je envoyer une photo par courrier postal ?",
+    reponse:
+      "Oui, si vous ne pouvez pas transmettre votre photo par email, nous pouvons organiser l'envoi d'une photo par courrier postal. Appelez-moi pour convenir du format et de l'adresse.",
   },
 ];
 

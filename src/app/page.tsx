@@ -8,9 +8,80 @@ import Cta from "./components/Cta";
 import Citation from "./components/Citation";
 import BlobImage from "./components/BlobImage";
 import Image from "next/image";
+import { Cormorant_Garamond, MonteCarlo, Playfair_Display, Great_Vibes, Dancing_Script, Pacifico, Satisfy, Allura, Parisienne, Cookie } from "next/font/google";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHandsHoldingCircle, fa8, faLockOpen, faBolt, faLeaf, faBookOpen, faHandshake, faHandsHolding, faHouseChimneyUser, faHandHoldingHeart } from "@fortawesome/free-solid-svg-icons";
 
+
+const monteCarloFont = MonteCarlo({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-montecarlo-home",
+  display: "swap",
+});
+
+const cormorantFont = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-cormorant-home",
+  display: "swap",
+});
+
+const playfairFont = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-playfair-home",
+  display: "swap",
+});
+
+const greatVibesFont = Great_Vibes({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-great-vibes-home",
+  display: "swap",
+});
+
+const dancingScriptFont = Dancing_Script({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-dancing-script-home",
+  display: "swap",
+});
+
+const pacificoFont = Pacifico({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-pacifico-home",
+  display: "swap",
+});
+
+const satisfyFont = Satisfy({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-satisfy-home",
+  display: "swap",
+});
+
+const alluraFont = Allura({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-allura-home",
+  display: "swap",
+});
+
+const parisienneFont = Parisienne({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-parisienne-home",
+  display: "swap",
+});
+
+const cookieFont = Cookie({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-cookie-home",
+  display: "swap",
+});
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -58,7 +129,10 @@ export default function Home() {
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
         />
 
-        <div className="max-w-6xl mx-auto px-6 py-24 md:py-36  min-h-[60vh] md:min-h-[85vh] flex flex-col items-center text-center gap-6 relative z-10">
+        <div
+          className={`${monteCarloFont.variable} max-w-6xl mx-auto px-6 py-24 md:py-36 min-h-[60vh] md:min-h-[85vh] flex flex-col items-center text-center gap-6 relative z-10`}
+          style={{ fontFamily: "var(--font-montecarlo-home)" }}
+        >
           <motion.span
             variants={fadeUp} initial="hidden" animate="visible" custom={0}
             className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]"
@@ -70,7 +144,7 @@ export default function Home() {
             initial="hidden"
             animate="visible"
             custom={1}
-            className="font-playfair text-5xl md:text-7xl text-[#2D1B4E] leading-tight"
+            className="text-5xl md:text-7xl text-[#2D1B4E] leading-tight"
           >
             Retrouvez votre
             <br />
@@ -120,6 +194,287 @@ export default function Home() {
           </span>
           <div className="w-px h-10 bg-gradient-to-b from-[#9B7FC8]/50 to-transparent" />
         </motion.div>
+      </section>
+
+      <section className="bg-[#FFF7F0] py-20">
+        <div className={`${monteCarloFont.variable} max-w-6xl mx-auto px-6`}>
+          <div className="text-center mb-12">
+            <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#D9826B]">
+              Style MonteCarlo
+            </span>
+            <h2 className="text-5xl text-[#2D1B4E]" style={{ fontFamily: "var(--font-montecarlo-home)" }}>
+              Une écriture légère et poétique
+            </h2>
+            <p className="mt-5 text-[#2D1B4E]/75 max-w-3xl mx-auto">
+              Explorez un univers où chaque titre respire la douceur et l’élégance, idéal pour une page d’accueil chaleureuse.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-white p-8 rounded-3xl border border-[#F5E0E8] shadow-sm">
+              <h3 className="text-3xl text-[#9B7FC8]" style={{ fontFamily: "var(--font-montecarlo-home)" }}>
+                Présentation
+              </h3>
+              <p className="mt-4 text-[#2D1B4E]/75 leading-relaxed">
+                Un effet visuel élégant pour valoriser votre message principal et créer un sentiment de confiance.
+              </p>
+            </div>
+            <div className="bg-white p-8 rounded-3xl border border-[#F5E0E8] shadow-sm">
+              <h3 className="text-3xl text-[#9B7FC8]" style={{ fontFamily: "var(--font-montecarlo-home)" }}>
+                Sensibilité
+              </h3>
+              <p className="mt-4 text-[#2D1B4E]/75 leading-relaxed">
+                Des titres qui supportent une narration douce, idéale pour le magnétisme et l’accompagnement bien-être.
+              </p>
+            </div>
+            <div className="bg-white p-8 rounded-3xl border border-[#F5E0E8] shadow-sm">
+              <h3 className="text-3xl text-[#9B7FC8]" style={{ fontFamily: "var(--font-montecarlo-home)" }}>
+                Harmonie
+              </h3>
+              <p className="mt-4 text-[#2D1B4E]/75 leading-relaxed">
+                Une ambiance visuelle plus douce qui invite le visiteur à prendre le temps de lire et ressentir.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#FEF7FF] py-20">
+        <div className={`${greatVibesFont.variable} max-w-6xl mx-auto px-6`}>
+          <div className="text-center mb-12">
+            <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#D9826B]">
+              Calligraphie douce
+            </span>
+            <h2 className="text-5xl text-[#2D1B4E]" style={{ fontFamily: "var(--font-great-vibes-home)" }}>
+              Great Vibes pour une touche féminine
+            </h2>
+            <p className="mt-5 text-[#2D1B4E]/75 max-w-3xl mx-auto">
+              Une police fluide et raffinée qui donne l’impression d’une écriture manuscrite légère.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white p-8 rounded-3xl border border-[#F5E0E8] shadow-sm">
+              <p className="text-4xl text-[#9B7FC8]" style={{ fontFamily: "var(--font-great-vibes-home)" }}>
+                Bienvenue
+              </p>
+              <p className="mt-4 text-[#2D1B4E]/75 leading-relaxed">
+                Une section qui respire la délicatesse, parfaite pour valoriser une offre sensible et inspirante.
+              </p>
+            </div>
+            <div className="bg-white p-8 rounded-3xl border border-[#F5E0E8] shadow-sm">
+              <p className="text-4xl text-[#9B7FC8]" style={{ fontFamily: "var(--font-great-vibes-home)" }}>
+                Esthétique
+              </p>
+              <p className="mt-4 text-[#2D1B4E]/75 leading-relaxed">
+                Idéal pour des accroches émotionnelles et des expressions douces, sans perdre en lisibilité.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#F7FEF5] py-20">
+        <div className={`${dancingScriptFont.variable} max-w-6xl mx-auto px-6`}>
+          <div className="text-center mb-12">
+            <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#7BAE7F]">
+              Calligraphie dynamique
+            </span>
+            <h2 className="text-5xl text-[#2D1B4E]" style={{ fontFamily: "var(--font-dancing-script-home)" }}>
+              Dancing Script pour plus de mouvement
+            </h2>
+            <p className="mt-5 text-[#2D1B4E]/75 max-w-3xl mx-auto">
+              Une police expressive et chaleureuse, qui fonctionne bien pour des titres souples et accueillants.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white p-8 rounded-3xl border border-[#E9F6EA] shadow-sm">
+              <p className="text-4xl text-[#7BAE7F]" style={{ fontFamily: "var(--font-dancing-script-home)" }}>
+                Vibrant
+              </p>
+              <p className="mt-4 text-[#2D1B4E]/75 leading-relaxed">
+                Une section qui apporte une énergie positive à vos titres sans les rendre trop formels.
+              </p>
+            </div>
+            <div className="bg-white p-8 rounded-3xl border border-[#E9F6EA] shadow-sm">
+              <p className="text-4xl text-[#7BAE7F]" style={{ fontFamily: "var(--font-dancing-script-home)" }}>
+                Accueillant
+              </p>
+              <p className="mt-4 text-[#2D1B4E]/75 leading-relaxed">
+                Convient bien à une page d’accueil chaleureuse, à une présentation ou à une accroche de service.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#FFF9F8] py-20">
+        <div className={`${pacificoFont.variable} max-w-6xl mx-auto px-6`}>
+          <div className="text-center mb-12">
+            <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#D9826B]">
+              Calligraphie joyeuse
+            </span>
+            <h2 className="text-5xl text-[#2D1B4E]" style={{ fontFamily: "var(--font-pacifico-home)" }}>
+              Pacifico pour un ton convivial
+            </h2>
+            <p className="mt-5 text-[#2D1B4E]/75 max-w-3xl mx-auto">
+              Une police qui sublime les titres avec une touche rétro et enjouée.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white p-8 rounded-3xl border border-[#F7E8E3] shadow-sm">
+              <p className="text-4xl text-[#D9826B]" style={{ fontFamily: "var(--font-pacifico-home)" }}>
+                Festif
+              </p>
+              <p className="mt-4 text-[#2D1B4E]/75 leading-relaxed">
+                Parfait pour des accroches amicales, un ton chaleureux et spontané.
+              </p>
+            </div>
+            <div className="bg-white p-8 rounded-3xl border border-[#F7E8E3] shadow-sm">
+              <p className="text-4xl text-[#D9826B]" style={{ fontFamily: "var(--font-pacifico-home)" }}>
+                Convivial
+              </p>
+              <p className="mt-4 text-[#2D1B4E]/75 leading-relaxed">
+                Idéal pour des messages qui cherchent à créer un lien humain et simple.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#F5F6FF] py-20">
+        <div className={`${satisfyFont.variable} max-w-6xl mx-auto px-6`}>
+          <div className="text-center mb-12">
+            <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#7D5BB3]">
+              Calligraphie fluide
+            </span>
+            <h2 className="text-5xl text-[#2D1B4E]" style={{ fontFamily: "var(--font-satisfy-home)" }}>
+              Satisfy pour une cursive naturelle
+            </h2>
+            <p className="mt-5 text-[#2D1B4E]/75 max-w-3xl mx-auto">
+              Une police manuscrite aux courbes souples, très agréable pour les titres de service.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white p-8 rounded-3xl border border-[#E8E4FF] shadow-sm">
+              <p className="text-4xl text-[#7D5BB3]" style={{ fontFamily: "var(--font-satisfy-home)" }}>
+                Manuscrit
+              </p>
+              <p className="mt-4 text-[#2D1B4E]/75 leading-relaxed">
+                Convient aux titres doux et personnels, avec une esthétique élégante.
+              </p>
+            </div>
+            <div className="bg-white p-8 rounded-3xl border border-[#E8E4FF] shadow-sm">
+              <p className="text-4xl text-[#7D5BB3]" style={{ fontFamily: "var(--font-satisfy-home)" }}>
+                Authentique
+              </p>
+              <p className="mt-4 text-[#2D1B4E]/75 leading-relaxed">
+                Un ton naturel qui reste lisible tout en donnant du caractère aux titres.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#F9FFF5] py-20">
+        <div className={`${alluraFont.variable} max-w-6xl mx-auto px-6`}>
+          <div className="text-center mb-12">
+            <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#7BAE7F]">
+              Calligraphie élégante
+            </span>
+            <h2 className="text-5xl text-[#2D1B4E]" style={{ fontFamily: "var(--font-allura-home)" }}>
+              Allura pour un résultat sophistiqué
+            </h2>
+            <p className="mt-5 text-[#2D1B4E]/75 max-w-3xl mx-auto">
+              Une police cursive légère et distinguée, parfaite pour une page d’accueil haut de gamme.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white p-8 rounded-3xl border border-[#E6F1E9] shadow-sm">
+              <p className="text-4xl text-[#7BAE7F]" style={{ fontFamily: "var(--font-allura-home)" }}>
+                Raffiné
+              </p>
+              <p className="mt-4 text-[#2D1B4E]/75 leading-relaxed">
+                Idéal pour un branding doux et élégant sur une page d’accueil.
+              </p>
+            </div>
+            <div className="bg-white p-8 rounded-3xl border border-[#E6F1E9] shadow-sm">
+              <p className="text-4xl text-[#7BAE7F]" style={{ fontFamily: "var(--font-allura-home)" }}>
+                Sublime
+              </p>
+              <p className="mt-4 text-[#2D1B4E]/75 leading-relaxed">
+                Une touche sophistiquée pour les titres, sans charger le visuel.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#FFF3FF] py-20">
+        <div className={`${parisienneFont.variable} max-w-6xl mx-auto px-6`}>
+          <div className="text-center mb-12">
+            <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#C98BF0]">
+              Calligraphie rétro
+            </span>
+            <h2 className="text-5xl text-[#2D1B4E]" style={{ fontFamily: "var(--font-parisienne-home)" }}>
+              Parisienne pour un style vintage chic
+            </h2>
+            <p className="mt-5 text-[#2D1B4E]/75 max-w-3xl mx-auto">
+              Une écriture discrète et stylée, idéale pour une page élégante et accueillante.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white p-8 rounded-3xl border border-[#F1E4FF] shadow-sm">
+              <p className="text-4xl text-[#C98BF0]" style={{ fontFamily: "var(--font-parisienne-home)" }}>
+                Vintage
+              </p>
+              <p className="mt-4 text-[#2D1B4E]/75 leading-relaxed">
+                Parfait pour un design qui cherche une touche de charme et de personnalité.
+              </p>
+            </div>
+            <div className="bg-white p-8 rounded-3xl border border-[#F1E4FF] shadow-sm">
+              <p className="text-4xl text-[#C98BF0]" style={{ fontFamily: "var(--font-parisienne-home)" }}>
+                Chic
+              </p>
+              <p className="mt-4 text-[#2D1B4E]/75 leading-relaxed">
+                Un style simple qui conserve de l’élégance, sans être trop élaboré.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#FFF8E8] py-20">
+        <div className={`${cookieFont.variable} max-w-6xl mx-auto px-6`}>
+          <div className="text-center mb-12">
+            <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#D98B5F]">
+              Calligraphie douce
+            </span>
+            <h2 className="text-5xl text-[#2D1B4E]" style={{ fontFamily: "var(--font-cookie-home)" }}>
+              Cookie pour une typographie gourmande
+            </h2>
+            <p className="mt-5 text-[#2D1B4E]/75 max-w-3xl mx-auto">
+              Une police ronde et agréable qui donne une sensation chaleureuse et accessible.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white p-8 rounded-3xl border border-[#F9E4CE] shadow-sm">
+              <p className="text-4xl text-[#D98B5F]" style={{ fontFamily: "var(--font-cookie-home)" }}>
+                Chaleureux
+              </p>
+              <p className="mt-4 text-[#2D1B4E]/75 leading-relaxed">
+                Idéal pour les pages d’accueil qui doivent paraître accessibles et bienveillantes.
+              </p>
+            </div>
+            <div className="bg-white p-8 rounded-3xl border border-[#F9E4CE] shadow-sm">
+              <p className="text-4xl text-[#D98B5F]" style={{ fontFamily: "var(--font-cookie-home)" }}>
+                Doux
+              </p>
+              <p className="mt-4 text-[#2D1B4E]/75 leading-relaxed">
+                Une police facile à lire avec une touche manuscrite légère.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* ── POURQUOI CONSULTER ───────────────────────────────────── */}

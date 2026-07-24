@@ -32,7 +32,6 @@
   --crystal-color: #C9A35B;
   --sound-color: #7BAE7F;
   --energy-balance-color: #9B7FC8;
-  --accompaniment-color: #D48B8B;
 
   /*  --leaf-color: #00c131;
   --sun-color: #fffd00;
@@ -46,7 +45,7 @@ html {
 }
 
 body {
-  font-family: var(--font-montecarlo), sans-serif;
+  font-family: var(--font-lato), sans-serif;
 }
 
 .montecarlo-regular {
@@ -55,15 +54,25 @@ body {
   font-style: normal;
 }
 
-
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-playfair), serif;
+  font-family: var(--font-montecarlo), cursive;
+}
+
+.home-title-switcher {
+  font-family: var(--home-title-font, var(--font-montecarlo-home));
 }
 
 .font-playfair {
-  font-family: var(--font-playfair), serif;
+  font-family: var(--font-montecarlo), cursive;
 }
-
+.home-title-switcher h1,
+.home-title-switcher h2,
+.home-title-switcher h3,
+.home-title-switcher h4,
+.home-title-switcher h5,
+.home-title-switcher h6 {
+  font-family: inherit !important;
+}
 .font-lato {
   font-family: var(--font-lato), sans-serif;
 }

@@ -392,7 +392,7 @@ export default function MagnetiseusePage() {
               },
               {
                 icon: faHeartCircleCheck,
-                color: "var(--accompaniment-color)",
+                color: "var(--family-color)",
                 title: "Accompagnement personnalisé",
                 desc: "Chaque soin est adapté à votre situation et à vos besoins."
               }

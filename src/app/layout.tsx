@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Spectral, Nunito } from "next/font/google";
+import { Spectral, Nunito, MonteCarlo } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -16,6 +16,13 @@ const nunito = Nunito({
   subsets: ["latin"],
   weight: ["300", "400", "500", "700"],
   variable: "--font-lato",
+  display: "swap",
+});
+
+const monteCarlo = MonteCarlo({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-montecarlo",
   display: "swap",
 });
   
@@ -51,7 +58,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={`${spectral.variable} ${nunito.variable} h-full antialiased`}>
+    <html lang="fr" className={`${spectral.variable} ${nunito.variable} ${monteCarlo.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-[#F5F0FF] text-[#2D1B4E]">
         <Header />
         <main className="flex-1">{children}</main>
