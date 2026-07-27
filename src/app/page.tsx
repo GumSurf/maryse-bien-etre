@@ -8,78 +8,14 @@ import Cta from "./components/Cta";
 import Citation from "./components/Citation";
 import BlobImage from "./components/BlobImage";
 import Image from "next/image";
-import { Cormorant_Garamond, MonteCarlo, Playfair_Display, Great_Vibes, Dancing_Script, Pacifico, Satisfy, Allura, Parisienne, Cookie } from "next/font/google";
+import { MonteCarlo } from "next/font/google";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHandsHoldingCircle, fa8, faLockOpen, faBolt, faLeaf, faBookOpen, faHandshake, faHandsHolding, faHouseChimneyUser, faHandHoldingHeart } from "@fortawesome/free-solid-svg-icons";
-
+import { fa8, faLockOpen, faBolt, faLeaf, faBookOpen, faHouseChimneyUser, faHandHoldingHeart } from "@fortawesome/free-solid-svg-icons";
 
 const monteCarloFont = MonteCarlo({
   subsets: ["latin"],
   weight: ["400"],
   variable: "--font-montecarlo-home",
-  display: "swap",
-});
-
-const cormorantFont = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-cormorant-home",
-  display: "swap",
-});
-
-const playfairFont = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-playfair-home",
-  display: "swap",
-});
-
-const greatVibesFont = Great_Vibes({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-great-vibes-home",
-  display: "swap",
-});
-
-const dancingScriptFont = Dancing_Script({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-dancing-script-home",
-  display: "swap",
-});
-
-const pacificoFont = Pacifico({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-pacifico-home",
-  display: "swap",
-});
-
-const satisfyFont = Satisfy({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-satisfy-home",
-  display: "swap",
-});
-
-const alluraFont = Allura({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-allura-home",
-  display: "swap",
-});
-
-const parisienneFont = Parisienne({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-parisienne-home",
-  display: "swap",
-});
-
-const cookieFont = Cookie({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-cookie-home",
   display: "swap",
 });
 

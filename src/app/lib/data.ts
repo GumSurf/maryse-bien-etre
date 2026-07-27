@@ -140,7 +140,7 @@ export const faqMagnetisme = [
 
 // ─── Infos contact ───────────────────────────────────────────
 export const contact = {
-  email: "contact@maryse.fr",
+  email: "contact@maryse-bien-etre.fr",
   telephone: "+33 7 80 34 26 18",
   adresse: {
     nom: "Briand Maryse",

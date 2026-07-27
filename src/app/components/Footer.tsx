@@ -39,7 +39,7 @@ export default function Footer() {
           <span className="font-lato text-sm font-semibold text-[#C9B8E8] uppercase tracking-widest">
             Contact
           </span>
-          <p className="font-lato text-sm text-[#E8E0F5]/85">contact@maryse.fr</p>
+          <p className="font-lato text-sm text-[#E8E0F5]/85">contact@maryse-bien-etre.fr</p>
           <p className="font-lato text-sm text-[#E8E0F5]/85">+33 7 80 34 26 18</p>
           <Link
             href="/contact"
