@@ -214,6 +214,9 @@ export default function TarifsPage() {
               <TarifCard key={tarif.id} tarif={tarif} index={i} />
             ))}
           </div>
+          <p className="font-lato text-sm text-[#9B7FC8] mt-8 text-center">
+            Un acompte de 30 % est demandé pour toute prestation de numérologie.
+          </p>
         </div>
       </section>
 
@@ -262,8 +265,9 @@ export default function TarifsPage() {
               </motion.div>
             ))}
           </div>
-          <p className="text-sm text-[#E8E0F5]/80 mt-8 text-center">
-            N-B: Certaines mutuelles participent au remboursement des médecines douces. N'hésitez pas à vous renseigner auprès de celle-ci. Numéro de siret : 81133490300010.
+          <p className="font-lato text-sm text-[#E8E0F5]/80 mt-8 text-center">
+            N-B: Certaines mutuelles participent au remboursement des médecines douces. N'hésitez pas à vous renseigner auprès de celle-ci.
+            <br />Numéro de siret : 81133490300010.
           </p>
         </div>
       </section>

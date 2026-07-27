@@ -7,7 +7,7 @@ export const services = [
     {
     slug: "magnetisme",
     title: "Magnétisme",
-    description: "Depuis que je suis enfant , je ressens et je pratique  le magnétisme , un don transmis avec Amour  par ma grand-mère  Eléonore  . Je vous accompagne avec bienveillance afin de favoriser un rééquilibrage énergétique et retrouver davantage de sérénité au quotidien.  .Aujourd'hui je l'associe  à la numérologie  pour vous accompagner avec douceur en cabinet ou à distance .",
+    description: "Depuis que je suis enfant, je ressens et je pratique le magnétisme, un don transmis avec Amour par ma grand-mère Eléonore. Je vous accompagne avec bienveillance afin de favoriser un rééquilibrage énergétique et retrouver davantage de sérénité au quotidien. Aujourd'hui je l'associe à la numérologie pour vous accompagner avec douceur en cabinet ou à distance.",
     href: "/magnetisme",
     icon: faHandsHoldingCircle,
     color: "var(--magnetisme-color)",
@@ -186,7 +186,7 @@ export const tarifsMagnetisme = [
     prix: "65€",
     duree: "1h",
     description:
-      "Un soin énergétique pour accompagner votre démarche de bien-être et d'harmonisation.",
+      "Mon bien-être est une priorité et je prends le temps de prendre soin de moi.",
   },
   {
     id: "magnetisme-enfant",
