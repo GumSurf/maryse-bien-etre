@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { contact } from "../lib/data";
+import { contact, horaires } from "../lib/data";
 import Cta from "../components/Cta";
 import { PhoneCall, HouseHeart, Camera, } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -134,9 +134,8 @@ export default function ContactPage() {
                 key={m.label}
                 variants={fadeUp} initial="hidden" whileInView="visible"
                 viewport={{ once: true }} custom={i}
-                className={`group bg-[#F5F0FF] border border-[#C9B8E8]/50 rounded-3xl p-8 flex flex-col gap-5 hover:shadow-xl hover:shadow-[#C9B8E8]/20 hover:-translate-y-1 transition-all duration-500 ${
-                  i === 1 ? "lg:mt-10" : ""
-                }`}
+                className={`group bg-[#F5F0FF] border border-[#C9B8E8]/50 rounded-3xl p-8 flex flex-col gap-5 hover:shadow-xl hover:shadow-[#C9B8E8]/20 hover:-translate-y-1 transition-all duration-500 ${i === 1 ? "lg:mt-10" : ""
+                  }`}
               >
                 <motion.div
                   className="w-14 h-14 rounded-2xl bg-white border border-[#C9B8E8]/60 flex items-center justify-center shadow-sm"
@@ -149,11 +148,10 @@ export default function ContactPage() {
                     style={{ color: m.color }}
                   />
                 </motion.div>
-                <div className="flex flex-col gap-2">
-                  <span className="font-lato text-xs tracking-[0.2em] uppercase text-[#9B7FC8]">
+                <div className="flex flex-col gap-2"><span className="font-lato tracking-[0.2em] uppercase text-[#9B7FC8]">
                     {m.label}
                   </span>
-                  <p className="font-playfair text-lg text-[#2D1B4E] leading-snug">
+                  <p className="font-playfair text-2xl text-[#2D1B4E] leading-snug">
                     {m.valeur}
                   </p>
                   <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed mt-1">
@@ -170,6 +168,51 @@ export default function ContactPage() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── HORAIRES ─────────────────────────────────────────── */}
+      <section className="bg-[#F5F0FF] py-28">
+        <div className="max-w-2xl mx-auto px-6">
+          <motion.div
+            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]">
+              Disponibilités
+            </span>
+            <h2 className="font-playfair text-4xl text-[#2D1B4E] mt-2">
+              Mes horaires
+            </h2>
+          </motion.div>
+
+          <motion.div
+            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}
+            className="bg-white border border-[#C9B8E8]/50 rounded-3xl p-10 flex flex-col gap-0 shadow-sm"
+          >
+            {horaires.map((h, i) => (
+              <div
+                key={h.jour}
+                className={`flex items-center justify-between gap-6 py-5 ${i !== horaires.length - 1 ? "border-b border-[#C9B8E8]/25" : ""
+                  }`}
+              >
+                <span className="font-playfair text-lg text-[#2D1B4E]">
+                  {h.jour}
+                </span>
+                <div className="flex flex-col items-end gap-1">
+                  {h.creneaux.map((c) => (
+                    <span
+                      key={c}
+                      className={`font-lato text-sm ${c === "Fermé" ? "text-[#2D1B4E]/40 italic" : "text-[#2D1B4E]/75"
+                        }`}
+                    >
+                      {c}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </motion.div>
         </div>
       </section>
 

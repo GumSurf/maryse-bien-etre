@@ -267,3 +267,10 @@ export const faqTarifs = [
       "Pour l'instant, je fonctionne uniquement en espèces, par chèque ou par virement bancaire, réglés le jour de la séance.",
   },
 ];
+
+export const horaires = [
+  { jour: "Lundi", creneaux: ["Fermé"] },
+  { jour: "Mardi au vendredi", creneaux: ["10h00 - 12h15", "14h30 - 18h30"] },
+  { jour: "Samedi", creneaux: ["10h00 - 16h00"] },
+  { jour: "Jours fériés", creneaux: ["Fermé"] },
+];
