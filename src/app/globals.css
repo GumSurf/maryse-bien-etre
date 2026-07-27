@@ -55,15 +55,15 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-montecarlo), cursive;
+  font-family: var(--font-great-vibes), cursive;
 }
 
 .home-title-switcher {
-  font-family: var(--home-title-font, var(--font-montecarlo-home));
+  font-family: var(--home-title-font, var(--font-great-vibes));
 }
 
 .font-playfair {
-  font-family: var(--font-montecarlo), cursive;
+  font-family: var(--font-great-vibes), cursive;
 }
 .home-title-switcher h1,
 .home-title-switcher h2,

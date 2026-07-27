@@ -7,7 +7,7 @@ export const services = [
     {
     slug: "magnetisme",
     title: "Magnétisme",
-    description: "Hérité de ma grand-mère Éléonore dès mon enfance, le magnétisme est au cœur de ma pratique. Je vous accompagne avec bienveillance afin de favoriser un rééquilibrage énergétique et retrouver davantage de sérénité au quotidien.",
+    description: "Depuis que je suis enfant , je ressens et je pratique  le magnétisme , un don transmis avec Amour  par ma grand-mère  Eléonore  . Je vous accompagne avec bienveillance afin de favoriser un rééquilibrage énergétique et retrouver davantage de sérénité au quotidien.  .Aujourd'hui je l'associe  à la numérologie  pour vous accompagner avec douceur en cabinet ou à distance .",
     href: "/magnetisme",
     icon: faHandsHoldingCircle,
     color: "var(--magnetisme-color)",
@@ -81,7 +81,7 @@ export const faqGlobale = [
   {
     question: "Comment prendre rendez-vous ?",
     reponse:
-      "Rien de plus simple : appelez-moi ou envoyez-moi un email, et nous trouverons ensemble un créneau qui vous convient. Je réponds généralement sous 24h.",
+      "Rien de plus simple, appelez-moi ou écrivez-moi un email, et nous fixerons ensemble un créneau qui vous convient. Je réponds généralement sous 24 heures.",
   },
 ];
 
@@ -156,12 +156,12 @@ export const citation = [
     auteur: "Hippocrate",
   },
   {
-    texte: "Fais du bien à ton corps pour que ton âme ait envie d'y rester",
-    auteur: "Proverbe Indien",
+    texte: "Les nombres sont le langage secret de l'univers.",
+    auteur: "Pythagore",
   },
   {
-    texte: "C'est dans le calme et la confiance que sera votre force.",
-    auteur: "Isaïe",
+    texte: "Fais du bien à ton corps pour que ton âme ait envie d'y rester",
+    auteur: "Proverbe Indien",
   },
   {
     texte: "Ce que l'on sème dans le silence, on le récolte dans la paix.",

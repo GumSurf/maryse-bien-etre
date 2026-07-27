@@ -137,9 +137,9 @@ export default function TarifsPage() {
               Un tarif juste, pour un accompagnement sincère
             </h2>
             <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed">
-              Je crois profondément que l&apos;accès à ce type d&apos;accompagnement
-              ne doit pas être un frein. Mes tarifs restent volontairement
-              stables, quelle que soit votre situation ou votre demande.
+              Je souhaite que chacun puisse prendre soin de soi sans pression, 
+              je propose des tarifs justes et transparents pour que le bien-être reste accessible sans surprise, 
+              au prix annoncé, adapté à votre situation.
             </p>
             <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed">
               Aucune surprise, aucun palier caché : le prix annoncé est celui

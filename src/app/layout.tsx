@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Spectral, Nunito, MonteCarlo } from "next/font/google";
+import { Spectral, Nunito, MonteCarlo, Great_Vibes } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -23,6 +23,13 @@ const monteCarlo = MonteCarlo({
   subsets: ["latin"],
   weight: ["400"],
   variable: "--font-montecarlo",
+  display: "swap",
+});
+
+const greatVibes = Great_Vibes({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-great-vibes",
   display: "swap",
 });
   
