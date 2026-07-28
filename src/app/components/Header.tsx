@@ -1,6 +1,7 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
@@ -14,16 +15,63 @@ const navLinks = [
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Fermer le menu au clic en dehors
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (headerRef.current && !headerRef.current.contains(event.target as Node)) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [menuOpen]);
 
   return (
-    <header className="w-full bg-[#F5F0FF] border-b border-[#C9B8E8]/40 sticky top-0 z-50 backdrop-blur-sm">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" aria-label="Maryse — Retour à l'accueil" className="flex flex-col leading-tight">
-          <span className="font-playfair text-2xl text-[#2D1B4E] tracking-wide">
-            Maryse Briand
+    <header
+      ref={headerRef}
+      className={`w-full bg-[#F5F0FF] border-b border-[#C9B8E8]/40 sticky top-0 z-50 backdrop-blur-sm transition-all duration-300 ${
+        scrolled ? "py-2" : "py-5"
+      }`}
+    >
+      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
+        <Link
+          href="/"
+          aria-label="Maryse — Retour à l'accueil"
+          className="flex items-center gap-3"
+        >
+          <span
+            className={`relative block transition-all duration-300 ${
+              scrolled ? "h-14 w-14" : "h-24 w-24"
+            }`}
+          >
+            <Image
+              src="/logo.png"
+              alt="Maryse Briand — Magnétiseuse Numérologue"
+              fill
+              sizes="(max-width: 768px) 56px, 96px"
+              className="object-contain"
+              priority
+            />
           </span>
-          <span className="text-xs text-[#9B7FC8] tracking-[0.2em] uppercase font-lato">
-            Magnétisme & Numérologie
+          <span
+            className={`font-playfair text-[#2D1B4E] tracking-wide transition-all duration-300 ${
+              scrolled ? "text-xl hidden sm:block" : "text-2xl"
+            }`}
+          >
+            Maryse Briand
           </span>
         </Link>
 
