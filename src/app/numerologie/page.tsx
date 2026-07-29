@@ -7,6 +7,7 @@ import Faq from "../components/Faq";
 import Cta from "../components/Cta";
 import BlobImage from "../components/BlobImage";
 import Image from "next/image";
+import Citation from "../components/Citation";
 import { Compass, CalendarDays, Sparkles, UserRound } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar, faCalendarDay, faCalendarDays, faCompass, faSeedling, faSprayCanSparkles, faTrophy, faUser } from "@fortawesome/free-solid-svg-icons";
@@ -580,7 +581,7 @@ export default function NumerologiePage() {
               {
                 num: "01",
                 title: "La prise de contact",
-                desc: "Vous me transmettez votre date de naissance et votre prénom. On échange sur vos attentes.",
+                desc: "Vous me transmettez votre date de naissance, votre prénom et votre nom de famille. On échange sur vos attentes.",
                 offset: "md:mt-0",
               },
               {
@@ -614,6 +615,8 @@ export default function NumerologiePage() {
           </div>
         </div>
       </section>
+
+      <Citation theme="numerologie" />
 
       <Faq
         items={faqNumerologie}

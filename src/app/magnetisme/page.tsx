@@ -7,6 +7,7 @@ import Faq from "../components/Faq";
 import Cta from "../components/Cta";
 import BlobImage from "../components/BlobImage";
 import Image from "next/image";
+import Citation from "../components/Citation";
 import { Flame, Leaf, HeartPulse, Moon, CircleDot, Radar, Gem, Bell, Sparkles, HandHeart } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell, faCircleDot, faFire, faGem, faHandHoldingHeart, faHeartPulse, faLeaf, faLegal, faCloudMoon, faWandSparkles, faWaveSquare, faWifi, faCompass, faScaleBalanced, faMortarPestle, faHeartCircleCheck } from "@fortawesome/free-solid-svg-icons";
@@ -413,6 +414,8 @@ export default function MagnetiseusePage() {
         </div>
       </section>
 
+      <Citation theme="soins_energetique" />
+
       {/* ── MA PRATIQUE ──────────────────────────────────────── */}
       <section className=" bg-white py-28">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -702,6 +705,8 @@ export default function MagnetiseusePage() {
           </motion.p>
         </div>
       </section>
+
+      <Citation theme="magnetisme" />
 
       <Faq
         items={faqMagnetisme}

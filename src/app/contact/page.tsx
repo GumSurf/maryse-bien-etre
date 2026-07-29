@@ -6,6 +6,7 @@ import Cta from "../components/Cta";
 import { PhoneCall, HouseHeart, Camera, } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCamera, faHouse, faPhone, faPhoneVolume } from "@fortawesome/free-solid-svg-icons";
+import { faInstagram, faFacebookF } from "@fortawesome/free-brands-svg-icons";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -168,6 +169,35 @@ export default function ContactPage() {
               </motion.div>
             ))}
           </div>
+                    {/* Réseaux sociaux, rattachés à la même section */}
+          <motion.div
+            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={3}
+            className="flex flex-col items-center gap-4 mt-12 pt-12 md:mt-16 md:pt-16 border-t border-[#C9B8E8]/30"
+          >
+            <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]/70">
+              Suivez-moi
+            </span>
+            <div className="flex justify-center gap-4">
+              <a
+                href="https://www.instagram.com/VOTRE_HANDLE"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Suivre Maryse sur Instagram"
+                className="w-11 h-11 rounded-full border border-[#C9B8E8]/60 flex items-center justify-center text-[#9B7FC8] hover:bg-[#9B7FC8] hover:text-white transition-colors"
+              >
+                <FontAwesomeIcon icon={faInstagram} className="text-[18px]" />
+              </a>
+              <a
+                href="https://www.facebook.com/VOTRE_PAGE"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Suivre Maryse sur Facebook"
+                className="w-11 h-11 rounded-full border border-[#C9B8E8]/60 flex items-center justify-center text-[#9B7FC8] hover:bg-[#9B7FC8] hover:text-white transition-colors"
+              >
+                <FontAwesomeIcon icon={faFacebookF} className="text-[18px]" />
+              </a>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -196,7 +226,7 @@ export default function ContactPage() {
                 className={`flex items-center justify-between gap-6 py-5 ${i !== horaires.length - 1 ? "border-b border-[#C9B8E8]/25" : ""
                   }`}
               >
-                <span className="font-playfair text-lg text-[#2D1B4E]">
+                <span className="font-playfair text-2xl text-[#2D1B4E]">
                   {h.jour}
                 </span>
                 <div className="flex flex-col items-end gap-1">

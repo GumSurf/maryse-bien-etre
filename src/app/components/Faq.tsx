@@ -21,7 +21,7 @@ export default function Faq({ items, title, subtitle }: FaqProps) {
               </span>
             )}
             {title && (
-              <h2 className="font-playfair text-4xl text-[#2D1B4E] mt-2">
+              <h2 className="font-playfair text-5xl text-[#2D1B4E] mt-2">
                 {title}
               </h2>
             )}
@@ -33,7 +33,7 @@ export default function Faq({ items, title, subtitle }: FaqProps) {
               key={item.question}
               className="border-b border-[#C9B8E8]/50 pb-8 last:border-b-0"
             >
-              <h3 className="font-playfair text-lg text-[#2D1B4E] mb-2">
+              <h3 className="font-playfair text-3xl text-[#2D1B4E] mb-2">
                 {item.question}
               </h3>
               <p className="font-lato text-sm text-[#2D1B4E]/80 leading-relaxed">

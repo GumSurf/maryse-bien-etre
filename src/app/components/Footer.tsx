@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInstagram, faFacebookF } from "@fortawesome/free-brands-svg-icons";
 
 export default function Footer() {
   return (
@@ -12,6 +14,26 @@ export default function Footer() {
           <p className="font-lato text-sm text-[#E8E0F5]/80 mt-2 leading-relaxed">
             Accompagnement holistique pour retrouver équilibre et sérénité.
           </p>
+          <div className="flex items-center gap-3 mt-3">
+            <a
+              href="https://www.instagram.com/magnetiseusemorbihan"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram de Maryse Briand"
+              className="w-9 h-9 rounded-full border border-[#C9B8E8]/40 flex items-center justify-center text-[#C9B8E8] hover:bg-[#C9B8E8] hover:text-[#2D1B4E] transition-colors"
+            >
+              <FontAwesomeIcon icon={faInstagram} className="text-[15px]" />
+            </a>
+            <a
+              href="https://www.facebook.com/maryse.soin.magnetisme"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook de Maryse Briand"
+              className="w-9 h-9 rounded-full border border-[#C9B8E8]/40 flex items-center justify-center text-[#C9B8E8] hover:bg-[#C9B8E8] hover:text-[#2D1B4E] transition-colors"
+            >
+              <FontAwesomeIcon icon={faFacebookF} className="text-[15px]" />
+            </a>
+          </div>
         </div>
 
         <div className="flex flex-col gap-3">

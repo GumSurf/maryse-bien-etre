@@ -154,18 +154,27 @@ export const citation = [
   {
     texte: "Guéris le corps, l'esprit suivra le chemin de la lumière.",
     auteur: "Hippocrate",
-  },
-  {
-    texte: "Les nombres sont le langage secret de l'univers.",
-    auteur: "Pythagore",
+    theme: "magnetisme",
   },
   {
     texte: "Fais du bien à ton corps pour que ton âme ait envie d'y rester",
     auteur: "Proverbe Indien",
+    theme: "magnetisme",
+  },
+  {
+    texte: "Mon bien être est une priorité et je prends le temps de prendre soin de moi",
+    auteur: "Maryse",
+    theme: "soins_energetique",
+  },
+  {
+    texte: "Les nombres sont le langage secret de l'univers.",
+    auteur: "Pythagore",
+    theme: "numerologie",
   },
   {
     texte: "Ce que l'on sème dans le silence, on le récolte dans la paix.",
     auteur: "Proverbe Breton",
+    theme: "global",
   },
 ];
 
@@ -186,7 +195,7 @@ export const tarifsMagnetisme = [
     prix: "65€",
     duree: "1h",
     description:
-      "Mon bien-être est une priorité et je prends le temps de prendre soin de moi.",
+      "Un soin énergétique pour accompagner votre démarche de bien-être et d'harmonisation.",
   },
   {
     id: "magnetisme-enfant",
