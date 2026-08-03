@@ -11,6 +11,9 @@ import Citation from "../components/Citation";
 import { Flame, Leaf, HeartPulse, Moon, CircleDot, Radar, Gem, Bell, Sparkles, HandHeart } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell, faCircleDot, faFire, faGem, faHandHoldingHeart, faHeartPulse, faLeaf, faLegal, faCloudMoon, faWandSparkles, faWaveSquare, faWifi, faCompass, faScaleBalanced, faMortarPestle, faHeartCircleCheck } from "@fortawesome/free-solid-svg-icons";
+import { avis } from "../lib/data";
+import AvisClients from "../components/AvisClients";
+
 
 const service = services.find((s) => s.slug === "magnetisme")!;
 
@@ -233,34 +236,30 @@ export default function MagnetiseusePage() {
               ))}
             </div>
           </motion.div>
+          <div className="relative w-full h-[1200px] overflow-hidden md:rounded-3xl">
+            <Image
+              src="/chakras.png"
+              alt="Retrouvez votre harmonie intérieure"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
+        </div>
+      </section>
 
-          <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}
-            className="hidden lg:block relative h-[420px]"
-          >
-            {[
-              { icon: "◈", size: 90, top: "5%", left: "30%", delay: 0 },
-              { icon: "✦", size: 60, top: "10%", left: "70%", delay: 0.4 },
-              { icon: "◎", size: 100, top: "35%", left: "5%", delay: 0.8 },
-              { icon: "◇", size: 70, top: "30%", left: "60%", delay: 1.2 },
-              { icon: "◈", size: 55, top: "60%", left: "80%", delay: 1.6 },
-              { icon: "✦", size: 85, top: "65%", left: "20%", delay: 2 },
-              { icon: "◎", size: 65, top: "85%", left: "50%", delay: 2.4 },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                className="absolute rounded-full border border-[#C9B8E8]/30 flex items-center justify-center"
-                style={{ width: item.size, height: item.size, top: item.top, left: item.left }}
-                animate={{ opacity: [0.5, 0.9, 0.5], y: [0, -10, 0] }}
-                transition={{ duration: 4 + (i % 3), repeat: Infinity, ease: "easeInOut", delay: item.delay }}
-                whileHover={{ borderColor: "rgba(201,184,232,0.7)", backgroundColor: "rgba(155,127,200,0.12)", scale: 1.08 }}
-              >
-                <span className="text-[#C9B8E8]/75" style={{ fontSize: item.size * 0.3 }} aria-hidden="true">
-                  {item.icon}
-                </span>
-              </motion.div>
-            ))}
-          </motion.div>
+      {/* ── BANNIÈRE HARMONIE INTÉRIEURE ─────────────────────── */}
+      <section className="bg-[#2D1B4E] md:py-16">
+        <div className="max-w-6xl mx-auto md:px-6">
+          <div className="relative w-full h-[1200px] overflow-hidden md:rounded-3xl">
+            <Image
+              src="/chakras.png"
+              alt="Retrouvez votre harmonie intérieure"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
         </div>
       </section>
 
@@ -705,6 +704,13 @@ export default function MagnetiseusePage() {
           </motion.p>
         </div>
       </section>
+
+      <AvisClients
+        items={avis}
+        theme="magnetisme"
+        subtitle="Témoignages"
+        title="Ils m'ont fait confiance"
+      />
 
       <Citation theme="magnetisme" />
 

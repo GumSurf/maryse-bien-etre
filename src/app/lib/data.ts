@@ -40,24 +40,36 @@ export const services = [
 ];
 
 // ─── Avis clients ────────────────────────────────────────────
-export const avis = [
+export type ThemeAvis = "magnetisme" | "soin_energetique" | "magnetisme et numerologie";
+
+export type Avis = {
+  nom: string;
+  service: string;
+  texte: string;
+  theme: ThemeAvis;
+};
+
+export const avis: Avis[] = [
   {
-    nom: "Sophie M.",
-    service: "Numérologie",
-    texte:
-      "Une séance de numérologie avec Maryse m'a permis de voir ma vie sous un angle totalement nouveau. Je recommande les yeux fermés.",
-  },
-  {
-    nom: "Laurent B.",
+    nom: "Patricia Raimbault Soler",
     service: "Magnétisme",
     texte:
-      "Maryse dégage une énergie apaisante et bienveillante. Sa séance de magnétisme m'a vraiment aidé à lâcher prise.",
+      `J’ai rencontré Maryse pour 1 séance de Magnétisme à la suite de problèmes de Santé qui impactaient mon quotidien. Elle a su m’apporter avec beaucoup d’Empathie et de Bienveillance, 1 mieux-être tout au long de la séance. Et à  la fin de la séance, je me suis sentie tellement "allégée, débarrassée"de tout ce qui pouvait bloquer mes énergies, 1 vrai "Bien Etre" que je suis même repartie ss béquilles....Et je n’étais pas à Lourdes,mais à  Ploemeur ds le 56.Des personnes comme Maryse sont essentielles ds nos vie...Alors,n’hésitez pas,contactez la,vs ne serez pas déçu...vs vs direz même...pourquoi je ne suis pas venu plus tôt?..Patricia`,
+    theme: "magnetisme",
   },
   {
-    nom: "Céline R.",
-    service: "Numérologie",
+    nom: "Elodie Le Stanguennec",
+    service: "Soin énergétique",
     texte:
-      "Je suis venue avec beaucoup de doutes et je suis repartie avec des réponses. Merci Maryse pour cette belle rencontre.",
+      `Les soins énergétiques que j'ai pu faire avec Maryse m'ont fait énormément de bien !! Thérapeute passionnée, c'est une belle âme avec beaucoup de gentillesse et de douceur je la recommande à 100%`,
+    theme: "soin_energetique",
+  },
+  {
+    nom: "Dominique Renaud-gauche",
+    service: "Magnétisme et numérologie",
+    texte:
+      `Très et excellente magnetiseuse et numerologue je recommande personne de confiance à 100% n hésiter pas à la contacter`,
+    theme: "magnetisme et numerologie",
   },
 ];
 
@@ -247,7 +259,7 @@ export const infosPratiques = [
     color: "var(--support-color)",
     titre: "Déplacement",
     description:
-      "Les déplacements à domicile sont incluses dans un rayon de 8 km autour de Lorient. Au-delà, entre 8 et 15 km, un supplément de 10 € est appliqué.",
+      "Les déplacements à domicile sont incluses dans un rayon de 7 km autour de Lorient. Au-delà, entre 8 et 15 km, un supplément entre 5 € et 10 € est appliqué.",
   },
   {
     icon: faBan,

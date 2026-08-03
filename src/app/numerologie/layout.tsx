@@ -10,7 +10,7 @@ export const metadata = {
     siteName: "Maryse Bien-Être",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/harmonie_interieure.png",
         width: 1200,
         height: 630,
         alt: "Maryse Bien-Être — Magnétisme et Numérologie à Lorient",

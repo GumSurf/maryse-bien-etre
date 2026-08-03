@@ -11,6 +11,8 @@ import Citation from "../components/Citation";
 import { Compass, CalendarDays, Sparkles, UserRound } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar, faCalendarDay, faCalendarDays, faCompass, faSeedling, faSprayCanSparkles, faTrophy, faUser } from "@fortawesome/free-solid-svg-icons";
+import { avis } from "../lib/data";
+import AvisClients from "../components/AvisClients";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -199,58 +201,19 @@ export default function NumerologiePage() {
 
       {/* ── DÉFINITION ───────────────────────────────────────── */}
       <section className="bg-[#2D1B4E] py-28 relative overflow-hidden">
-        <motion.div
-          className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#9B7FC8]/10 blur-3xl pointer-events-none"
-          animate={{ scale: [1, 1.1, 1] }}
-          transition={{ duration: 10, repeat: Infinity }}
-        />
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
           <motion.div
             variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
-            className="hidden lg:block relative h-[420px]"
+            className="hidden lg:flex justify-center"
           >
-            {[
-              { n: "7", size: 90, top: "2%", left: "8%", delay: 0 },
-              { n: "3", size: 70, top: "8%", left: "55%", delay: 0.3 },
-              { n: "9", size: 110, top: "30%", left: "28%", delay: 0.6 },
-              { n: "1", size: 60, top: "15%", left: "82%", delay: 0.9 },
-              { n: "4", size: 80, top: "55%", left: "5%", delay: 1.2 },
-              { n: "11", size: 95, top: "60%", left: "60%", delay: 1.5 },
-              { n: "2", size: 65, top: "75%", left: "35%", delay: 1.8 },
-              { n: "8", size: 75, top: "42%", left: "78%", delay: 2.1 },
-              { n: "6", size: 55, top: "85%", left: "82%", delay: 2.4 },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                className="absolute rounded-full border border-[#C9B8E8]/30 flex items-center justify-center"
-                style={{
-                  width: item.size,
-                  height: item.size,
-                  top: item.top,
-                  left: item.left,
-                }}
-                animate={{ opacity: [0.5, 0.9, 0.5], y: [0, -8, 0] }}
-                transition={{
-                  duration: 4 + (i % 3),
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: item.delay,
-                }}
-                whileHover={{
-                  transition: { duration: 0.3 },
-                  borderColor: "rgba(201,184,232,0.7)",
-                  backgroundColor: "rgba(155,127,200,0.12)",
-                  scale: 1.08,
-                }}
-              >
-                <span
-                  className="font-playfair text-[#C9B8E8]/75"
-                  style={{ fontSize: item.size * 0.32 }}
-                >
-                  {item.n}
-                </span>
-              </motion.div>
-            ))}
+            <div className="relative w-full h-[480px]">
+              <Image
+                src="/harmonie_interieure.png"
+                alt="Photo de Numérologie"
+                fill
+                className="object-contain"
+              />
+            </div>
           </motion.div>
 
           <motion.div
@@ -290,6 +253,21 @@ export default function NumerologiePage() {
               ))}
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* ── BANNIÈRE HARMONIE INTÉRIEURE ─────────────────────── */}
+      <section className="bg-[#2D1B4E] md:py-16">
+        <div className="max-w-6xl mx-auto md:px-6">
+          <div className="relative w-full aspect-[1200/630] overflow-hidden md:rounded-3xl">
+            <Image
+              src="/harmonie_interieure.png"
+              alt="Retrouvez votre harmonie intérieure"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
         </div>
       </section>
 
@@ -615,6 +593,13 @@ export default function NumerologiePage() {
           </div>
         </div>
       </section>
+
+      <AvisClients
+        items={avis}
+        theme="numerologie"
+        subtitle="Témoignages"
+        title="Ils m'ont fait confiance"
+      />
 
       <Citation theme="numerologie" />
 

@@ -11,6 +11,7 @@ import Image from "next/image";
 import { MonteCarlo } from "next/font/google";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { fa8, faLockOpen, faBolt, faLeaf, faBookOpen, faHouseChimneyUser, faHandHoldingHeart } from "@fortawesome/free-solid-svg-icons";
+import AvisClients from "./components/AvisClients";
 
 const monteCarloFont = MonteCarlo({
   subsets: ["latin"],
@@ -385,42 +386,7 @@ export default function Home() {
       </section>
 
       {/* ── AVIS CLIENTS ─────────────────────────────────────── */}
-      <section className=" bg-white py-24">
-        <div className="max-w-6xl mx-auto px-6">
-          <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
-            className="text-center mb-14"
-          >
-            <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]">
-              Témoignages
-            </span>
-            <h2 className="font-playfair text-4xl text-[#2D1B4E] mt-2">
-              Ils m'ont fait confiance
-            </h2>
-          </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:items-start">
-            {avis.map((a, i) => (
-              <motion.div
-                key={a.nom}
-                variants={fadeUp} initial="hidden" whileInView="visible"
-                viewport={{ once: true }} custom={i}
-                className={`bg-white border border-[#C9B8E8]/50 rounded-2xl p-8 flex flex-col gap-4 ${i === 1 ? "md:mt-8" : i === 2 ? "md:mt-3" : ""
-                  }`}
-              >
-                <span className="text-[#C9B8E8] font-playfair text-4xl leading-none" aria-hidden="true">
-                  "
-                </span>
-                <p className="font-lato text-sm text-[#2D1B4E]/80 leading-relaxed -mt-2">
-                  {a.texte}
-                </p>
-                <span className="font-lato text-xs text-[#9B7FC8] tracking-widest uppercase mt-auto" aria-label={`Témoignage de ${a.nom}`}>
-                  - {a.nom}
-                </span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <AvisClients items={avis} subtitle="Témoignages" title="Ils m'ont fait confiance" />
 
       <Faq items={faqGlobale} subtitle="Questions fréquentes" title="Vous avez des questions ?" />
 

@@ -179,20 +179,22 @@ export default function ContactPage() {
             </span>
             <div className="flex justify-center gap-4">
               <a
-                href="https://www.instagram.com/VOTRE_HANDLE"
+                href="https://www.instagram.com/magnetiseusemorbihan"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Suivre Maryse sur Instagram"
-                className="w-11 h-11 rounded-full border border-[#C9B8E8]/60 flex items-center justify-center text-[#9B7FC8] hover:bg-[#9B7FC8] hover:text-white transition-colors"
+                className="w-11 h-11 rounded-full flex items-center justify-center text-white transition-transform hover:scale-110"
+                style={{ background: "var(--instagram-gradient)" }}
               >
                 <FontAwesomeIcon icon={faInstagram} className="text-[18px]" />
               </a>
               <a
-                href="https://www.facebook.com/VOTRE_PAGE"
+                href="https://www.facebook.com/maryse.soin.magnetisme"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Suivre Maryse sur Facebook"
-                className="w-11 h-11 rounded-full border border-[#C9B8E8]/60 flex items-center justify-center text-[#9B7FC8] hover:bg-[#9B7FC8] hover:text-white transition-colors"
+                className="w-11 h-11 rounded-full flex items-center justify-center text-white transition-transform hover:scale-110"
+                style={{ background: "var(--facebook-color)" }}
               >
                 <FontAwesomeIcon icon={faFacebookF} className="text-[18px]" />
               </a>
