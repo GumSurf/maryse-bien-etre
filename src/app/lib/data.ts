@@ -4,7 +4,7 @@ import { faHandsHoldingCircle, fa8, faCreditCard, faMapLocation, faBan } from "@
 
 // ─── Services ───────────────────────────────────────────────
 export const services = [
-    {
+  {
     slug: "magnetisme",
     title: "Magnétisme",
     description: "Depuis que je suis enfant, je ressens et je pratique le magnétisme, un don transmis avec Amour par ma grand-mère Eléonore. Je vous accompagne avec bienveillance afin de favoriser un rééquilibrage énergétique et retrouver davantage de sérénité au quotidien. Aujourd'hui je l'associe à la numérologie pour vous accompagner avec douceur en cabinet ou à distance.",
@@ -40,7 +40,7 @@ export const services = [
 ];
 
 // ─── Avis clients ────────────────────────────────────────────
-export type ThemeAvis = "magnetisme" | "soin_energetique" | "magnetisme et numerologie";
+export type ThemeAvis = "magnetisme" | "soin_energetique" | "numerologie" | "magnetisme et numerologie";
 
 export type Avis = {
   nom: string;
@@ -70,6 +70,34 @@ export const avis: Avis[] = [
     texte:
       `Très et excellente magnetiseuse et numerologue je recommande personne de confiance à 100% n hésiter pas à la contacter`,
     theme: "magnetisme et numerologie",
+  },
+  {
+    nom: "Sylvie Stephan",
+    service: "Magnétisme",
+    texte:
+      `Je connais Maryse en tant qu'amie, je l'ai découverte en tant que professionnelle. Elle pratique avec passion et connaissance. Séance de magnétisme qui amène les émotions à fleur de peau et apporte des effets bénéfiques immédiats. N'hésitez pas à la rencontrer.`,
+    theme: "magnetisme",
+  },
+  {
+    nom: "Coco Zte Bzh",
+    service: "Magnétisme",
+    texte:
+      `Très belle séance hier avec Maryse que je ne connaissais pas. Une personne bienveillante et très gentille. À peine la séance terminée, je ressentais les bienfaits. Je n'hésiterai pas à revenir vers vous si besoin. Vraiment merci pour la personne que vous êtes.`,
+    theme: "magnetisme",
+  },
+  {
+    nom: "Élodie Le Stanguennec",
+    service: "Soin énergétique",
+    texte:
+      `Les soins énergétiques que j'ai pu faire avec Maryse m'ont fait énormément de bien !! Thérapeute passionnée, c'est une belle âme avec beaucoup de gentillesse et de douceur. Je la recommande à 100%.`,
+    theme: "soin_energetique",
+  },
+  {
+    nom: "Laura Nizan",
+    service: "Numérologie",
+    texte:
+      `J'ai fait appel à Maryse pour la numérologie et j'en suis ravie. Maryse est passionnée par les chiffres et les échanges que nous avons pu avoir durant le rendez-vous étaient très intéressants. Elle est adorable, prend son temps pour bien expliquer et nous donne ses astuces liées aux chiffres.`,
+    theme: "numerologie",
   },
 ];
 
@@ -185,7 +213,7 @@ export const citation = [
   },
   {
     texte: "Ce que l'on sème dans le silence, on le récolte dans la paix.",
-    auteur: "Proverbe Breton",
+    auteur: "Auteur Inconnu",
     theme: "global",
   },
 ];

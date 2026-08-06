@@ -20,7 +20,8 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram de Maryse Briand"
-              className="w-9 h-9 rounded-full border border-[#C9B8E8]/40 flex items-center justify-center text-[#C9B8E8] hover:bg-[#C9B8E8] hover:text-[#2D1B4E] transition-colors"
+              className="w-9 h-9 rounded-full border border-[#C9B8E8]/40 flex items-center justify-center text-white transition-transform hover:scale-105"
+              style={{ background: "var(--instagram-gradient)" }}
             >
               <FontAwesomeIcon icon={faInstagram} className="text-[15px]" />
             </a>
@@ -29,7 +30,8 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook de Maryse Briand"
-              className="w-9 h-9 rounded-full border border-[#C9B8E8]/40 flex items-center justify-center text-[#C9B8E8] hover:bg-[#C9B8E8] hover:text-[#2D1B4E] transition-colors"
+              className="w-9 h-9 rounded-full border border-[#C9B8E8]/40 flex items-center justify-center text-white transition-transform hover:scale-105"
+              style={{ background: "var(--facebook-color)" }}
             >
               <FontAwesomeIcon icon={faFacebookF} className="text-[15px]" />
             </a>
