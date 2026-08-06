@@ -58,13 +58,6 @@ export const avis: Avis[] = [
     theme: "magnetisme",
   },
   {
-    nom: "Elodie Le Stanguennec",
-    service: "Soin énergétique",
-    texte:
-      `Les soins énergétiques que j'ai pu faire avec Maryse m'ont fait énormément de bien !! Thérapeute passionnée, c'est une belle âme avec beaucoup de gentillesse et de douceur je la recommande à 100%`,
-    theme: "soin_energetique",
-  },
-  {
     nom: "Dominique Renaud-gauche",
     service: "Magnétisme et numérologie",
     texte:

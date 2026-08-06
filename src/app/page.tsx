@@ -10,7 +10,7 @@ import BlobImage from "./components/BlobImage";
 import Image from "next/image";
 import { MonteCarlo } from "next/font/google";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { fa8, faLockOpen, faBolt, faLeaf, faBookOpen, faHouseChimneyUser, faHandHoldingHeart } from "@fortawesome/free-solid-svg-icons";
+import { fa8, faLock, faBolt, faLeaf, faBookOpen, faHouseChimneyUser, faHandHoldingHeart } from "@fortawesome/free-solid-svg-icons";
 import AvisClients from "./components/AvisClients";
 
 const monteCarloFont = MonteCarlo({
@@ -67,7 +67,7 @@ export default function Home() {
         />
 
         <div
-          className={`${monteCarloFont.variable} max-w-6xl mx-auto px-6 py-24 md:py-36 min-h-[60vh] md:min-h-[85vh] flex flex-col items-center text-center gap-6 relative z-10`}
+          className={`${monteCarloFont.variable} max-w-6xl mx-auto px-6 py-24 md:py-32 min-h-[55vh] md:min-h-[75vh] flex flex-col items-center text-center gap-6 relative z-10`}
           style={{ fontFamily: "var(--font-montecarlo-home)" }}
         >
           <motion.span
@@ -99,7 +99,7 @@ export default function Home() {
           >
             Depuis mon enfance, j'accompagne les personnes grâce au magnétisme transmis
             par ma grand-mère Éléonore. Aujourd'hui, cette pratique est enrichie par la
-            numérologie afin de vous proposer un accompagnement personnalisé, en cabinet
+            numérologie afin de vous proposer un accompagnement personnalisé, à domicile
             ou à distance.
           </motion.p>
           <motion.div
@@ -120,17 +120,6 @@ export default function Home() {
             </Link>
           </motion.div>
         </div>
-
-        <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <span className="font-lato text-xs text-[#9B7FC8]/65 tracking-widest uppercase" aria-label="Découvrir">
-            Découvrir
-          </span>
-          <div className="w-px h-10 bg-gradient-to-b from-[#9B7FC8]/50 to-transparent" />
-        </motion.div>
       </section>
 
       {/* ── POURQUOI CONSULTER ───────────────────────────────────── */}
@@ -163,28 +152,24 @@ export default function Home() {
             {[
               {
                 icon: faLeaf,
-                type: "fontawesome",
                 title: "Stress & anxiété",
                 text: "Retrouvez calme et apaisement dans votre quotidien.",
                 color: "var(--leaf-color)"
               },
               {
                 icon: faBolt,
-                type: "fontawesome",
                 title: "Fatigue",
                 text: "Favorisez un meilleur équilibre énergétique.",
                 color: "var(--energy-color)"
               },
               {
-                icon: faLockOpen,
-                type: "fontawesome",
+                icon: faLock,
                 title: "Blocages",
                 text: "Avancez plus sereinement face aux difficultés émotionnelles.",
                 color: "var(--blockage-color)"
               },
               {
                 icon: fa8,
-                type: "fontawesome",
                 title: "Numérologie",
                 text: "Mieux comprendre votre personnalité et votre chemin de vie.",
                 color: "var(--number-color)"
@@ -221,10 +206,8 @@ export default function Home() {
         </div>
       </section>
 
-      <Citation />
-
       {/* ── SERVICES ─────────────────────────────────────────── */}
-      <section id="services" className=" bg-white py-24">
+      <section id="services" className="bg-white py-24">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
             variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -254,9 +237,18 @@ export default function Home() {
                   <Link
                     href={s.href}
                     aria-label={`En savoir plus sur la ${s.title}`}
-                    className="group bg-white border border-[#C9B8E8]/50 rounded-3xl p-10 flex flex-col gap-4 hover:shadow-xl hover:shadow-[#C9B8E8]/20 hover:-translate-y-1 transition-all duration-300"
+                    className="group relative bg-white border border-[#C9B8E8]/50 rounded-3xl p-10 pt-12 flex flex-col gap-4 overflow-hidden hover:shadow-xl hover:shadow-[#C9B8E8]/25 hover:-translate-y-1 transition-all duration-300"
                   >
-                    <div className="w-16 h-16 rounded-2xl bg-[#F5F0FF] flex items-center justify-center group-hover:bg-[#9B7FC8]/10 transition-colors">
+                    {/* Bord supérieur coloré */}
+                    <div
+                      className="absolute top-0 left-0 right-0 h-1.5"
+                      style={{ background: s.color }}
+                    />
+
+                    <div
+                      className="w-16 h-16 rounded-2xl flex items-center justify-center transition-transform duration-300 group-hover:scale-105"
+                      style={{ background: `${s.color}1A` }}
+                    >
                       <FontAwesomeIcon
                         icon={s.icon}
                         className="text-[34px]"
@@ -272,8 +264,11 @@ export default function Home() {
                       {s.description}
                     </p>
 
-                    <span className="font-lato text-sm text-[#9B7FC8] group-hover:underline mt-auto">
-                      En savoir plus →
+                    <span className="font-lato text-sm text-[#9B7FC8] mt-auto inline-flex items-center gap-1.5">
+                      En savoir plus
+                      <span className="transition-transform duration-300 group-hover:translate-x-1">
+                        →
+                      </span>
                     </span>
                   </Link>
                 </motion.div>
@@ -338,8 +333,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── POURQUOI MOI ───────────────────────────────────── */}
-      <section className="bg-[#F5F0FF] py-24">
+      {/* ── POURQUOI MOI (parcours) ───────────────────────────── */}
+      <section className="bg-white py-24">
         <div className="max-w-6xl mx-auto px-6">
 
           <motion.div
@@ -358,28 +353,41 @@ export default function Home() {
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {values.map((item) => (
-              <div
+          <div className="relative grid md:grid-cols-3 gap-10 md:gap-6">
+            {/* Ligne de parcours (desktop uniquement) */}
+            <div className="hidden md:block absolute top-10 left-[16.66%] right-[16.66%] h-px bg-[#C9B8E8]/50" />
+
+            {values.map((item, i) => (
+              <motion.div
                 key={item.title}
-                className="bg-white rounded-3xl p-8 border border-[#C9B8E8]/40"
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                custom={i}
+                className="relative flex flex-col items-center text-center gap-4"
               >
-                <div className="w-20 h-20 rounded-full bg-[#F5F0FF] flex items-center justify-center mx-auto">
+                <div className="relative z-10 w-20 h-20 rounded-full bg-[#F5F0FF] border border-[#C9B8E8]/40 flex items-center justify-center">
                   <FontAwesomeIcon
                     icon={item.icon}
-                    className="text-[38px]"
+                    className="text-[32px]"
                     style={{ color: item.color }}
                   />
+                  <span
+                    className="absolute -bottom-2 -right-1 w-7 h-7 rounded-full bg-[#9B7FC8] text-white font-lato text-xs flex items-center justify-center"
+                  >
+                    {i + 1}
+                  </span>
                 </div>
 
-                <h3 className="font-playfair text-2xl text-[#2D1B4E] mt-5">
+                <h3 className="font-playfair text-xl text-[#2D1B4E]">
                   {item.title}
                 </h3>
 
-                <p className="font-lato text-sm mt-3 text-[#2D1B4E]/75 leading-relaxed">
+                <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed max-w-xs">
                   {item.text}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -387,6 +395,8 @@ export default function Home() {
 
       {/* ── AVIS CLIENTS ─────────────────────────────────────── */}
       <AvisClients items={avis} subtitle="Témoignages" title="Ils m'ont fait confiance" />
+
+      <Citation />
 
       <Faq items={faqGlobale} subtitle="Questions fréquentes" title="Vous avez des questions ?" />
 

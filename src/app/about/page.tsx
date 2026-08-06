@@ -8,7 +8,7 @@ import Cta from "../components/Cta";
 import Citation from "../components/Citation";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart, faHandHoldingHeart, faLeaf, faHandsHoldingChild } from "@fortawesome/free-solid-svg-icons";
+import { faHeart, faPeopleArrows, faLeaf } from "@fortawesome/free-solid-svg-icons";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -47,19 +47,19 @@ const valeurs = [
     icon: faHeart,
     title: "La bienveillance",
     desc: "Chaque personne est accueillie avec écoute, respect et sans jugement afin de proposer un accompagnement adapté à ses besoins.",
-    color: "#D48B8B"
+    color: "var(--bienveillance-color, #D48B8B)"
   },
   {
-    icon: faHandsHoldingChild,
+    icon: faPeopleArrows,
     title: "La transmission",
     desc: "Je poursuis le savoir que ma grand-mère Éléonore m'a transmis avec le même respect et la même passion qui ont guidé son enseignement.",
-    color: "#C9A35B"
+    color: "var(--transmission-color, #C9A35B)"
   },
   {
     icon: faLeaf,
     title: "L'authenticité",
     desc: "Je pratique le magnétisme avec sincérité et humilité, en restant fidèle aux valeurs qui m'ont été transmises depuis mon enfance.",
-    color: "#7BAE7F"
+    color: "var(--authenticite-color, #7BAE7F)"
   }
 ];
 
@@ -67,7 +67,7 @@ export default function AboutPage() {
   return (
     <>
       {/* ── HERO ─────────────────────────────────────────────── */}
-      <section className="relative bg-[#F5F0FF] overflow-hidden  min-h-[60vh] md:min-h-[85vh] flex items-center">
+      <section className="relative bg-[#F5F0FF] overflow-hidden min-h-[55vh] md:min-h-[75vh] flex items-center">
         <motion.div
           className="absolute top-[-100px] right-[-100px] w-[450px] h-[450px] rounded-full bg-[#C9B8E8]/20 blur-3xl pointer-events-none"
           animate={{ scale: [1, 1.08, 1], opacity: [0.4, 0.6, 0.4] }}
@@ -79,7 +79,7 @@ export default function AboutPage() {
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
         />
 
-        <div className="max-w-6xl mx-auto px-6 py-28 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full relative z-10">
+        <div className="max-w-6xl mx-auto px-6 py-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full relative z-10">
           <div className="flex flex-col gap-7">
             <motion.span
               variants={fadeUp} initial="hidden" animate="visible" custom={0}
@@ -122,28 +122,17 @@ export default function AboutPage() {
             >
               <Image
                 src="/maryse_6.jpeg"
-                alt="Photo de Magnetisme"
+                alt="Photo de Maryse"
                 fill
                 className="object-cover"
               />
             </BlobImage>
           </motion.div>
         </div>
-
-        <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <span className="font-lato text-xs text-[#9B7FC8]/65 tracking-widest uppercase" aria-label="Découvrir">
-            Découvrir
-          </span>
-          <div className="w-px h-10 bg-gradient-to-b from-[#9B7FC8]/50 to-transparent" />
-        </motion.div>
       </section>
 
       {/* ── HISTOIRE ─────────────────────────────────────────── */}
-      <section className=" bg-white py-28">
+      <section className="bg-white py-28">
         <div className="max-w-3xl mx-auto px-6 text-center flex flex-col gap-6">
           <motion.span
             variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -252,11 +241,20 @@ export default function AboutPage() {
                 key={item.title}
                 variants={fadeUp} initial="hidden" whileInView="visible"
                 viewport={{ once: true }} custom={i}
-                whileHover={{ y: -6, transition: { duration: 0.3 },boxShadow: "0 20px 40px rgba(155,127,200,0.15)" }}
-                className={`bg-white border border-[#C9B8E8]/50 rounded-3xl p-8 flex flex-col gap-4 transition-all duration-300 ${i === 1 ? "lg:mt-10" : ""
+                whileHover={{ y: -6, transition: { duration: 0.3 }, boxShadow: "0 20px 40px rgba(155,127,200,0.15)" }}
+                className={`relative bg-white border border-[#C9B8E8]/50 rounded-3xl p-8 pt-10 flex flex-col gap-4 overflow-hidden transition-all duration-300 ${i === 1 ? "lg:mt-10" : ""
                   }`}
               >
-                <div className="w-16 h-16 rounded-full bg-[#F5F0FF] flex items-center justify-center">
+                {/* Bord supérieur coloré */}
+                <div
+                  className="absolute top-0 left-0 right-0 h-1.5"
+                  style={{ background: item.color }}
+                />
+
+                <div
+                  className="w-16 h-16 rounded-full flex items-center justify-center"
+                  style={{ backgroundColor: `color-mix(in srgb, ${item.color} 12%, white)` }}
+                >
                   <FontAwesomeIcon
                     icon={item.icon}
                     className="text-[34px]"
