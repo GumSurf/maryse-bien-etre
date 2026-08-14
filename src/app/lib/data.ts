@@ -109,7 +109,7 @@ export const faqGlobale = [
   {
     question: "Le magnétisme peut-il remplacer un traitement médical ?",
     reponse:
-      "Non. Le magnétisme est une approche complémentaire qui ne se substitue en aucun cas à un suivi médical. Il vient en soutien de votre bien-être global.",
+      "Non. Le magnétisme est une approche complémentaire qui ne se substitue en aucun cas à un suivi médical. Il vient en supplément de votre bien-être global.",
   },
   {
     question: "Comment prendre rendez-vous ?",

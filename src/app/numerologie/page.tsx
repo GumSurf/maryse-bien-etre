@@ -2,16 +2,19 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { faqNumerologie } from "../lib/data";
+import { faqNumerologie, avis } from "../lib/data";
 import Faq from "../components/Faq";
 import Cta from "../components/Cta";
 import BlobImage from "../components/BlobImage";
 import Image from "next/image";
 import Citation from "../components/Citation";
-import { Compass, CalendarDays, Sparkles, UserRound } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCalendar, faCalendarDay, faCalendarDays, faCompass, faSeedling, faSprayCanSparkles, faTrophy, faUser } from "@fortawesome/free-solid-svg-icons";
-import { avis } from "../lib/data";
+import {
+  faCalendarDays,
+  faSeedling,
+  faTrophy,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
 import AvisClients from "../components/AvisClients";
 
 const fadeUp = {
@@ -23,11 +26,16 @@ const fadeUp = {
   }),
 };
 
+const numerologieQuote =
+  avis.find(
+    (a) => a.theme === "numerologie" || a.theme === "magnetisme et numerologie"
+  ) ?? null;
+
 export default function NumerologiePage() {
   return (
     <>
       {/* ── HERO ─────────────────────────────────────────────── */}
-      <section className="relative bg-[#F5F0FF] overflow-hidden  min-h-[60vh] md:min-h-[85vh] flex items-center">
+      <section className="relative bg-[#F5F0FF] overflow-hidden min-h-[55vh] md:min-h-[75vh] flex items-center">
         <motion.div
           className="absolute top-[-120px] right-[-120px] w-[550px] h-[550px] rounded-full bg-[#C9B8E8]/25 blur-3xl pointer-events-none"
           animate={{ scale: [1, 1.08, 1], opacity: [0.4, 0.65, 0.4] }}
@@ -39,7 +47,7 @@ export default function NumerologiePage() {
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
         />
 
-        <div className="max-w-6xl mx-auto px-6 py-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full relative z-10">
+        <div className="max-w-6xl mx-auto px-6 py-28 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full relative z-10">
           <div className="flex flex-col gap-7">
             <motion.span
               variants={fadeUp} initial="hidden" animate="visible" custom={0}
@@ -125,21 +133,10 @@ export default function NumerologiePage() {
             </div>
           </motion.div>
         </div>
-
-        <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <span className="font-lato text-xs text-[#9B7FC8]/65 tracking-widest uppercase" aria-label="Découvrir">
-            Découvrir
-          </span>
-          <div className="w-px h-10 bg-gradient-to-b from-[#9B7FC8]/50 to-transparent" />
-        </motion.div>
       </section>
 
       {/* ── ACCROCHE ÉMOTIONNELLE ─────────────────────────────── */}
-      <section id="definition" className=" bg-white py-28">
+      <section id="definition" className="bg-white py-28">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
             variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -190,7 +187,7 @@ export default function NumerologiePage() {
             >
               <Image
                 src="/maryse_2.jpg"
-                alt="Photo de Numerologie"
+                alt="Maryse lors d'une consultation de numérologie"
                 fill
                 className="object-cover"
               />
@@ -200,76 +197,88 @@ export default function NumerologiePage() {
       </section>
 
       {/* ── DÉFINITION ───────────────────────────────────────── */}
-      <section className="bg-[#2D1B4E] py-28 relative overflow-hidden">
-        <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
-          <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
-            className="hidden lg:flex justify-center"
-          >
-            <div className="relative w-full h-[480px]">
-              <Image
-                src="/harmonie_interieure.png"
-                alt="Photo de Numérologie"
-                fill
-                className="object-contain"
-              />
-            </div>
-          </motion.div>
+<section className="bg-[#2D1B4E] py-28 relative overflow-hidden">
+  <motion.div
+    className="absolute top-0 left-0 w-96 h-96 rounded-full bg-[#9B7FC8]/10 blur-3xl pointer-events-none"
+    animate={{ scale: [1, 1.1, 1] }}
+    transition={{ duration: 10, repeat: Infinity }}
+  />
 
-          <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}
-            className="flex flex-col gap-6"
-          >
-            <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#C9B8E8]/75">
-              Définition
-            </span>
-            <h2 className="font-playfair text-4xl md:text-5xl text-white leading-tight">
-              La numérologie,{" "}
-              <em className="text-[#C9B8E8] not-italic">c'est quoi exactement ?</em>
-            </h2>
-            <p className="font-lato text-sm text-[#E8E0F5]/80 leading-relaxed">
-              La numérologie est une discipline ancestrale qui consiste à analyser
-              les vibrations des chiffres liés à votre date de naissance et à votre
-              prénom. Elle révèle les messages cachés derrière ces chiffres pour
-              mieux vous aligner avec votre véritable essence.
-            </p>
-            <p className="font-lato text-sm text-[#E8E0F5]/80 leading-relaxed">
-              Chaque nombre est une énergie, une vibration en mouvement constant,
-              qui porte en elle une part d'ombre et une part de lumière, fluctuante
-              selon chaque personne. Les nombres se manifestent dans notre quotidien
-              sous les formes les plus variées : il n'y a pas de hasard, il n'y a
-              que des rendez-vous.
-            </p>
-            <div className="flex flex-col gap-3 mt-2">
-              {[
-                "Vos forces et vos défis",
-                "Vos cycles et périodes de transformation",
-                "Les clés de votre fonctionnement profond",
-              ].map((item, i) => (
-                <div key={i} className="flex items-center gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#C9B8E8] flex-shrink-0" />
-                  <span className="font-lato text-sm text-[#E8E0F5]/85">{item}</span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
+  <div className="max-w-6xl mx-auto px-6 relative z-10">
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-[1.3fr_3fr] md:items-center md:gap-8">
 
-      {/* ── BANNIÈRE HARMONIE INTÉRIEURE ─────────────────────── */}
-      <section className="bg-[#2D1B4E] md:py-16">
-        <div className="max-w-6xl mx-auto md:px-6">
-          <div className="relative w-full aspect-[1200/630] overflow-hidden md:rounded-3xl">
-            <Image
-              src="/harmonie_interieure.png"
-              alt="Retrouvez votre harmonie intérieure"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
+      {/* Texte */}
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="flex flex-col gap-6"
+      >
+        <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#C9B8E8]/75">
+          Définition
+        </span>
+
+        <h2 className="font-playfair text-4xl md:text-5xl text-white leading-tight">
+          La numérologie,{" "}
+          <em className="text-[#C9B8E8] not-italic">
+            c'est quoi exactement ?
+          </em>
+        </h2>
+
+        <p className="font-lato text-sm text-[#E8E0F5]/80 leading-relaxed">
+          La numérologie est une discipline ancestrale qui consiste à analyser
+          les vibrations des chiffres liés à votre date de naissance et à votre
+          prénom. Elle révèle les messages cachés derrière ces chiffres pour
+          mieux vous aligner avec votre véritable essence.
+        </p>
+
+        <p className="font-lato text-sm text-[#E8E0F5]/80 leading-relaxed">
+          Chaque nombre est une énergie, une vibration en mouvement constant,
+          qui porte en elle une part d'ombre et une part de lumière, fluctuante
+          selon chaque personne. Les nombres se manifestent dans notre quotidien
+          sous les formes les plus variées : il n'y a pas de hasard, il n'y a
+          que des rendez-vous.
+        </p>
+
+        <div className="flex flex-col gap-3 mt-2">
+          {[
+            "Vos forces et vos défis",
+            "Vos cycles et périodes de transformation",
+            "Les clés de votre fonctionnement profond",
+          ].map((item) => (
+            <div key={item} className="flex items-center gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#C9B8E8] flex-shrink-0" />
+              <span className="font-lato text-sm text-[#E8E0F5]/85">
+                {item}
+              </span>
+            </div>
+          ))}
         </div>
-      </section>
+      </motion.div>
+
+      {/* Image */}
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        custom={1}
+        className="w-screen relative left-1/2 right-1/2 -mx-[50vw] md:w-auto md:static md:mx-0"
+      >
+        <Image
+          src="/harmonie_interieure.png"
+          alt="Photo de Numérologie"
+          width={1200}
+          height={900}
+          className="w-full h-auto md:rounded rounded-none"
+          priority
+        />
+      </motion.div>
+
+    </div>
+  </div>
+</section>
 
       {/* ── COMMENT ÇA AIDE ──────────────────────────────────── */}
       <section className="bg-[#F5F0FF] py-28">
@@ -290,28 +299,28 @@ export default function NumerologiePage() {
             {[
               {
                 icon: faSeedling,
-                color: "var(--support-color)",
+                color: "var(--support-color, #7BAE7F)",
                 title: "Le Chemin de Vie",
                 desc: "Votre direction intérieure, votre mission profonde.",
                 offset: "lg:mt-0",
               },
               {
                 icon: faCalendarDays,
-                color: "var(--energy-color)",
+                color: "var(--energy-color, #C9A35B)",
                 title: "Cycles & Années",
                 desc: "Agir au bon moment, sans forcer. Comprendre vos rythmes.",
                 offset: "lg:mt-12",
               },
               {
                 icon: faTrophy,
-                color: "var(--number-color)",
+                color: "var(--number-color, #9B7FC8)",
                 title: "Défis & Leçons",
                 desc: "Transformer les obstacles en véritables leviers d'évolution.",
                 offset: "lg:mt-4",
               },
               {
                 icon: faUser,
-                color: "var(--family-color)",
+                color: "var(--family-color, #2D1B4E)",
                 title: "Connaissance de soi",
                 desc: "Se retrouver, se reconnaître dans ses propres vibrations.",
                 offset: "lg:mt-16",
@@ -322,13 +331,22 @@ export default function NumerologiePage() {
                 variants={fadeUp} initial="hidden" whileInView="visible"
                 viewport={{ once: true }} custom={i}
                 whileHover={{ y: -6, transition: { duration: 0.3 }, boxShadow: "0 20px 40px rgba(155,127,200,0.15)" }}
-                className={`bg-white border border-[#C9B8E8]/50 rounded-3xl p-8 flex flex-col gap-4 transition-all duration-300 cursor-default ${item.offset}`}
+                className={`relative bg-white border border-[#C9B8E8]/50 rounded-3xl p-8 pt-10 flex flex-col gap-4 overflow-hidden transition-all duration-300 cursor-default ${item.offset}`}
               >
-                <FontAwesomeIcon
-                  icon={item.icon}
-                  className="text-[34px]"
-                  style={{ color: item.color }}
+                <div
+                  className="absolute top-0 left-0 right-0 h-1.5"
+                  style={{ background: item.color }}
                 />
+                <div
+                  className="w-12 h-12 rounded-xl flex items-center justify-center"
+                  style={{ backgroundColor: `color-mix(in srgb, ${item.color} 12%, white)` }}
+                >
+                  <FontAwesomeIcon
+                    icon={item.icon}
+                    className="text-[28px]"
+                    style={{ color: item.color }}
+                  />
+                </div>
                 <h3 className="font-playfair text-xl text-[#2D1B4E]">{item.title}</h3>
                 <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed">{item.desc}</p>
               </motion.div>
@@ -337,7 +355,7 @@ export default function NumerologiePage() {
         </div>
       </section>
 
-      {/* ── DETTES KARMIQUES & MÉMOIRES FAMILIALES (nouveau) ─── */}
+      {/* ── DETTES KARMIQUES & MÉMOIRES FAMILIALES ───────────── */}
       <section className="bg-white py-28">
         <div className="max-w-5xl mx-auto px-6">
           <motion.div
@@ -382,7 +400,7 @@ export default function NumerologiePage() {
       </section>
 
       {/* ── MA PRATIQUE ──────────────────────────────────────── */}
-      <section className=" bg-[#F5F0FF] py-28">
+      <section className="bg-[#F5F0FF] py-28">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
             variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -431,7 +449,7 @@ export default function NumerologiePage() {
             >
               <Image
                 src="/numerologie/numerologie_1.jpg"
-                alt="Photo de Numerologie"
+                alt="Portrait numérologique en cours de préparation"
                 fill
                 className="object-cover"
               />
@@ -440,7 +458,7 @@ export default function NumerologiePage() {
         </div>
       </section>
 
-      {/* ── CYCLES DE 9 ANS & ANNÉE PERSONNELLE (nouveau) ────── */}
+      {/* ── CYCLES DE 9 ANS & ANNÉE PERSONNELLE ──────────────── */}
       <section className="bg-white py-28">
         <div className="max-w-5xl mx-auto px-6">
           <motion.div
@@ -524,18 +542,23 @@ export default function NumerologiePage() {
             ))}
           </div>
 
-          <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
-            className="mt-16 max-w-2xl mx-auto text-center border-t border-[#C9B8E8]/20 pt-14"
-          >
-            <span className="font-playfair text-5xl text-[#C9B8E8]/50 block leading-none -mb-2" aria-hidden="true">"</span>
-            <p className="font-playfair text-xl text-white leading-relaxed">
-              Je repars avec des clés pour toute ma vie.
-            </p>
-            <span className="font-lato text-xs text-[#C9B8E8]/70 tracking-widest uppercase mt-4 block" aria-label="Témoignage de Laurent B.">
-              - Laurent B.
-            </span>
-          </motion.div>
+          {numerologieQuote && (
+            <motion.div
+              variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+              className="mt-16 max-w-2xl mx-auto text-center border-t border-[#C9B8E8]/20 pt-14"
+            >
+              <span className="font-playfair text-5xl text-[#C9B8E8]/50 block leading-none -mb-2" aria-hidden="true">"</span>
+              <p className="font-playfair text-xl text-white leading-relaxed line-clamp-4">
+                {numerologieQuote.texte}
+              </p>
+              <span
+                className="font-lato text-xs text-[#C9B8E8]/70 tracking-widest uppercase mt-4 block"
+                aria-label={`Témoignage de ${numerologieQuote.nom}`}
+              >
+                - {numerologieQuote.nom}
+              </span>
+            </motion.div>
+          )}
         </div>
       </section>
 

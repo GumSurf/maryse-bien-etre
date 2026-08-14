@@ -2,20 +2,33 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { services, faqMagnetisme } from "../lib/data";
+import { services, faqMagnetisme, avis } from "../lib/data";
 import Faq from "../components/Faq";
 import Cta from "../components/Cta";
 import BlobImage from "../components/BlobImage";
 import Image from "next/image";
 import Citation from "../components/Citation";
-import { Flame, Leaf, HeartPulse, Moon, CircleDot, Radar, Gem, Bell, Sparkles, HandHeart } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBell, faCircleDot, faFire, faGem, faHandHoldingHeart, faHeartPulse, faLeaf, faLegal, faCloudMoon, faWandSparkles, faWaveSquare, faWifi, faCompass, faScaleBalanced, faMortarPestle, faHeartCircleCheck } from "@fortawesome/free-solid-svg-icons";
-import { avis } from "../lib/data";
+import {
+  faFire,
+  faLeaf,
+  faHeartPulse,
+  faCloudMoon,
+  faCompass,
+  faWifi,
+  faGem,
+  faMortarPestle,
+  faScaleBalanced,
+  faHeartCircleCheck,
+} from "@fortawesome/free-solid-svg-icons";
 import AvisClients from "../components/AvisClients";
 
-
 const service = services.find((s) => s.slug === "magnetisme")!;
+
+const magnetismeQuote =
+  avis.find(
+    (a) => a.theme === "magnetisme" || a.theme === "magnetisme et numerologie"
+  ) ?? null;
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -30,7 +43,7 @@ export default function MagnetiseusePage() {
   return (
     <>
       {/* ── HERO ─────────────────────────────────────────────── */}
-      <section className="relative bg-[#F5F0FF] overflow-hidden  min-h-[60vh] md:min-h-[85vh] flex items-center">
+      <section className="relative bg-[#F5F0FF] overflow-hidden min-h-[55vh] md:min-h-[75vh] flex items-center">
         <motion.div
           className="absolute top-[-100px] left-[-100px] w-[500px] h-[500px] rounded-full bg-[#C9B8E8]/25 blur-3xl pointer-events-none"
           animate={{ scale: [1, 1.08, 1], opacity: [0.4, 0.65, 0.4] }}
@@ -42,7 +55,7 @@ export default function MagnetiseusePage() {
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
         />
 
-        <div className="max-w-6xl mx-auto px-6 py-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full relative z-10">
+        <div className="max-w-6xl mx-auto px-6 py-28 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full relative z-10">
           <motion.div
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -125,21 +138,10 @@ export default function MagnetiseusePage() {
             </motion.div>
           </div>
         </div>
-
-        <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <span className="font-lato text-xs text-[#9B7FC8]/65 tracking-widest uppercase" aria-label="Découvrir">
-            Découvrir
-          </span>
-          <div className="w-px h-10 bg-gradient-to-b from-[#9B7FC8]/50 to-transparent" />
-        </motion.div>
       </section>
 
       {/* ── ACCROCHE ÉMOTIONNELLE ─────────────────────────────── */}
-      <section id="definition" className=" bg-white py-28">
+      <section id="definition" className="bg-white py-28">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
             variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -191,7 +193,7 @@ export default function MagnetiseusePage() {
             >
               <Image
                 src="/maryse_7.jpeg"
-                alt="Photo de Magnetisme"
+                alt="Maryse lors d'une séance de magnétisme"
                 fill
                 className="object-cover"
               />
@@ -201,64 +203,56 @@ export default function MagnetiseusePage() {
       </section>
 
       {/* ── DÉFINITION ───────────────────────────────────────── */}
-      <section className="bg-[#2D1B4E] py-28 relative overflow-hidden">
+<section className="bg-[#2D1B4E] py-28 relative overflow-hidden">
         <motion.div
           className="absolute top-0 left-0 w-96 h-96 rounded-full bg-[#9B7FC8]/10 blur-3xl pointer-events-none"
           animate={{ scale: [1, 1.1, 1] }}
           transition={{ duration: 10, repeat: Infinity }}
         />
-        <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
-          <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
-            className="flex flex-col gap-6"
-          >
-            <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#C9B8E8]/75">
-              Définition
-            </span>
-            <h2 className="font-playfair text-4xl md:text-5xl text-white leading-tight">
-              Le magnétisme,{" "}
-              <em className="text-[#C9B8E8] not-italic">c'est quoi exactement ?</em>
-            </h2>
-            <p className="font-lato text-sm text-[#E8E0F5]/80 leading-relaxed">
-              {service.intro}
-            </p>
-            <p className="font-lato text-sm text-[#E8E0F5]/80 leading-relaxed">
-              C'est une pratique énergétique ancestrale qui accompagne les
-              personnes dans leur recherche de bien être. Chaque séance est adaptée à vos
-              besoins et se déroule à votre rythme.
-            </p>
-            <div className="flex flex-col gap-3 mt-2">
-              {service.details.map((item) => (
-                <div key={item} className="flex items-center gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#C9B8E8] flex-shrink-0" />
-                  <span className="font-lato text-sm text-[#E8E0F5]/85">{item}</span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-          <div className="relative w-full h-[1200px] overflow-hidden md:rounded-3xl">
-            <Image
-              src="/chakras.png"
-              alt="Retrouvez votre harmonie intérieure"
-              fill
-              className="object-contain"
-              priority
-            />
-          </div>
-        </div>
-      </section>
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-[1.3fr_3fr] md:items-center md:gap-8">
+            <motion.div
+              variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+              className="flex flex-col gap-6"
+            >
+              <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#C9B8E8]/75">
+                Définition
+              </span>
+              <h2 className="font-playfair text-4xl md:text-5xl text-white leading-tight">
+                Le magnétisme,{" "}
+                <em className="text-[#C9B8E8] not-italic">c'est quoi exactement ?</em>
+              </h2>
+              <p className="font-lato text-sm text-[#E8E0F5]/80 leading-relaxed">
+                {service.intro}
+              </p>
+              <p className="font-lato text-sm text-[#E8E0F5]/80 leading-relaxed">
+                C'est une pratique énergétique ancestrale qui accompagne les
+                personnes dans leur recherche de bien être. Chaque séance est adaptée à vos
+                besoins et se déroule à votre rythme.
+              </p>
+              <div className="flex flex-col gap-3 mt-2">
+                {service.details.map((item) => (
+                  <div key={item} className="flex items-center gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#C9B8E8] flex-shrink-0" />
+                    <span className="font-lato text-sm text-[#E8E0F5]/85">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
 
-      {/* ── BANNIÈRE HARMONIE INTÉRIEURE ─────────────────────── */}
-      <section className="bg-[#2D1B4E] md:py-16">
-        <div className="max-w-6xl mx-auto md:px-6">
-          <div className="relative w-full h-[1200px] overflow-hidden md:rounded-3xl">
-            <Image
-              src="/chakras.png"
-              alt="Retrouvez votre harmonie intérieure"
-              fill
-              className="object-contain"
-              priority
-            />
+            <motion.div
+              variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}
+              className="w-screen relative left-1/2 right-1/2 -mx-[50vw] md:w-auto md:static md:mx-0"
+            >
+              <Image
+                src="/magnetiseuse&numerologie.png"
+                alt="Représentation des chakras et de l'harmonie intérieure"
+                width={1200}
+                height={900}
+                className="w-full h-auto md:rounded rounded-none"
+                priority
+              />
+            </motion.div>
           </div>
         </div>
       </section>
@@ -282,28 +276,28 @@ export default function MagnetiseusePage() {
             {[
               {
                 icon: faFire,
-                color: "var(--burn-color)",
+                color: "var(--burn-color, #E07A5F)",
                 title: "Brûlures",
                 desc: "J'interviens également comme coupeuse de feu afin d'accompagner les personnes souffrant de brûlures (ménagères, traitements médicaux...).",
                 offset: "lg:mt-0",
               },
               {
                 icon: faLeaf,
-                color: "var(--stress-color)",
+                color: "var(--stress-color, #7BAE7F)",
                 title: "Stress & fatigue",
                 desc: "Le magnétisme peut contribuer à retrouver davantage de calme, de sérénité et un meilleur équilibre énergétique.",
                 offset: "lg:mt-4",
               },
               {
                 icon: faHeartPulse,
-                color: "var(--pain-color)",
+                color: "var(--pain-color, #C97B84)",
                 title: "Douleurs & peau",
                 desc: "Le magnétisme peut accompagner certaines douleurs et problèmes de peau, toujours en complément d'un suivi médical.",
                 offset: "lg:mt-10",
               },
               {
                 icon: faCloudMoon,
-                color: "var(--sleep-color)",
+                color: "var(--sleep-color, #6C7BA3)",
                 title: "Sommeil & détente",
                 desc: "Un accompagnement énergétique peut favoriser un sommeil plus réparateur et un véritable lâcher-prise.",
                 offset: "lg:mt-4",
@@ -314,12 +308,19 @@ export default function MagnetiseusePage() {
                 variants={fadeUp} initial="hidden" whileInView="visible"
                 viewport={{ once: true }} custom={i}
                 whileHover={{ y: -6, transition: { duration: 0.3 }, boxShadow: "0 20px 40px rgba(155,127,200,0.15)" }}
-                className={`bg-white border border-[#C9B8E8]/50 rounded-3xl p-8 flex flex-col gap-4 transition-all duration-300 cursor-default ${item.offset}`}
+                className={`relative bg-white border border-[#C9B8E8]/50 rounded-3xl p-8 pt-10 flex flex-col gap-4 overflow-hidden transition-all duration-300 cursor-default ${item.offset}`}
               >
-                <div className="w-12 h-12 rounded-xl bg-[#F5F0FF] flex items-center justify-center">
+                <div
+                  className="absolute top-0 left-0 right-0 h-1.5"
+                  style={{ background: item.color }}
+                />
+                <div
+                  className="w-12 h-12 rounded-xl flex items-center justify-center"
+                  style={{ backgroundColor: `color-mix(in srgb, ${item.color} 12%, white)` }}
+                >
                   <FontAwesomeIcon
                     icon={item.icon}
-                    className="text-[34px]"
+                    className="text-[28px]"
                     style={{ color: item.color }}
                   />
                 </div>
@@ -362,46 +363,56 @@ export default function MagnetiseusePage() {
             {[
               {
                 icon: faCompass,
-                color: "var(--pendulum-color)",
+                color: "var(--pendulum-color, #9B7FC8)",
                 title: "Pendule",
                 desc: "Utilisé pour rechercher les causes, détecter les blocages énergétiques et évaluer le taux vibratoire."
               },
               {
                 icon: faWifi,
-                color: "var(--vibration-color)",
+                color: "var(--vibration-color, #7FA8C9)",
                 title: "Planche vibratoire",
                 desc: "Permet d'affiner les recherches énergétiques et d'orienter le soin."
               },
               {
                 icon: faGem,
-                color: "var(--crystal-color)",
+                color: "var(--crystal-color, #B98FD6)",
                 title: "Pierres & cristaux",
                 desc: "Ils accompagnent le rééquilibrage des centres énergétiques et des chakras."
               },
               {
                 icon: faMortarPestle,
-                color: "var(--sound-color)",
+                color: "var(--sound-color, #C9A35B)",
                 title: "Bols tibétains",
                 desc: "Les vibrations sonores favorisent la détente et l'harmonisation énergétique."
               },
               {
                 icon: faScaleBalanced,
-                color: "var(--energy-balance-color)",
+                color: "var(--energy-balance-color, #7FBFA0)",
                 title: "Rééquilibrage énergétique",
                 desc: "Travail sur la circulation de l'énergie afin de retrouver davantage d'harmonie."
               },
               {
                 icon: faHeartCircleCheck,
-                color: "var(--family-color)",
+                color: "var(--family-color, #9B7FC8)",
                 title: "Accompagnement personnalisé",
                 desc: "Chaque soin est adapté à votre situation et à vos besoins."
               }
             ].map((item) => (
-              <div key={item.title} className="flex flex-col gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#F5F0FF] flex items-center justify-center">
+              <div
+                key={item.title}
+                className="relative flex flex-col gap-4 p-6 rounded-2xl border border-[#C9B8E8]/30 overflow-hidden"
+              >
+                <div
+                  className="absolute top-0 left-0 bottom-0 w-1"
+                  style={{ background: item.color }}
+                />
+                <div
+                  className="w-12 h-12 rounded-xl flex items-center justify-center"
+                  style={{ backgroundColor: `color-mix(in srgb, ${item.color} 12%, white)` }}
+                >
                   <FontAwesomeIcon
                     icon={item.icon}
-                    className="text-[34px]"
+                    className="text-[28px]"
                     style={{ color: item.color }}
                   />
                 </div>
@@ -416,7 +427,7 @@ export default function MagnetiseusePage() {
       <Citation theme="soins_energetique" />
 
       {/* ── MA PRATIQUE ──────────────────────────────────────── */}
-      <section className=" bg-white py-28">
+      <section className="bg-white py-28">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
             variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -461,22 +472,19 @@ export default function MagnetiseusePage() {
             </div>
           </motion.div>
 
-          <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}
-            className="order-1 lg:order-2 flex justify-center"
-          >
-            <BlobImage
-              variant={3}
-              className="w-64 h-64 md:w-full md:max-w-sm md:aspect-[4/5]"
+            <motion.div
+              variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}
+              className="order-2 lg:order-0 w-screen relative left-1/2 right-1/2 -mx-[50vw] md:w-auto md:static md:mx-0"
             >
               <Image
-                src="/magnetisme/bol_tibétain01.jpg"
-                alt="Photo de Magnetisme"
-                fill
-                className="object-cover"
+                src="/chakras.png"
+                alt="Représentation des chakras et de l'harmonie intérieure"
+                width={1200}
+                height={900}
+                className="w-full h-auto md:rounded rounded-none"
+                priority
               />
-            </BlobImage>
-          </motion.div>
+            </motion.div>
         </div>
       </section>
 
@@ -575,18 +583,23 @@ export default function MagnetiseusePage() {
             ))}
           </div>
 
-          <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
-            className="mt-16 max-w-2xl mx-auto text-center border-t border-[#C9B8E8]/20 pt-14"
-          >
-            <span className="font-playfair text-5xl text-[#C9B8E8]/50 block leading-none -mb-2" aria-hidden="true">"</span>
-            <p className="font-playfair text-xl text-white leading-relaxed">
-              Maryse dégage une énergie apaisante. J'ai vraiment pu lâcher prise.
-            </p>
-            <span className="font-lato text-xs text-[#C9B8E8]/70 tracking-widest uppercase mt-4 block" aria-label="Témoignage de Laurent B.">
-              - Laurent B.
-            </span>
-          </motion.div>
+          {magnetismeQuote && (
+            <motion.div
+              variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+              className="mt-16 max-w-2xl mx-auto text-center border-t border-[#C9B8E8]/20 pt-14"
+            >
+              <span className="font-playfair text-5xl text-[#C9B8E8]/50 block leading-none -mb-2" aria-hidden="true">"</span>
+              <p className="font-playfair text-xl text-white leading-relaxed line-clamp-4">
+                {magnetismeQuote.texte}
+              </p>
+              <span
+                className="font-lato text-xs text-[#C9B8E8]/70 tracking-widest uppercase mt-4 block"
+                aria-label={`Témoignage de ${magnetismeQuote.nom}`}
+              >
+                - {magnetismeQuote.nom}
+              </span>
+            </motion.div>
+          )}
         </div>
       </section>
 
@@ -608,7 +621,7 @@ export default function MagnetiseusePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:items-start">
             {[
               { num: "01", title: "L'échange initial", desc: "On discute ensemble de ce que vous ressentez, de vos besoins et de vos attentes.", offset: "md:mt-0" },
-              { num: "02", title: "La séance", desc: "En présentiel ou à distance, je transmets une énergie bienveillante pour votre corps qui en ont besoin.", offset: "md:mt-10" },
+              { num: "02", title: "La séance", desc: "À votre domicile ou à distance, je transmets une énergie bienveillante là où votre corps en a besoin.", offset: "md:mt-10" },
               { num: "03", title: "Le retour", desc: "Après la séance, on échange sur ce que vous avez ressenti et je vous donne quelques conseils.", offset: "md:mt-4" },
             ].map((step, i) => (
               <motion.div
@@ -640,16 +653,16 @@ export default function MagnetiseusePage() {
               Magnétisme à distance
             </span>
             <h2 className="font-playfair text-4xl md:text-5xl text-[#2D1B4E] mt-2">
-              Cabinet, domicile ou accompagnement à distance
+              À domicile ou à distance, selon vos besoins
             </h2>
             <motion.p
               variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}
               className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed mt-6"
             >
-              Les séances peuvent se dérouler au cabinet, chez vous, ou à distance à partir
-              d'une photo récente lorsque le déplacement n'est pas possible. Cette dernière
-              option permet aussi d'accompagner les personnes vivant loin du cabinet, sans
-              que l'efficacité du soin en soit affectée.
+              Les séances peuvent se dérouler à votre domicile, ou à distance à partir
+              d'une photo récente lorsque le déplacement n'est pas possible. Cette option
+              à distance permet aussi d'accompagner les personnes vivant loin, sans que
+              l'efficacité du soin en soit affectée.
             </motion.p>
           </motion.div>
 

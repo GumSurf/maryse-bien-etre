@@ -3,9 +3,8 @@
 import { motion } from "framer-motion";
 import { contact, horaires } from "../lib/data";
 import Cta from "../components/Cta";
-import { PhoneCall, HouseHeart, Camera, } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCamera, faHouse, faPhone, faPhoneVolume } from "@fortawesome/free-solid-svg-icons";
+import { faCamera, faHouse, faPhoneVolume } from "@fortawesome/free-solid-svg-icons";
 import { faInstagram, faFacebookF } from "@fortawesome/free-brands-svg-icons";
 
 const fadeUp = {
@@ -20,7 +19,7 @@ const fadeUp = {
 const moyens = [
   {
     icon: faPhoneVolume,
-    color: "var(--support-color)",
+    color: "var(--support-color, #9B7FC8)",
     label: "Téléphone",
     valeur: contact.telephone,
     description: "Le moyen le plus simple pour me joindre et échanger sur votre situation.",
@@ -28,7 +27,7 @@ const moyens = [
   },
   {
     icon: faHouse,
-    color: "var(--family-color)",
+    color: "var(--family-color, #2D1B4E)",
     label: "À domicile",
     valeur: "Lorient et alentours, sur rendez-vous",
     description: "Je me déplace directement chez vous, dans le confort de votre foyer.",
@@ -36,7 +35,7 @@ const moyens = [
   },
   {
     icon: faCamera,
-    color: "var(--number-color)",
+    color: "var(--number-color, #7D5BB3)",
     label: "À distance",
     valeur: "Par téléphone, à partir d'une photo",
     description: "Vous ne pouvez pas vous déplacer ? Les séances à distance fonctionnent tout aussi bien.",
@@ -67,7 +66,7 @@ export default function ContactPage() {
   return (
     <>
       {/* ── HERO ─────────────────────────────────────────────── */}
-      <section className="relative bg-[#F5F0FF] overflow-hidden min-h-[60vh] md:min-h-[85vh] flex items-center">
+      <section className="relative bg-[#F5F0FF] overflow-hidden min-h-[55vh] md:min-h-[75vh] flex items-center">
         <motion.div
           className="absolute top-[-100px] right-[-100px] w-[450px] h-[450px] rounded-full bg-[#C9B8E8]/20 blur-3xl pointer-events-none"
           animate={{ scale: [1, 1.08, 1], opacity: [0.4, 0.6, 0.4] }}
@@ -78,7 +77,7 @@ export default function ContactPage() {
           animate={{ scale: [1, 1.06, 1] }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
         />
-        <div className="max-w-4xl mx-auto px-6 py-28 flex flex-col items-center text-center gap-6 relative z-10 w-full">
+        <div className="max-w-4xl mx-auto px-6 py-24 flex flex-col items-center text-center gap-6 relative z-10 w-full">
           <motion.span
             variants={fadeUp} initial="hidden" animate="visible" custom={0}
             className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]"
@@ -101,17 +100,6 @@ export default function ContactPage() {
             simple : un appel suffit.
           </motion.p>
         </div>
-
-        <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <span className="font-lato text-xs text-[#9B7FC8]/65 tracking-widest uppercase" aria-label="Découvrir">
-            Découvrir
-          </span>
-          <div className="w-px h-10 bg-gradient-to-b from-[#9B7FC8]/50 to-transparent" />
-        </motion.div>
       </section>
 
       {/* ── MOYENS DE CONTACT ────────────────────────────────── */}
@@ -149,7 +137,8 @@ export default function ContactPage() {
                     style={{ color: m.color }}
                   />
                 </motion.div>
-                <div className="flex flex-col gap-2"><span className="font-lato tracking-[0.2em] uppercase text-[#9B7FC8]">
+                <div className="flex flex-col gap-2">
+                  <span className="font-lato tracking-[0.2em] uppercase text-[#9B7FC8]">
                     {m.label}
                   </span>
                   <p className="font-playfair text-2xl text-[#2D1B4E] leading-snug">
@@ -169,7 +158,8 @@ export default function ContactPage() {
               </motion.div>
             ))}
           </div>
-                    {/* Réseaux sociaux, rattachés à la même section */}
+
+          {/* Réseaux sociaux, rattachés à la même section */}
           <motion.div
             variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={3}
             className="flex flex-col items-center gap-4 mt-12 pt-12 md:mt-16 md:pt-16 border-t border-[#C9B8E8]/30"
@@ -184,7 +174,7 @@ export default function ContactPage() {
                 rel="noopener noreferrer"
                 aria-label="Suivre Maryse sur Instagram"
                 className="w-11 h-11 rounded-full flex items-center justify-center text-white transition-transform hover:scale-110"
-                style={{ background: "var(--instagram-gradient)" }}
+                style={{ background: "var(--instagram-gradient, linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888))" }}
               >
                 <FontAwesomeIcon icon={faInstagram} className="text-[18px]" />
               </a>
@@ -194,7 +184,7 @@ export default function ContactPage() {
                 rel="noopener noreferrer"
                 aria-label="Suivre Maryse sur Facebook"
                 className="w-11 h-11 rounded-full flex items-center justify-center text-white transition-transform hover:scale-110"
-                style={{ background: "var(--facebook-color)" }}
+                style={{ background: "var(--facebook-color, #1877F2)" }}
               >
                 <FontAwesomeIcon icon={faFacebookF} className="text-[18px]" />
               </a>

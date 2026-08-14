@@ -28,9 +28,11 @@ const offsets = ["lg:mt-0", "lg:mt-10", "lg:mt-4"];
 function TarifCard({
   tarif,
   index,
+  accentColor,
 }: {
   tarif: (typeof tarifsMagnetisme)[number];
   index: number;
+  accentColor: string;
 }) {
   return (
     <motion.div
@@ -44,15 +46,23 @@ function TarifCard({
         transition: { duration: 0.3 },
         boxShadow: "0 20px 40px rgba(155,127,200,0.15)",
       }}
-      className={`bg-white border border-[#C9B8E8]/50 rounded-3xl p-8 flex flex-col gap-4 transition-all duration-300 ${offsets[index % offsets.length]}`}
+      className={`relative bg-white border border-[#C9B8E8]/50 rounded-3xl p-8 pt-10 flex flex-col gap-4 overflow-hidden transition-all duration-300 ${offsets[index % offsets.length]}`}
     >
+      <div
+        className="absolute top-0 left-0 right-0 h-1.5"
+        style={{ background: accentColor }}
+      />
+
       <div className="flex items-start justify-between gap-4">
         <h3 className="font-playfair text-xl text-[#2D1B4E]">{tarif.titre}</h3>
-        <span className="font-playfair text-2xl text-[#9B7FC8] whitespace-nowrap">
+        <span
+          className="font-playfair text-2xl whitespace-nowrap"
+          style={{ color: accentColor }}
+        >
           {tarif.prix}
         </span>
       </div>
-      <span className="font-lato text-xs tracking-[0.2em] uppercase text-[#9B7FC8]/70">
+      <span className="font-lato text-xs tracking-[0.2em] uppercase text-[#2D1B4E]/50">
         {tarif.duree}
       </span>
       <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed">
@@ -66,7 +76,7 @@ export default function TarifsPage() {
   return (
     <>
       {/* ── HERO ─────────────────────────────────────────────── */}
-      <section className="relative bg-[#F5F0FF] overflow-hidden min-h-[55vh] md:min-h-[85vh] flex items-center">
+      <section className="relative bg-[#F5F0FF] overflow-hidden min-h-[55vh] md:min-h-[75vh] flex items-center">
         <motion.div
           className="absolute top-[-120px] left-[-120px] w-[550px] h-[550px] rounded-full bg-[#C9B8E8]/25 blur-3xl pointer-events-none"
           animate={{ scale: [1, 1.08, 1], opacity: [0.4, 0.65, 0.4] }}
@@ -97,7 +107,7 @@ export default function TarifsPage() {
             className="font-lato text-base text-[#2D1B4E]/75 leading-relaxed max-w-lg"
           >
             Que vous choisissiez une séance de magnétisme ou une consultation
-            de numérologie, à domicile, en cabinet ou à distance.
+            de numérologie, à domicile ou à distance.
           </motion.p>
           <motion.div
             variants={fadeUp} initial="hidden" animate="visible" custom={3}
@@ -110,17 +120,6 @@ export default function TarifsPage() {
             </Link>
           </motion.div>
         </div>
-        
-        <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <span className="font-lato text-xs text-[#9B7FC8]/65 tracking-widest uppercase" aria-label="Découvrir">
-            Découvrir
-          </span>
-          <div className="w-px h-10 bg-gradient-to-b from-[#9B7FC8]/50 to-transparent" />
-        </motion.div>
       </section>
 
       {/* ── ACCROCHE ─────────────────────────────────────────── */}
@@ -137,8 +136,8 @@ export default function TarifsPage() {
               Un tarif juste, pour un accompagnement sincère
             </h2>
             <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed">
-              Je souhaite que chacun puisse prendre soin de soi sans pression, 
-              je propose des tarifs justes et transparents pour que le bien-être reste accessible sans surprise, 
+              Je souhaite que chacun puisse prendre soin de soi sans pression,
+              je propose des tarifs justes et transparents pour que le bien-être reste accessible sans surprise,
               au prix annoncé, adapté à votre situation.
             </p>
             <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed">
@@ -157,7 +156,7 @@ export default function TarifsPage() {
             >
               <Image
                 src="/tarif/tarif_1.jpg"
-                alt="Photo de Numérologie"
+                alt="Séance de magnétisme et numérologie chez Maryse"
                 fill
                 className="object-cover"
               />
@@ -183,7 +182,12 @@ export default function TarifsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:items-start">
             {tarifsMagnetisme.map((tarif, i) => (
-              <TarifCard key={tarif.id} tarif={tarif} index={i} />
+              <TarifCard
+                key={tarif.id}
+                tarif={tarif}
+                index={i}
+                accentColor="var(--magnetisme-color, #9B7FC8)"
+              />
             ))}
           </div>
         </div>
@@ -211,7 +215,12 @@ export default function TarifsPage() {
               }`}
           >
             {tarifsNumerologie.map((tarif, i) => (
-              <TarifCard key={tarif.id} tarif={tarif} index={i} />
+              <TarifCard
+                key={tarif.id}
+                tarif={tarif}
+                index={i}
+                accentColor="var(--number-color, #2D1B4E)"
+              />
             ))}
           </div>
           <p className="font-lato text-sm text-[#9B7FC8] mt-8 text-center">
@@ -266,8 +275,8 @@ export default function TarifsPage() {
             ))}
           </div>
           <p className="font-lato text-sm text-[#E8E0F5]/80 mt-8 text-center">
-            N-B: Certaines mutuelles participent au remboursement des médecines douces. N'hésitez pas à vous renseigner auprès de celle-ci.
-            <br />Numéro de siret : 81133490300010.
+            NB : certaines mutuelles participent au remboursement des médecines douces. N'hésitez pas à vous renseigner auprès de la vôtre.
+            <br />Numéro de SIRET : 81133490300010.
           </p>
         </div>
       </section>
