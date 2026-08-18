@@ -180,7 +180,7 @@ export default function TarifsPage() {
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:items-start">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:items-start">
             {tarifsMagnetisme.map((tarif, i) => (
               <TarifCard
                 key={tarif.id}
