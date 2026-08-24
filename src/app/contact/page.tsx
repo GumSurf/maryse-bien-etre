@@ -309,8 +309,7 @@ export default function ContactPage() {
           </h2>
           <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed max-w-xl">
             J'interviens à Lorient et dans les alentours, directement chez vous,
-            sur rendez-vous. Les séances à distance sont également disponibles
-            par téléphone, à partir d'une photo récente.
+            sur rendez-vous. les séances à distance se font à partir d'une photo récente en pied.
           </p>
         </div>
       </section>
