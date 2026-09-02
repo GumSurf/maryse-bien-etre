@@ -291,7 +291,6 @@ export const infosPratiques = [
   },
 ];
 
-// Adapter la clé "answer" au nom réellement utilisé dans faqNumerologie (ex: "reponse")
 export const faqTarifs = [
   {
     question: "Le tarif change-t-il selon ma problématique ?",
