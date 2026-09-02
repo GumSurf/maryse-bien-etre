@@ -50,27 +50,27 @@ export default function NumerologiePage() {
         <div className="max-w-6xl mx-auto px-6 py-28 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full relative z-10">
           <div className="flex flex-col gap-7">
             <motion.span
-              variants={fadeUp} initial="hidden" animate="visible" custom={0}
+              variants={fadeUp} initial="false" animate="visible" custom={0}
               className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]"
             >
               Numérologie
             </motion.span>
             <motion.h1
-              variants={fadeUp} initial="hidden" animate="visible" custom={1}
+              variants={fadeUp} initial="false" animate="visible" custom={1}
               className="font-playfair text-5xl md:text-6xl text-[#2D1B4E] leading-[1.1]"
             >
               Comprendre votre chemin de vie pour{" "}
               <em className="text-[#9B7FC8] not-italic">mieux avancer</em>
             </motion.h1>
             <motion.p
-              variants={fadeUp} initial="hidden" animate="visible" custom={2}
+              variants={fadeUp} initial="false" animate="visible" custom={2}
               className="font-lato text-base text-[#2D1B4E]/75 leading-relaxed max-w-md"
             >
               En présentiel ou à distance, je vous propose une lecture claire
               et personnalisée de vos cycles de vie.
             </motion.p>
             <motion.div
-              variants={fadeUp} initial="hidden" animate="visible" custom={3}
+              variants={fadeUp} initial="false" animate="visible" custom={3}
               className="flex flex-col sm:flex-row gap-4"
             >
               <Link
@@ -139,7 +139,7 @@ export default function NumerologiePage() {
       <section id="definition" className="bg-white py-28">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }}
             className="flex flex-col gap-6"
           >
             <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]">
@@ -166,7 +166,7 @@ export default function NumerologiePage() {
               ].map((q, i) => (
                 <motion.li
                   key={i}
-                  variants={fadeUp} initial="hidden" whileInView="visible"
+                  variants={fadeUp} initial="false" whileInView="visible"
                   viewport={{ once: true }} custom={i}
                   className="flex items-start gap-3 font-lato text-sm text-[#2D1B4E]/80 italic"
                 >
@@ -178,7 +178,7 @@ export default function NumerologiePage() {
           </motion.div>
 
           <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }} custom={1}
             className="flex justify-center"
           >
             <BlobImage
@@ -210,7 +210,7 @@ export default function NumerologiePage() {
       {/* Texte */}
       <motion.div
         variants={fadeUp}
-        initial="hidden"
+        initial="false"
         whileInView="visible"
         viewport={{ once: true }}
         className="flex flex-col gap-6"
@@ -260,7 +260,7 @@ export default function NumerologiePage() {
       {/* Image */}
       <motion.div
         variants={fadeUp}
-        initial="hidden"
+        initial="false"
         whileInView="visible"
         viewport={{ once: true }}
         custom={1}
@@ -284,7 +284,7 @@ export default function NumerologiePage() {
       <section className="bg-[#F5F0FF] py-28">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }}
             className="text-center mb-16"
           >
             <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]">
@@ -328,7 +328,7 @@ export default function NumerologiePage() {
             ].map((item, i) => (
               <motion.div
                 key={item.title}
-                variants={fadeUp} initial="hidden" whileInView="visible"
+                variants={fadeUp} initial="false" whileInView="visible"
                 viewport={{ once: true }} custom={i}
                 whileHover={{ y: -6, transition: { duration: 0.3 }, boxShadow: "0 20px 40px rgba(155,127,200,0.15)" }}
                 className={`relative bg-white border border-[#C9B8E8]/50 rounded-3xl p-8 pt-10 flex flex-col gap-4 overflow-hidden transition-all duration-300 cursor-default ${item.offset}`}
@@ -359,7 +359,7 @@ export default function NumerologiePage() {
       <section className="bg-white py-28">
         <div className="max-w-5xl mx-auto px-6">
           <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }}
             className="text-center mb-16"
           >
             <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]" aria-label="Dettes karmiques et mémoires familiales">
@@ -372,7 +372,7 @@ export default function NumerologiePage() {
 
           <div className="grid md:grid-cols-2 gap-8">
             <motion.div
-              variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+              variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }}
               className="bg-[#F5F0FF] rounded-3xl p-8 border border-[#C9B8E8]/40 flex flex-col gap-4"
             >
               <h3 className="font-playfair text-2xl text-[#2D1B4E]">Les dettes karmiques</h3>
@@ -385,7 +385,7 @@ export default function NumerologiePage() {
             </motion.div>
 
             <motion.div
-              variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}
+              variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }} custom={1}
               className="bg-[#F5F0FF] rounded-3xl p-8 border border-[#C9B8E8]/40 flex flex-col gap-4"
             >
               <h3 className="font-playfair text-2xl text-[#2D1B4E]">Les mémoires familiales</h3>
@@ -403,7 +403,7 @@ export default function NumerologiePage() {
       <section className="bg-[#F5F0FF] py-28">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }}
             className="flex flex-col gap-6 order-2 lg:order-1"
           >
             <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]">
@@ -428,7 +428,7 @@ export default function NumerologiePage() {
               ].map((item, i) => (
                 <motion.div
                   key={i}
-                  variants={fadeUp} initial="hidden" whileInView="visible"
+                  variants={fadeUp} initial="false" whileInView="visible"
                   viewport={{ once: true }} custom={i}
                   className="flex items-center gap-3 p-4 rounded-2xl bg-white border border-[#C9B8E8]/40"
                 >
@@ -440,7 +440,7 @@ export default function NumerologiePage() {
           </motion.div>
 
           <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }} custom={1}
             className="order-1 lg:order-2 flex justify-center"
           >
             <BlobImage
@@ -462,7 +462,7 @@ export default function NumerologiePage() {
       <section className="bg-white py-28">
         <div className="max-w-5xl mx-auto px-6">
           <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }}
             className="text-center mb-16"
           >
             <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]" aria-label="Cycles de vie">
@@ -474,7 +474,7 @@ export default function NumerologiePage() {
           </motion.div>
 
           <motion.p
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }} custom={1}
             className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed max-w-3xl mx-auto"
           >
             Votre chiffre de chemin de vie et votre chiffre d'année personnelle
@@ -485,7 +485,7 @@ export default function NumerologiePage() {
           </motion.p>
 
           <motion.p
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={2}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }} custom={2}
             className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed max-w-3xl mx-auto mt-4"
           >
             Connaître votre année personnelle permet d'agir au bon moment, sans
@@ -499,7 +499,7 @@ export default function NumerologiePage() {
       <section className="bg-[#2D1B4E] py-24">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }}
             className="text-center mb-16"
           >
             <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#C9B8E8]/75">
@@ -519,7 +519,7 @@ export default function NumerologiePage() {
             ].map((label, i, arr) => (
               <motion.div
                 key={i}
-                variants={fadeUp} initial="hidden" whileInView="visible"
+                variants={fadeUp} initial="false" whileInView="visible"
                 viewport={{ once: true }} custom={i}
                 className="flex items-center gap-6 py-6 group"
               >
@@ -544,7 +544,7 @@ export default function NumerologiePage() {
 
           {numerologieQuote && (
             <motion.div
-              variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+              variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }}
               className="mt-16 max-w-2xl mx-auto text-center border-t border-[#C9B8E8]/20 pt-14"
             >
               <span className="font-playfair text-5xl text-[#C9B8E8]/50 block leading-none -mb-2" aria-hidden="true">"</span>
@@ -566,7 +566,7 @@ export default function NumerologiePage() {
       <section className="bg-[#F5F0FF] py-28">
         <div className="max-w-5xl mx-auto px-6">
           <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }}
             className="text-center mb-16"
           >
             <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]" aria-label="Étapes">
@@ -600,7 +600,7 @@ export default function NumerologiePage() {
             ].map((step, i) => (
               <motion.div
                 key={step.num}
-                variants={fadeUp} initial="hidden" whileInView="visible"
+                variants={fadeUp} initial="false" whileInView="visible"
                 viewport={{ once: true }} custom={i}
                 className={`bg-white border border-[#C9B8E8]/50 rounded-3xl p-8 flex flex-col gap-4 hover:shadow-xl hover:shadow-[#C9B8E8]/15 hover:-translate-y-1 transition-all duration-500 ${step.offset}`}
               >

@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { services, avis, faqGlobale, citation } from "./lib/data";
+import { motion, useReducedMotion } from "framer-motion";
+import { services, avis, faqGlobale } from "./lib/data";
 import Faq from "./components/Faq";
 import Cta from "./components/Cta";
 import Citation from "./components/Citation";
@@ -50,19 +50,54 @@ const values = [
   },
 ];
 
+const pourquoiConsulter = [
+  {
+    icon: faLeaf,
+    title: "Stress & anxiété",
+    text: "Retrouvez calme et apaisement dans votre quotidien.",
+    color: "var(--leaf-color)",
+  },
+  {
+    icon: faBolt,
+    title: "Fatigue",
+    text: "Favorisez un meilleur équilibre énergétique.",
+    color: "var(--energy-color)",
+  },
+  {
+    icon: faLock,
+    title: "Blocages",
+    text: "Avancez plus sereinement face aux difficultés émotionnelles.",
+    color: "var(--blockage-color)",
+  },
+  {
+    icon: fa8,
+    title: "Numérologie",
+    text: "Mieux comprendre votre personnalité et votre chemin de vie.",
+    color: "var(--number-color)",
+  },
+];
+
 export default function Home() {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <>
       {/* ── HERO ─────────────────────────────────────────────── */}
       <section className="relative bg-[#F5F0FF] overflow-hidden">
         <motion.div
+          aria-hidden="true"
           className="absolute top-[-80px] right-[-80px] w-[400px] h-[400px] rounded-full bg-[#C9B8E8]/20 blur-3xl pointer-events-none"
-          animate={{ scale: [1, 1.08, 1], opacity: [0.4, 0.6, 0.4] }}
+          animate={
+            shouldReduceMotion
+              ? undefined
+              : { scale: [1, 1.08, 1], opacity: [0.4, 0.6, 0.4] }
+          }
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
+          aria-hidden="true"
           className="absolute bottom-[-60px] left-[-60px] w-[300px] h-[300px] rounded-full bg-[#9B7FC8]/10 blur-2xl pointer-events-none"
-          animate={{ scale: [1, 1.06, 1] }}
+          animate={shouldReduceMotion ? undefined : { scale: [1, 1.06, 1] }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
         />
 
@@ -71,14 +106,14 @@ export default function Home() {
           style={{ fontFamily: "var(--font-montecarlo-home)" }}
         >
           <motion.span
-            variants={fadeUp} initial="hidden" animate="visible" custom={0}
+            variants={fadeUp} initial="false" animate="visible" custom={0}
             className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]"
           >
             Magnétisme & Numérologie
           </motion.span>
           <motion.h1
             variants={fadeUp}
-            initial="hidden"
+            initial="false"
             animate="visible"
             custom={1}
             className="text-5xl md:text-7xl text-[#2D1B4E] leading-tight"
@@ -92,7 +127,7 @@ export default function Home() {
 
           <motion.p
             variants={fadeUp}
-            initial="hidden"
+            initial="false"
             animate="visible"
             custom={2}
             className="font-lato text-base md:text-lg text-[#2D1B4E]/75 max-w-2xl leading-relaxed"
@@ -103,7 +138,7 @@ export default function Home() {
             ou à distance.
           </motion.p>
           <motion.div
-            variants={fadeUp} initial="hidden" animate="visible" custom={3}
+            variants={fadeUp} initial="false" animate="visible" custom={3}
             className="flex flex-col sm:flex-row gap-4 mt-4"
           >
             <Link
@@ -127,7 +162,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
             variants={fadeUp}
-            initial="hidden"
+            initial="false"
             whileInView="visible"
             viewport={{ once: true }}
             className="text-center mb-16"
@@ -148,37 +183,11 @@ export default function Home() {
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-            {[
-              {
-                icon: faLeaf,
-                title: "Stress & anxiété",
-                text: "Retrouvez calme et apaisement dans votre quotidien.",
-                color: "var(--leaf-color)"
-              },
-              {
-                icon: faBolt,
-                title: "Fatigue",
-                text: "Favorisez un meilleur équilibre énergétique.",
-                color: "var(--energy-color)"
-              },
-              {
-                icon: faLock,
-                title: "Blocages",
-                text: "Avancez plus sereinement face aux difficultés émotionnelles.",
-                color: "var(--blockage-color)"
-              },
-              {
-                icon: fa8,
-                title: "Numérologie",
-                text: "Mieux comprendre votre personnalité et votre chemin de vie.",
-                color: "var(--number-color)"
-              }
-            ].map((item, i) => (
+            {pourquoiConsulter.map((item, i) => (
               <motion.div
                 key={item.title}
                 variants={fadeUp}
-                initial="hidden"
+                initial="false"
                 whileInView="visible"
                 viewport={{ once: true }}
                 custom={i}
@@ -210,7 +219,7 @@ export default function Home() {
       <section id="services" className="bg-white py-24">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }}
             className="text-center mb-14"
           >
             <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]">
@@ -228,7 +237,7 @@ export default function Home() {
                 <motion.div
                   key={s.slug}
                   variants={fadeUp}
-                  initial="hidden"
+                  initial="false"
                   whileInView="visible"
                   viewport={{ once: true }}
                   custom={i}
@@ -282,7 +291,7 @@ export default function Home() {
       <section className="bg-[#F5F0FF] py-24">
         <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-14">
           <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }}
             className="flex-shrink-0"
           >
             <BlobImage
@@ -293,12 +302,13 @@ export default function Home() {
                 src="/maryse_3.jpg"
                 alt="Photo de Maryse"
                 fill
+                sizes="(max-width: 768px) 256px, 320px"
                 className="object-cover"
               />
             </BlobImage>
           </motion.div>
           <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }} custom={1}
             className="flex flex-col gap-5"
           >
             <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]">
@@ -339,7 +349,7 @@ export default function Home() {
 
           <motion.div
             variants={fadeUp}
-            initial="hidden"
+            initial="false"
             whileInView="visible"
             viewport={{ once: true }}
             className="text-center mb-16"
@@ -361,7 +371,7 @@ export default function Home() {
               <motion.div
                 key={item.title}
                 variants={fadeUp}
-                initial="hidden"
+                initial="false"
                 whileInView="visible"
                 viewport={{ once: true }}
                 custom={i}

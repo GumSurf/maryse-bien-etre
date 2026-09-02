@@ -79,20 +79,20 @@ export default function ContactPage() {
         />
         <div className="max-w-4xl mx-auto px-6 py-24 flex flex-col items-center text-center gap-6 relative z-10 w-full">
           <motion.span
-            variants={fadeUp} initial="hidden" animate="visible" custom={0}
+            variants={fadeUp} initial="false" animate="visible" custom={0}
             className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]"
           >
             Contact
           </motion.span>
           <motion.h1
-            variants={fadeUp} initial="hidden" animate="visible" custom={1}
+            variants={fadeUp} initial="false" animate="visible" custom={1}
             className="font-playfair text-5xl md:text-6xl text-[#2D1B4E] leading-tight"
           >
             Parlons de{" "}
             <em className="text-[#9B7FC8] not-italic">vous</em>
           </motion.h1>
           <motion.p
-            variants={fadeUp} initial="hidden" animate="visible" custom={2}
+            variants={fadeUp} initial="false" animate="visible" custom={2}
             className="font-lato text-base text-[#2D1B4E]/75 max-w-lg leading-relaxed"
           >
             Que vous ayez une question, une envie d'en savoir plus, ou simplement
@@ -106,7 +106,7 @@ export default function ContactPage() {
       <section className="bg-white py-28">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }}
             className="text-center mb-16"
           >
             <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]">
@@ -121,7 +121,7 @@ export default function ContactPage() {
             {moyens.map((m, i) => (
               <motion.div
                 key={m.label}
-                variants={fadeUp} initial="hidden" whileInView="visible"
+                variants={fadeUp} initial="false" whileInView="visible"
                 viewport={{ once: true }} custom={i}
                 className={`group bg-[#F5F0FF] border border-[#C9B8E8]/50 rounded-3xl p-8 flex flex-col gap-5 hover:shadow-xl hover:shadow-[#C9B8E8]/20 hover:-translate-y-1 transition-all duration-500 ${i === 1 ? "lg:mt-10" : ""
                   }`}
@@ -161,7 +161,7 @@ export default function ContactPage() {
 
           {/* Réseaux sociaux, rattachés à la même section */}
           <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={3}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }} custom={3}
             className="flex flex-col items-center gap-4 mt-12 pt-12 md:mt-16 md:pt-16 border-t border-[#C9B8E8]/30"
           >
             <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]/70">
@@ -197,7 +197,7 @@ export default function ContactPage() {
       <section className="bg-[#F5F0FF] py-28">
         <div className="max-w-2xl mx-auto px-6">
           <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }}
             className="text-center mb-16"
           >
             <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]">
@@ -209,7 +209,7 @@ export default function ContactPage() {
           </motion.div>
 
           <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }} custom={1}
             className="bg-white border border-[#C9B8E8]/50 rounded-3xl p-10 flex flex-col gap-0 shadow-sm"
           >
             {horaires.map((h, i) => (
@@ -252,7 +252,7 @@ export default function ContactPage() {
         />
         <div className="max-w-4xl mx-auto px-6 relative z-10">
           <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }}
             className="text-center mb-16"
           >
             <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#C9B8E8]/75">
@@ -271,7 +271,7 @@ export default function ContactPage() {
             {objections.map((item, i) => (
               <motion.div
                 key={i}
-                variants={fadeUp} initial="hidden" whileInView="visible"
+                variants={fadeUp} initial="false" whileInView="visible"
                 viewport={{ once: true }} custom={i}
                 className="flex gap-6 py-8 border-b border-[#C9B8E8]/15 last:border-b-0"
               >

@@ -280,7 +280,7 @@ export const infosPratiques = [
     color: "var(--support-color)",
     titre: "Déplacement",
     description:
-      "Les déplacements à domicile sont incluses dans un rayon de 7 km autour de Lorient. Au-delà, entre 8 et 15 km, un supplément entre 5 € et 10 € est appliqué.",
+      "Les déplacements à domicile sont incluses dans un rayon de 5 km autour de Lorient. Au-delà, entre 6 et 15 km, un supplément entre 5 € et 10 € est appliqué.",
   },
   {
     icon: faBan,

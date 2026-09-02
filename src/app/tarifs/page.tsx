@@ -37,7 +37,7 @@ function TarifCard({
   return (
     <motion.div
       variants={fadeUp}
-      initial="hidden"
+      initial="false"
       whileInView="visible"
       viewport={{ once: true }}
       custom={index}
@@ -90,27 +90,27 @@ export default function TarifsPage() {
 
         <div className="max-w-4xl mx-auto px-6 py-28 text-center relative z-10 flex flex-col items-center gap-7">
           <motion.span
-            variants={fadeUp} initial="hidden" animate="visible" custom={0}
+            variants={fadeUp} initial="false" animate="visible" custom={0}
             className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]"
           >
             Tarifs
           </motion.span>
           <motion.h1
-            variants={fadeUp} initial="hidden" animate="visible" custom={1}
+            variants={fadeUp} initial="false" animate="visible" custom={1}
             className="font-playfair text-5xl md:text-6xl text-[#2D1B4E] leading-[1.1]"
           >
             Un accompagnement{" "}
             <em className="text-[#9B7FC8] not-italic">accessible et transparent</em>
           </motion.h1>
           <motion.p
-            variants={fadeUp} initial="hidden" animate="visible" custom={2}
+            variants={fadeUp} initial="false" animate="visible" custom={2}
             className="font-lato text-base text-[#2D1B4E]/75 leading-relaxed max-w-lg"
           >
             Que vous choisissiez une séance de magnétisme ou une consultation
             de numérologie, à domicile ou à distance.
           </motion.p>
           <motion.div
-            variants={fadeUp} initial="hidden" animate="visible" custom={3}
+            variants={fadeUp} initial="false" animate="visible" custom={3}
           >
             <Link
               href="/contact"
@@ -126,7 +126,7 @@ export default function TarifsPage() {
       <section className="bg-white py-28">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }}
             className="flex flex-col gap-6"
           >
             <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]">
@@ -147,7 +147,7 @@ export default function TarifsPage() {
           </motion.div>
 
           <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }} custom={1}
             className="flex justify-center"
           >
             <BlobImage
@@ -169,7 +169,7 @@ export default function TarifsPage() {
       <section className="bg-[#F5F0FF] py-28">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }}
             className="text-center mb-16"
           >
             <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]">
@@ -197,7 +197,7 @@ export default function TarifsPage() {
       <section className="bg-white py-28">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }}
             className="text-center mb-16"
           >
             <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]">
@@ -238,7 +238,7 @@ export default function TarifsPage() {
         />
         <div className="max-w-5xl mx-auto px-6 relative z-10">
           <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }}
             className="text-center mb-16"
           >
             <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#C9B8E8]/75">
@@ -253,7 +253,7 @@ export default function TarifsPage() {
             {infosPratiques.map((info, i) => (
               <motion.div
                 key={info.titre}
-                variants={fadeUp} initial="hidden" whileInView="visible"
+                variants={fadeUp} initial="false" whileInView="visible"
                 viewport={{ once: true }} custom={i}
                 whileHover={{
                   borderColor: "rgba(201,184,232,0.7)",

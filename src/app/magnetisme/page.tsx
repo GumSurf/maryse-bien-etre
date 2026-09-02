@@ -99,27 +99,27 @@ export default function MagnetiseusePage() {
 
           <div className="flex flex-col gap-7 order-2">
             <motion.span
-              variants={fadeUp} initial="hidden" animate="visible" custom={0}
+              variants={fadeUp} initial="false" animate="visible" custom={0}
               className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]"
               aria-label="Magnétisme"
             >
               Magnétisme
             </motion.span>
             <motion.h1
-              variants={fadeUp} initial="hidden" animate="visible" custom={1}
+              variants={fadeUp} initial="false" animate="visible" custom={1}
               className="font-playfair text-5xl md:text-6xl text-[#2D1B4E] leading-[1.1]"
             >
               Une énergie au service de{" "}
               <em className="text-[#9B7FC8] not-italic">votre bien-être</em>
             </motion.h1>
             <motion.p
-              variants={fadeUp} initial="hidden" animate="visible" custom={2}
+              variants={fadeUp} initial="false" animate="visible" custom={2}
               className="font-lato text-base text-[#2D1B4E]/75 leading-relaxed max-w-md"
             >
               {service.description}
             </motion.p>
             <motion.div
-              variants={fadeUp} initial="hidden" animate="visible" custom={3}
+              variants={fadeUp} initial="false" animate="visible" custom={3}
               className="flex flex-col sm:flex-row gap-4"
             >
               <Link
@@ -144,7 +144,7 @@ export default function MagnetiseusePage() {
       <section id="definition" className="bg-white py-28">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }}
             className="flex flex-col gap-6"
           >
             <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]">
@@ -172,7 +172,7 @@ export default function MagnetiseusePage() {
               ].map((q, i) => (
                 <motion.li
                   key={i}
-                  variants={fadeUp} initial="hidden" whileInView="visible"
+                  variants={fadeUp} initial="false" whileInView="visible"
                   viewport={{ once: true }} custom={i}
                   className="flex items-start gap-3 font-lato text-sm text-[#2D1B4E]/80 italic"
                 >
@@ -184,7 +184,7 @@ export default function MagnetiseusePage() {
           </motion.div>
 
           <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }} custom={1}
             className="flex justify-center"
           >
             <BlobImage
@@ -212,7 +212,7 @@ export default function MagnetiseusePage() {
         <div className="max-w-6xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-[1.3fr_3fr] md:items-center md:gap-8">
             <motion.div
-              variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+              variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }}
               className="flex flex-col gap-6"
             >
               <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#C9B8E8]/75">
@@ -241,7 +241,7 @@ export default function MagnetiseusePage() {
             </motion.div>
 
             <motion.div
-              variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}
+              variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }} custom={1}
               className="w-screen relative left-1/2 right-1/2 -mx-[50vw] md:w-auto md:static md:mx-0"
             >
               <Image
@@ -261,7 +261,7 @@ export default function MagnetiseusePage() {
       <section className="bg-[#F5F0FF] py-28">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }}
             className="text-center mb-16"
           >
             <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]">
@@ -305,7 +305,7 @@ export default function MagnetiseusePage() {
             ].map((item, i) => (
               <motion.div
                 key={item.title}
-                variants={fadeUp} initial="hidden" whileInView="visible"
+                variants={fadeUp} initial="false" whileInView="visible"
                 viewport={{ once: true }} custom={i}
                 whileHover={{ y: -6, transition: { duration: 0.3 }, boxShadow: "0 20px 40px rgba(155,127,200,0.15)" }}
                 className={`relative bg-white border border-[#C9B8E8]/50 rounded-3xl p-8 pt-10 flex flex-col gap-4 overflow-hidden transition-all duration-300 cursor-default ${item.offset}`}
@@ -338,7 +338,7 @@ export default function MagnetiseusePage() {
 
           <motion.div
             variants={fadeUp}
-            initial="hidden"
+            initial="false"
             whileInView="visible"
             viewport={{ once: true }}
             className="text-center mb-16"
@@ -430,7 +430,7 @@ export default function MagnetiseusePage() {
       <section className="bg-white py-28">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }}
             className="flex flex-col gap-6 order-2 lg:order-1"
           >
             <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]">
@@ -461,7 +461,7 @@ export default function MagnetiseusePage() {
               ].map((item, i) => (
                 <motion.div
                   key={i}
-                  variants={fadeUp} initial="hidden" whileInView="visible"
+                  variants={fadeUp} initial="false" whileInView="visible"
                   viewport={{ once: true }} custom={i}
                   className="flex items-center gap-3 p-4 rounded-2xl bg-[#F5F0FF] border border-[#C9B8E8]/40"
                 >
@@ -473,7 +473,7 @@ export default function MagnetiseusePage() {
           </motion.div>
 
             <motion.div
-              variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}
+              variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }} custom={1}
               className="order-2 lg:order-0 w-screen relative left-1/2 right-1/2 -mx-[50vw] md:w-auto md:static md:mx-0"
             >
               <Image
@@ -494,7 +494,7 @@ export default function MagnetiseusePage() {
 
           <motion.div
             variants={fadeUp}
-            initial="hidden"
+            initial="false"
             whileInView="visible"
             viewport={{ once: true }}
             className="text-center mb-16"
@@ -541,7 +541,7 @@ export default function MagnetiseusePage() {
       <section className="bg-[#2D1B4E] py-24">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }}
             className="text-center mb-16"
           >
             <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#C9B8E8]/75">
@@ -561,7 +561,7 @@ export default function MagnetiseusePage() {
             ].map((label, i, arr) => (
               <motion.div
                 key={i}
-                variants={fadeUp} initial="hidden" whileInView="visible"
+                variants={fadeUp} initial="false" whileInView="visible"
                 viewport={{ once: true }} custom={i}
                 className="flex items-center gap-6 py-6 group"
               >
@@ -585,7 +585,7 @@ export default function MagnetiseusePage() {
 
           {magnetismeQuote && (
             <motion.div
-              variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+              variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }}
               className="mt-16 max-w-2xl mx-auto text-center border-t border-[#C9B8E8]/20 pt-14"
             >
               <span className="font-playfair text-5xl text-[#C9B8E8]/50 block leading-none -mb-2" aria-hidden="true">"</span>
@@ -607,7 +607,7 @@ export default function MagnetiseusePage() {
       <section className="bg-[#F5F0FF] py-28">
         <div className="max-w-5xl mx-auto px-6">
           <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }}
             className="text-center mb-16"
           >
             <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]" aria-label="Étapes">
@@ -626,7 +626,7 @@ export default function MagnetiseusePage() {
             ].map((step, i) => (
               <motion.div
                 key={step.num}
-                variants={fadeUp} initial="hidden" whileInView="visible"
+                variants={fadeUp} initial="false" whileInView="visible"
                 viewport={{ once: true }} custom={i}
                 className={`bg-white border border-[#C9B8E8]/50 rounded-3xl p-8 flex flex-col gap-4 hover:shadow-xl hover:shadow-[#C9B8E8]/15 hover:-translate-y-1 transition-all duration-500 ${step.offset}`}
               >
@@ -647,7 +647,7 @@ export default function MagnetiseusePage() {
       <section className="bg-[#F5F0FF] py-28">
         <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
           <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }}
           >
             <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]">
               Magnétisme à distance
@@ -656,7 +656,7 @@ export default function MagnetiseusePage() {
               À domicile ou à distance, selon vos besoins
             </h2>
             <motion.p
-              variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}
+              variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }} custom={1}
               className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed mt-6"
             >
               Les séances peuvent se dérouler à votre domicile, ou à distance à partir
@@ -667,7 +667,7 @@ export default function MagnetiseusePage() {
           </motion.div>
 
           <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={2}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }} custom={2}
           >
             <BlobImage
               variant={4}
@@ -688,7 +688,7 @@ export default function MagnetiseusePage() {
       <section className="bg-[#F5F0FF] py-28">
         <div className="max-w-5xl mx-auto px-6">
           <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }}
             className="text-center mb-16"
           >
             <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]" aria-label="Magnétisme pour les animaux">
@@ -700,7 +700,7 @@ export default function MagnetiseusePage() {
           </motion.div>
 
           <motion.p
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }} custom={1}
             className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed max-w-3xl mx-auto"
           >
             Les animaux sont sensibles aux déséquilibres énergétiques. Le magnétisme peut
@@ -709,7 +709,7 @@ export default function MagnetiseusePage() {
           </motion.p>
 
           <motion.p
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={2}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }} custom={2}
             className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed max-w-3xl mx-auto mt-4"
           >
             Chaque soin est réalisé avec douceur et patience, en tenant compte du

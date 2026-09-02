@@ -82,13 +82,13 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto px-6 py-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full relative z-10">
           <div className="flex flex-col gap-7">
             <motion.span
-              variants={fadeUp} initial="hidden" animate="visible" custom={0}
+              variants={fadeUp} initial="false" animate="visible" custom={0}
               className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]"
             >
               À propos
             </motion.span>
             <motion.h1
-              variants={fadeUp} initial="hidden" animate="visible" custom={1}
+              variants={fadeUp} initial="false" animate="visible" custom={1}
               className="font-playfair text-5xl md:text-6xl text-[#2D1B4E] leading-[1.1]"
             >
               Bonjour, je suis{" "}
@@ -96,7 +96,7 @@ export default function AboutPage() {
             </motion.h1>
             <motion.p
               variants={fadeUp}
-              initial="hidden"
+              initial="false"
               animate="visible"
               custom={2}
               className="font-lato text-base text-[#2D1B4E]/75 leading-relaxed max-w-md"
@@ -113,7 +113,7 @@ export default function AboutPage() {
           </div>
 
           <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }} custom={1}
             className="flex justify-center"
           >
             <BlobImage
@@ -135,25 +135,25 @@ export default function AboutPage() {
       <section className="bg-white py-28">
         <div className="max-w-3xl mx-auto px-6 text-center flex flex-col gap-6">
           <motion.span
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }}
             className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]"
           >
             Mon histoire
           </motion.span>
           <motion.h2
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }} custom={1}
             className="font-playfair text-4xl md:text-5xl text-[#2D1B4E] leading-tight"
           >
             Un héritage familial
           </motion.h2>
           <motion.p
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={2}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }} custom={2}
             className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed"
           >
             Mon histoire a commencé auprès de ma grand-mère Éléonore, qui m'a initiée très jeune au magnétisme. Dès l'âge de ma jeunesse, elle m'a transmis ses gestes, son expérience et sa façon d'accompagner les personnes avec écoute et bienveillance.
           </motion.p>
           <motion.p
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={3}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }} custom={3}
             className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed"
           >
             Quelques années plus tard, désireuse d'approfondir ma compréhension de chacun, j'ai choisi de me former à la numérologie. Cette discipline complète aujourd'hui ma pratique du magnétisme et me permet de proposer un accompagnement encore plus personnalisé.
@@ -170,7 +170,7 @@ export default function AboutPage() {
         />
         <div className="max-w-3xl mx-auto px-6 relative z-10">
           <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }}
             className="text-center mb-16"
           >
             <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#C9B8E8]/75">
@@ -185,7 +185,7 @@ export default function AboutPage() {
             {parcours.map((etape, i) => (
               <motion.div
                 key={i}
-                variants={fadeUp} initial="hidden" whileInView="visible"
+                variants={fadeUp} initial="false" whileInView="visible"
                 viewport={{ once: true }} custom={i}
                 className="flex gap-6"
               >
@@ -224,7 +224,7 @@ export default function AboutPage() {
       <section className="bg-[#F5F0FF] py-28">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }}
             className="text-center mb-16"
           >
             <span className="font-lato text-xs tracking-[0.3em] uppercase text-[#9B7FC8]">
@@ -239,7 +239,7 @@ export default function AboutPage() {
             {valeurs.map((item, i) => (
               <motion.div
                 key={item.title}
-                variants={fadeUp} initial="hidden" whileInView="visible"
+                variants={fadeUp} initial="false" whileInView="visible"
                 viewport={{ once: true }} custom={i}
                 whileHover={{ y: -6, transition: { duration: 0.3 }, boxShadow: "0 20px 40px rgba(155,127,200,0.15)" }}
                 className={`relative bg-white border border-[#C9B8E8]/50 rounded-3xl p-8 pt-10 flex flex-col gap-4 overflow-hidden transition-all duration-300 ${i === 1 ? "lg:mt-10" : ""
