@@ -76,7 +76,15 @@ export default function Footer() {
 
       <div className="max-w-6xl mx-auto px-6 mt-10 pt-6 border-t border-[#C9B8E8]/30 flex flex-col md:flex-row justify-between items-center gap-2 text-xs text-[#C9B8E8]/65">
         <span className="font-lato">© {new Date().getFullYear()} Maryse - Tous droits réservés</span>
-        <span className="font-lato" aria-hidden="true">Réalisé par Gabriel Christe ✦</span>
+        <div className="flex items-center gap-4">
+          <Link
+            href="/mentions-legales"
+            className="font-lato hover:text-white transition-colors"
+          >
+            Mentions légales
+          </Link>
+          <span className="font-lato" aria-hidden="true">Réalisé par Gabriel Christe ✦</span>
+        </div>
       </div>
     </footer>
   );
