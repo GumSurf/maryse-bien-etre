@@ -22,6 +22,7 @@ import {
   faHeartCircleCheck,
 } from "@fortawesome/free-solid-svg-icons";
 import AvisClients from "../components/AvisClients";
+import { useState } from "react";
 
 const service = services.find((s) => s.slug === "magnetisme")!;
 
@@ -40,6 +41,7 @@ const fadeUp = {
 };
 
 export default function MagnetiseusePage() {
+  const [showFullQuote, setShowFullQuote] = useState(false);
   return (
     <>
       {/* ── HERO ─────────────────────────────────────────────── */}
@@ -585,15 +587,41 @@ export default function MagnetiseusePage() {
 
           {magnetismeQuote && (
             <motion.div
-              variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }}
+              variants={fadeUp}
+              initial="false"
+              whileInView="visible"
+              viewport={{ once: true }}
               className="mt-16 max-w-2xl mx-auto text-center border-t border-[#C9B8E8]/20 pt-14"
             >
-              <span className="font-playfair text-5xl text-[#C9B8E8]/50 block leading-none -mb-2" aria-hidden="true">"</span>
-              <p className="font-playfair text-xl text-white leading-relaxed line-clamp-4">
-                {magnetismeQuote.texte}
-              </p>
               <span
-                className="font-lato text-xs text-[#C9B8E8]/70 tracking-widest uppercase mt-4 block"
+                className="font-playfair text-5xl text-[#C9B8E8]/50 block leading-none -mb-2"
+                aria-hidden="true"
+              >
+                "
+              </span>
+
+              <motion.div
+                initial={false}
+                animate={{ height: showFullQuote ? "auto" : "6.5rem" }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="overflow-hidden"
+              >
+                <p className="font-lato text-xl text-white leading-relaxed">
+                  {magnetismeQuote.texte}
+                </p>
+              </motion.div>
+
+              <button
+                type="button"
+                onClick={() => setShowFullQuote(!showFullQuote)}
+                className="mt-4 font-lato text-sm text-[#C9B8E8] hover:text-white transition-colors underline underline-offset-4"
+                aria-expanded={showFullQuote}
+              >
+                {showFullQuote ? "Réduire" : "Lire la suite"}
+              </button>
+
+              <span
+                className="font-lato text-xs text-[#C9B8E8]/70 tracking-widest uppercase mt-5 block"
                 aria-label={`Témoignage de ${magnetismeQuote.nom}`}
               >
                 - {magnetismeQuote.nom}

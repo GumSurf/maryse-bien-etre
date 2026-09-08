@@ -133,7 +133,7 @@ export default function TarifsPage() {
               Ma philosophie
             </span>
             <h2 className="font-playfair text-4xl md:text-5xl text-[#2D1B4E] leading-tight">
-              Un tarif juste, pour un accompagnement sincère
+              <em className="text-[#9B7FC8] not-italic">Un tarif juste,</em> pour un accompagnement sincère
             </h2>
             <p className="font-lato text-sm text-[#2D1B4E]/75 leading-relaxed">
               Je souhaite que chacun puisse prendre soin de soi sans pression,

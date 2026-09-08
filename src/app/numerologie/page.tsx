@@ -16,6 +16,7 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import AvisClients from "../components/AvisClients";
+import { useState, useEffect, useRef } from "react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -32,6 +33,28 @@ const numerologieQuote =
   ) ?? null;
 
 export default function NumerologiePage() {
+  const [showFullQuote, setShowFullQuote] = useState(false);
+  const [isQuoteTooLong, setIsQuoteTooLong] = useState(false);
+  const quoteRef = useRef<HTMLParagraphElement>(null);
+
+  useEffect(() => {
+    const checkQuoteHeight = () => {
+      if (quoteRef.current) {
+        setIsQuoteTooLong(
+          quoteRef.current.scrollHeight > quoteRef.current.clientHeight
+        );
+      }
+    };
+
+    checkQuoteHeight();
+
+    window.addEventListener("resize", checkQuoteHeight);
+
+    return () => {
+      window.removeEventListener("resize", checkQuoteHeight);
+    };
+  }, [numerologieQuote?.texte]);
+
   return (
     <>
       {/* ── HERO ─────────────────────────────────────────────── */}
@@ -544,15 +567,49 @@ export default function NumerologiePage() {
 
           {numerologieQuote && (
             <motion.div
-              variants={fadeUp} initial="false" whileInView="visible" viewport={{ once: true }}
+              variants={fadeUp}
+              initial="false"
+              whileInView="visible"
+              viewport={{ once: true }}
               className="mt-16 max-w-2xl mx-auto text-center border-t border-[#C9B8E8]/20 pt-14"
             >
-              <span className="font-playfair text-5xl text-[#C9B8E8]/50 block leading-none -mb-2" aria-hidden="true">"</span>
-              <p className="font-playfair text-xl text-white leading-relaxed line-clamp-4">
-                {numerologieQuote.texte}
-              </p>
               <span
-                className="font-lato text-xs text-[#C9B8E8]/70 tracking-widest uppercase mt-4 block"
+                className="font-playfair text-5xl text-[#C9B8E8]/50 block leading-none -mb-2"
+                aria-hidden="true"
+              >
+                "
+              </span>
+
+              <motion.div
+                initial={false}
+                animate={{
+                  height: showFullQuote || !isQuoteTooLong ? "auto" : "6.5rem",
+                }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="overflow-hidden"
+              >
+                <p
+                  ref={quoteRef}
+                  className={`font-lato text-xl text-white leading-relaxed ${!showFullQuote && isQuoteTooLong ? "line-clamp-4" : ""
+                    }`}
+                >
+                  {numerologieQuote.texte}
+                </p>
+              </motion.div>
+
+              {isQuoteTooLong && (
+                <button
+                  type="button"
+                  onClick={() => setShowFullQuote((prev) => !prev)}
+                  className="mt-4 font-lato text-sm text-[#C9B8E8] hover:text-white transition-colors underline underline-offset-4"
+                  aria-expanded={showFullQuote}
+                >
+                  {showFullQuote ? "Réduire" : "Lire la suite"}
+                </button>
+              )}
+
+              <span
+                className="font-lato text-xs text-[#C9B8E8]/70 tracking-widest uppercase mt-5 block"
                 aria-label={`Témoignage de ${numerologieQuote.nom}`}
               >
                 - {numerologieQuote.nom}
