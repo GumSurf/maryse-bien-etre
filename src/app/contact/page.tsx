@@ -169,7 +169,7 @@ export default function ContactPage() {
             </span>
             <div className="flex justify-center gap-4">
               <a
-                href="https://www.instagram.com/magnetiseusemorbihan"
+                href="https://www.instagram.com/magnetiseuse.morbihan.bzh"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Suivre Maryse sur Instagram"

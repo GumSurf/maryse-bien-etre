@@ -16,7 +16,7 @@ export default function Footer() {
           </p>
           <div className="flex items-center gap-3 mt-3">
             <a
-              href="https://www.instagram.com/magnetiseusemorbihan"
+              href="https://www.instagram.com/magnetiseuse.morbihan.bzh"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram de Maryse Briand"
