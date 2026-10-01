@@ -226,7 +226,7 @@ export const tarifsMagnetisme = [
     id: "energetique",
     titre: "Soin Énergétique",
     prix: "65€",
-    duree: "1h",
+    duree: "1h15 à 1h30",
     description:
       "Un soin énergétique pour accompagner votre démarche de bien-être et d'harmonisation.",
   },
